@@ -1,0 +1,109 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+}
+.nav
+{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 100%;
+}
+.nav .nav-1 
+{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightgreen; */
+}
+.nav .nav-1 h1
+{
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav .nav-2
+{
+    padding-left: 15%;
+    padding-right: 15%;
+    width: 70%;
+    /* background-color: lightyellow; */
+}
+.nav .nav-2 ul
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: lightblue; */
+}
+.nav .nav-2 ul li
+{
+    padding: 10px;
+}
+.nav .nav-2 ul li a
+{
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+}   
+.nav .nav-3
+{
+    width: 15%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* background-color: lightcoral; */
+}
+.nav .nav-3 button
+{
+    width: 120px;
+    height: 35px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+/* profile start  */
+.pf
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pf .pf-1
+{
+    margin-left: 100px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+.pf .pf-2
+{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pf .pf-2 img
+{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
+}
