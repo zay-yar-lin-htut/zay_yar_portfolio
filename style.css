@@ -3,9 +3,11 @@
     box-sizing: border-box;
     margin: 0;
 }
+/* #bc7c6c */
 .nav
 {
-    height: 50px;
+    position: fixed;
+    height: 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +20,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: lightgreen; */
 }
 .nav .nav-1 h1
 {
@@ -29,17 +30,15 @@
 }
 .nav .nav-2
 {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
     width: 70%;
-    /* background-color: lightyellow; */
 }
 .nav .nav-2 ul
 {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    /* background-color: lightblue; */
 }
 .nav .nav-2 ul li
 {
@@ -63,15 +62,22 @@
 }
 .nav .nav-3 button
 {
+    outline: none;
+    border: none;
+    background-color: #bc7c6c;
     width: 120px;
     height: 35px;
     font-size: 17px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: black 1px solid;
     cursor: pointer;
     border-radius: 12px;
+}
+.nav .nav-3 button:hover
+{
+    background-color: #a66b5b;
+    transition: 0.3s;
 }
 
 /* profile start  */
@@ -85,12 +91,35 @@
 }
 .pf .pf-1
 {
-    margin-left: 100px;
     width: 60%;
     height: 100%;
     display: flex;
-    flex-direction: center;
+    justify-content: center;
     align-items: center;
+}
+.pf .pf-1 h1
+{
+    font-size: 40px;
+    font-weight: 500;
+}
+.pf .pf-1 p
+{
+    font-size: 18px;
+    font-weight: 400;
+}
+.pf .pf-1 a
+{
+    text-decoration: none;
+    color: black;
+    background-color: #bc7c6c;
+    width: 200px;
+    height: 35px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 12px;
 }
 .pf .pf-2
 {
@@ -104,6 +133,6 @@
 {
     width: 500px;
     height: 500px;
-    border-radius: 50%;
-    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    filter:drop-shadow(12px 12px 20px rgba(0, 0, 0, 0.2));
 }
