@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "start": "vite preview",
+    "dev": "vite"
+  },
+  "keywords": ["portfolio", "website"],
+  "author": "Zay Yar Lin Htut",
+  "license": "MIT"
+}
