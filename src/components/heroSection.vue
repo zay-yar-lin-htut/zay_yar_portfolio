@@ -1,7 +1,7 @@
 <script setup>
 
-const dev_photo = '../../public/images/dev.png';
-const ops_photo = '../../public/images/ops.png';
+const dev_photo = 'https://pub-64f9509f377f4746abc03aba2add5b1c.r2.dev/ProfileImages/dev%20(1).png';
+const ops_photo = 'https://pub-64f9509f377f4746abc03aba2add5b1c.r2.dev/ProfileImages/dev%20(2).png';
 const backend = 'backend developer'; 
 const devops = 'devops engineer';
 </script>
