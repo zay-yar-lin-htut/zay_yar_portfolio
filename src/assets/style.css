@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+.nav-text-common {
+  font-family: jersey, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Tighter spacing matches the logo better */
+}
+
+@font-face {
+  font-family: jersey;
+  src: url('/src/assets/fonts/Jersey10-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
