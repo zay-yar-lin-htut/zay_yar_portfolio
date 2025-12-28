@@ -1,7 +1,7 @@
 <script setup>
 
-const dev_photo = '/public/images/dev.png';
-const ops_photo = '/public/images/ops.png';
+const dev_photo = '../../public/images/dev.png';
+const ops_photo = '../../public/images/ops.png';
 const backend = 'backend developer'; 
 const devops = 'devops engineer';
 </script>
@@ -14,7 +14,7 @@ const devops = 'devops engineer';
             </div>
         </div>
         <div>
-            
+
         </div>
         <div class="flex flex-end w-2/5 justify-center items-center">
             <img class="h-4/5 w-4/5 drop-shadow-[0_6px_10px_rgba(239,68,68,0.4)]" :src="dev_photo" alt="">
