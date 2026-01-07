@@ -42,7 +42,7 @@ function onLeave() {
 </script>
 
 <template>
-  <nav class="bg-[#F8F9FF] w-full">
+  <nav class="bg-[#F8F9FF] w-full absolute top-0 left-0 z-50">
     <div class="flex justify-between items-center p-2 md:p-5">
       <div
         class="border flex items-center justify-center w-[60%] md:w-[30%] w-full text-center tracking-tight nav-text-common font-black drop-shadow-[0_6px_10px_rgba(239,68,68,0.4)] md:mx-20 sm:mx-0 whitespace-nowrap px-4"
