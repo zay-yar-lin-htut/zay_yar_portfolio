@@ -16,10 +16,10 @@ const indicator = reactive({
 });
 
 const indicatorStyle = computed(() => ({
-  left: `${indicator.left - 10}px`, // small padding around the text
-  top: `${indicator.top - 5}px`,
-  width: `${indicator.width + 20}px`,
-  height: `${indicator.height + 10}px`,
+  left: `${indicator.left - 8}px`,
+  top: `${indicator.top - 4}px`,
+  width: `${indicator.width + 16}px`,
+  height: `${indicator.height + 8}px`,
   opacity: indicator.show ? 1 : 0,
 }));
 
@@ -42,25 +42,54 @@ function onLeave() {
 </script>
 
 <template>
-  <nav class="bg-[#F8F9FF] w-full absolute top-0 left-0 z-50">
-    <div class="flex justify-between items-center p-2 md:p-5">
-      <div
-        class="border flex items-center justify-center w-[60%] md:w-[30%] w-full text-center tracking-tight nav-text-common font-black drop-shadow-[0_6px_10px_rgba(239,68,68,0.4)] md:mx-20 sm:mx-0 whitespace-nowrap px-4"
-        style="border-radius:12px 0 12px 0"
-      >
-        <span class="font-medium mr-3 text-base md:text-4xl">&lt;</span>
-        <span class="text-red font-black text-2xl md:text-4xl mt-0.3 md:mb-1">:</span>
-        <span class="text-xl md:text-xl lg:text-4xl">Zay Yar Lin Htut</span>
-        <span class="text-red font-black text-2xl md:text-4xl mt-0.3 md:mb-1">:</span>
-        <span class="font-medium ml-3 text-base md:text-4xl">&gt;</span>
+  <nav class="nav-glass w-full absolute top-0 left-0 z-50">
+    <div class="flex justify-between items-center p-4 md:px-8">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="card w-10 h-10 flex items-center justify-center">
+          <span class="text-black font-bold text-xl">Z</span>
+        </div>
+        <div>
+          <h1 class="font-display text-lg md:text-xl text-black">Zay Yar Lin Htut</h1>
+          <p class="text-xs md:text-sm text-gray-600 font-body">Full Stack Developer</p>
+        </div>
       </div>
 
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <div  
+          ref="navContainer"
+          class="relative flex space-x-6"
+        >
+          <div
+            :style="indicatorStyle"
+            class="pointer-events-none absolute rounded-full card transition-all duration-300"
+          ></div>
+          <a
+            v-for="item in navItems"
+            :key="item"
+            href="#"
+            @mouseenter="onEnter"
+            @mouseleave="onLeave"
+            class="relative px-4 py-2 text-gray-700 hover:text-black font-medium text-sm md:text-base transition-all duration-300 font-body"
+          >
+            {{ item }}
+          </a>
+        </div>
+        
+        <!-- CTA Button -->
+        <button class="liquid-button px-6 py-2 font-medium text-sm font-body">
+          Contact Me
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
       <button
         @click="isMenuOpen = !isMenuOpen"
-        class="md:hidden p-2 text-gray-600 w-[40%] left-0 flex justify-end"
+        class="md:hidden p-2 text-gray-600 hover:text-black transition-colors duration-300"
       >
         <svg
-          class="w-8 h-8"
+          class="w-6 h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -81,42 +110,26 @@ function onLeave() {
           />
         </svg>
       </button>
-
-      <div class="flex flex-end justify-center align-center md:w-[70%]">
-        <div  
-          ref="navContainer"
-          class="hidden md:flex relative space-x-8 justify-between align-center px-10 py-2"
-        >
-          <div
-            :style="indicatorStyle"
-            class="pointer-events-none absolute rounded-lg bg-red-600/10 border-red-600/20 shadow-[2px_2px_10px_0px_#EF4444] transition-all duration-300"
-          ></div>
-          <a
-            v-for="item in navItems"
-            :key="item"
-            href="#"
-            @mouseenter="onEnter"
-            @mouseleave="onLeave"
-            class="font-medium text-lg md:text-2xl transition-all duration-300 uppercase cursor-pointer font-sans"
-          >
-            {{ item }}
-          </a>
-        </div>
-      </div>
     </div>
 
+    <!-- Mobile Menu -->
     <div
       v-show="isMenuOpen"
-      class="md:hidden mt-4 flex flex-end flex-col border-t"
+      class="md:hidden nav-glass border-t border-gray-700/50"
     >
-      <a
-        v-for="item in navItems"
-        :key="item"
-        href="#"
-        class="px-4 font-medium text-lg uppercase text-gray-800 hover:text-red-600 hover:bg-gray-200 transition-all duration-300 font-sans py-3"
-      >
-        {{ item }}
-      </a>
+      <div class="px-4 py-4 space-y-3">
+        <a
+          v-for="item in navItems"
+          :key="item"
+          href="#"
+          class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300 font-medium font-body"
+        >
+          {{ item }}
+        </a>
+        <button class="w-full liquid-button px-6 py-3 text-white font-medium font-body mt-4">
+          Contact Me
+        </button>
+      </div>
     </div>
   </nav>
 </template>
