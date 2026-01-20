@@ -70,6 +70,7 @@ function bite(color) {
 
   biting.value = true;
 
+  // Immediate visual feedback
   setTimeout(() => {
     front.value = color;
     biting.value = false;
@@ -182,47 +183,99 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="root" class="flex justify-center items-center mx-auto p-4 sm:p-6 md:p-10">
+  <div ref="root" class="flex justify-center items-center h-full w-full px-4 sm:px-6 lg:px-10">
 
     <!-- Mobile: Stack layout, Desktop: Side-by-side -->
-    <div class="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-center gap-8 lg:gap-12">
+    <div class="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-center gap-6 lg:gap-12 xl:gap-16">
 
       <!-- LEFT: Text Content -->
-      <div class="flex w-full lg:w-3/5 justify-center items-center text-center lg:text-left">
-        <div class="space-y-4">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Welcome to My Portfolio
-          </h1>
-          <p class="text-lg sm:text-xl" :class="roleClass">
-            I'm Zay Yar Lin Htut, a passionate {{ displayRole }}.
-          </p>
-          <p class="text-lg sm:text-xl mt-4">
-            <span class="font-mono text-green-400 bg-black/80 px-3 py-2 rounded inline-block">
-              Your scrolling: {{ wheelPercent }}%
-            </span>
-          </p>
+      <div class="flex w-full lg:w-3/5 xl:w-1/2 justify-center items-center text-center lg:text-left">
+        <div class="space-y-6 sm:space-y-8">
+          <!-- Animated greeting -->
+          <div class="space-y-4">
+            <div class="inline-block">
+              <span class="text-base sm:text-lg text-gray-700 font-medium tracking-wide">Hello, I'm</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-black leading-tight">
+              Zay Yar Lin Htut
+            </h1>
+          </div>
+          
+          <!-- Dynamic role with intro text -->
+          <div class="space-y-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-lg sm:text-xl text-gray-700 font-body">Passionate</span>
+              <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-black" :class="roleClass">
+                {{ displayRole }}
+              </span>
+            </div>
+            <p class="text-base sm:text-lg text-gray-600 font-body leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Building scalable digital experiences with clean code and modern architecture. 
+              Specializing in backend systems, cloud deployment, and creating seamless solutions 
+              that bridge the gap between complex requirements and elegant implementations.
+            </p>
+          </div>
+          
+          <!-- Scroll indicator -->
+          <div class="pt-8">
+            <div class="flex items-center justify-center lg:justify-start space-x-4">
+              <span class="text-sm text-gray-500 font-body">
+                Scroll to explore journey
+              </span>
+              <div class="card px-4 py-2 flex items-center space-x-2">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span class="font-mono text-sm font-bold gradient-text">
+                  {{ wheelPercent }}%
+                </span>
+              </div>
+            </div>
+            <div class="mt-6 flex justify-center lg:justify-start">
+              <div class="w-8 h-12 border-2 border-gray-600 rounded-full flex justify-center">
+                <div class="w-1.5 h-4 bg-gradient-to-b from-blue-500 to-orange-500 rounded-full mt-3 animate-bounce"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- RIGHT: Interactive Circles -->
-      <div class="relative flex justify-center items-center w-full lg:w-2/5 h-[300px] sm:h-[350px] md:h-[400px]">
+      <div class="relative flex justify-center items-center w-full lg:w-2/5 xl:w-1/2 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
 
-        <!-- BLACK -->
+        <!-- BLACK - Backend -->
         <div
-          class="circle black"
+          class="card circle hover:scale-105 transition-all duration-300 cursor-pointer group relative overflow-hidden"
           :class="{ front: front === 'black', back: front !== 'black' }"
           @click="bite('black')"
         >
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center relative z-10">
+              <span class="text-white text-xs sm:text-sm font-bold block">BACKEND</span>
+              <span class="text-white/70 text-xs block mt-1">Systems</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
           <div v-if="biting && front === 'orange'" class="mouth"></div> 
         </div>
 
-        <!-- ORANGE -->
+        <!-- ORANGE - DevOps -->
         <div
-          class="circle orange"
+          class="card circle hover:scale-105 transition-all duration-300 cursor-pointer group relative overflow-hidden"
           :class="{ front: front === 'orange', back: front !== 'orange' }"
           @click="bite('orange')"
         >
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center relative z-10">
+              <span class="text-white text-xs sm:text-sm font-bold block">DEVOPS</span>
+              <span class="text-white/70 text-xs block mt-1">Infrastructure</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-pink-500/20"></div>
           <div v-if="biting && front === 'black'" class="mouth"></div>
+        </div>
+
+        <!-- Click instruction -->
+        <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs sm:text-sm text-gray-500 text-center">
+          Click circles to switch
         </div>
 
       </div>
@@ -237,7 +290,8 @@ onBeforeUnmount(() => {
   height: 120px;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive circle sizes */
@@ -262,17 +316,43 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Circle positioning */
+/* Circle positioning with dark theme */
 .black {
-  background: black;
+  background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
   left: 20%;
   transform: translateX(-50%);
 }
 
 .orange {
-  background: orange;
+  background: linear-gradient(135deg, #2d1b69, #0f3460);
   right: 20%;
   transform: translateX(50%);
+}
+
+/* Dark theme backgrounds */
+.black.back {
+  background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
+  opacity: 0.7;
+}
+
+.orange.back {
+  background: linear-gradient(135deg, #2d1b69, #0f3460);
+  opacity: 0.7;
+}
+
+/* Front circle gets enhanced dark color */
+.black.front {
+  background: linear-gradient(135deg, #0f0f1e, #1a1a2e);
+  box-shadow: 
+    0 20px 40px rgba(26, 26, 46, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.orange.front {
+  background: linear-gradient(135deg, #0f3460, #2d1b69);
+  box-shadow: 
+    0 20px 40px rgba(45, 27, 105, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Desktop positioning */
@@ -284,6 +364,22 @@ onBeforeUnmount(() => {
   .orange {
     right: 25%;
   }
+}
+
+/* Add glow effect on hover */
+.circle:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Front circle enhancement */
+.front {
+  z-index: 10;
+  transform: scale(1.1);
+}
+
+.back {
+  z-index: 5;
+  transform: scale(1);
 }
 
 .front {
@@ -304,8 +400,9 @@ onBeforeUnmount(() => {
   height: 0;
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
-  border-left: 40px solid white;
+  border-left: 40px solid rgba(255, 255, 255, 0.9);
   animation: bite 0.5s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive mouth sizes */
