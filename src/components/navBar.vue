@@ -1,11 +1,17 @@
 <script setup>
 import { ref, reactive, computed } from "vue";
-import { navItems } from "../../public/arrays.ts";
 
-// State to track if the mobile menu is open
+const navItems = [
+  { name: "About Me", href: "#about-me" },
+  { name: "Education", href: "#education" },
+  { name: "Experience", href: "#experience" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
 const isMenuOpen = ref(false);
 
-// Animated indicator that follows hovered nav items
 const navContainer = ref(null);
 const indicator = reactive({
   left: 0,
@@ -16,10 +22,10 @@ const indicator = reactive({
 });
 
 const indicatorStyle = computed(() => ({
-  left: `${indicator.left - 8}px`,
-  top: `${indicator.top - 4}px`,
-  width: `${indicator.width + 16}px`,
-  height: `${indicator.height + 8}px`,
+  left: `${indicator.left}px`,
+  top: `${indicator.top}px`,
+  width: `${indicator.width}px`,
+  height: `${indicator.height}px`,
   opacity: indicator.show ? 1 : 0,
 }));
 
@@ -39,94 +45,80 @@ function onEnter(e) {
 function onLeave() {
   indicator.show = false;
 }
+
+function scrollToSection(href) {
+  isMenuOpen.value = false;
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 </script>
 
 <template>
-  <nav class="nav-glass w-full absolute top-0 left-0 z-50">
-    <div class="flex justify-between items-center p-4 md:px-8">
-      <!-- Logo -->
+  <nav class="w-full fixed top-0 left-0 z-50" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px);">
+    <div class="flex justify-between items-center p-4 md:px-8 h-16 border-b border-gray-800">
       <div class="flex items-center space-x-3">
-        <div class="card w-10 h-10 flex items-center justify-center">
-          <span class="text-black font-bold text-xl">Z</span>
+        <div class="w-10 h-10 rounded flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #a855f7);">
+          <span class="text-white font-mono font-bold text-xl">&lt;Z/&gt;</span>
         </div>
         <div>
-          <h1 class="font-display text-lg md:text-xl text-black">Zay Yar Lin Htut</h1>
-          <p class="text-xs md:text-sm text-gray-600 font-body">Full Stack Developer</p>
+          <h1 class="font-mono text-lg md:text-xl text-white font-bold">[Your Name]</h1>
+          <p class="text-xs md:text-sm text-gray-500 font-mono">[Your Title]</p>
         </div>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center space-x-2">
         <div  
           ref="navContainer"
-          class="relative flex space-x-6"
+          class="relative flex space-x-1 items-center px-2 py-1"
         >
           <div
             :style="indicatorStyle"
-            class="pointer-events-none absolute rounded-full card transition-all duration-300"
+            class="pointer-events-none absolute rounded transition-all duration-300"
+            style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(168, 85, 247, 0.2)); border: 1px solid rgba(6, 182, 212, 0.3);"
           ></div>
           <a
             v-for="item in navItems"
-            :key="item"
-            href="#"
+            :key="item.name"
+            :href="item.href"
+            @click.prevent="scrollToSection(item.href)"
             @mouseenter="onEnter"
             @mouseleave="onLeave"
-            class="relative px-4 py-2 text-gray-700 hover:text-black font-medium text-sm md:text-base transition-all duration-300 font-body"
+            class="relative px-4 py-2 text-gray-400 hover:text-white font-mono text-sm md:text-base transition-colors duration-200 cursor-pointer"
           >
-            {{ item }}
+            {{ item.name }}
           </a>
         </div>
         
-        <!-- CTA Button -->
-        <button class="liquid-button px-6 py-2 font-medium text-sm font-body">
+        <button @click="scrollToSection('#contact')" class="ml-4 px-6 py-2 text-black font-mono font-bold rounded text-sm transition-all duration-200 hover:opacity-90" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
           Contact Me
         </button>
       </div>
 
-      <!-- Mobile Menu Button -->
       <button
         @click="isMenuOpen = !isMenuOpen"
-        class="md:hidden p-2 text-gray-600 hover:text-black transition-colors duration-300"
+        class="md:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200"
       >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            v-if="!isMenuOpen"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-          <path
-            v-else
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div
-      v-show="isMenuOpen"
-      class="md:hidden nav-glass border-t border-gray-700/50"
-    >
-      <div class="px-4 py-4 space-y-3">
+    <div v-show="isMenuOpen" class="md:hidden border-t border-gray-800" style="background: rgba(15, 23, 42, 0.98);">
+      <div class="px-4 py-4 space-y-2">
         <a
           v-for="item in navItems"
-          :key="item"
-          href="#"
-          class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300 font-medium font-body"
+          :key="item.name"
+          :href="item.href"
+          @click.prevent="scrollToSection(item.href)"
+          class="block px-4 py-3 text-gray-400 hover:text-white font-mono transition-colors duration-200 cursor-pointer"
         >
-          {{ item }}
+          {{ item.name }}
         </a>
-        <button class="w-full liquid-button px-6 py-3 text-white font-medium font-body mt-4">
+        <button @click="scrollToSection('#contact')" class="w-full mt-4 px-6 py-3 text-black font-mono font-bold rounded transition-all duration-200" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
           Contact Me
         </button>
       </div>
