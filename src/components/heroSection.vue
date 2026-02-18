@@ -24,23 +24,26 @@ function bite(color) {
       <!-- LEFT: Text Content -->
       <div class="flex w-full lg:w-3/5 justify-center items-center text-center lg:text-left">
         <div class="space-y-8">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5">
+          <!-- <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             <span class="text-sm font-mono text-cyan-400">Available for hire</span>
+          </div> -->
+
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/30 bg-cyan-500/5">
+            <span class="w-2 h-2 rounded-full bg-red-900 animate-pulse"></span>
+            <span class="text-sm font-mono text-red-400">Not Available for now</span>
           </div>
           
           <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            [Your Name]
+            Zay Yar Lin Htut
           </h1>
           
           <p class="text-lg sm:text-xl md:text-2xl font-mono text-cyan-400">
-            <span class="text-gray-500">&lt;</span>
-            <span>[Your Role]</span>
-            <span class="text-gray-500">/&gt;</span>
+            <span>Full-Stack Developer</span>
           </p>
           
           <p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl">
-            [Your short bio or description here. Describe your expertise, passion for coding, and what you specialize in.]
+            I'm rapper, BRUH!
           </p>
           
           <!-- Tech Stack -->
@@ -59,15 +62,15 @@ function bite(color) {
           <!-- Stats -->
           <div class="flex flex-wrap gap-8 justify-center lg:justify-start pt-2">
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[X+]</p>
+              <p class="text-2xl sm:text-3xl font-bold text-white">[2+]</p>
               <p class="text-sm font-mono text-gray-500">Years Experience</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[XX+]</p>
+              <p class="text-2xl sm:text-3xl font-bold text-white">[10+]</p>
               <p class="text-sm font-mono text-gray-500">Projects Completed</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[X]</p>
+              <p class="text-2xl sm:text-3xl font-bold text-white">[2]</p>
               <p class="text-sm font-mono text-gray-500">Companies</p>
             </div>
           </div>
