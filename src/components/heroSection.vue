@@ -19,67 +19,50 @@ function bite(color) {
 
 <template>
   <div class="flex justify-center items-center h-full w-full px-6 sm:px-8 lg:px-12 py-16 lg:py-24">
-    <div class="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-center gap-12 lg:gap-24">
+    <div class="flex flex-col-reverse lg:flex-row w-full max-w-7xl items-center justify-center gap-12 lg:gap-24">
 
       <!-- LEFT: Text Content -->
       <div class="flex w-full lg:w-3/5 justify-center items-center text-center lg:text-left">
         <div class="space-y-8">
-          <!-- <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span class="text-sm font-mono text-cyan-400">Available for hire</span>
-          </div> -->
 
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/30 bg-cyan-500/5">
             <span class="w-2 h-2 rounded-full bg-red-900 animate-pulse"></span>
             <span class="text-sm font-mono text-red-400">Not Available for now</span>
           </div>
           
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold text-white leading-tight">
             Zay Yar Lin Htut
           </h1>
           
-          <p class="text-lg sm:text-xl md:text-2xl font-mono text-cyan-400">
+          <p class="text-xl sm:text-2xl md:text-3xl font-mono text-cyan-400">
             <span>Full-Stack Developer</span>
           </p>
           
-          <p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl">
+          <p class="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl">
             I'm rapper, BRUH!
           </p>
-          
-          <!-- Tech Stack -->
-          <!-- <div class="space-y-3">
-            <p class="text-sm font-mono text-gray-500 uppercase tracking-wider">Tech Stack</p>
-            <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
-              <span class="px-3 py-1 text-sm font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded">JavaScript</span>
-              <span class="px-3 py-1 text-sm font-mono text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded">TypeScript</span>
-              <span class="px-3 py-1 text-sm font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded">Vue.js</span>
-              <span class="px-3 py-1 text-sm font-mono text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded">Node.js</span>
-              <span class="px-3 py-1 text-sm font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded">Docker</span>
-              <span class="px-3 py-1 text-sm font-mono text-purple-400 bg-purple-500/10 border border-purple-500/20 rounded">AWS</span>
-            </div>
-          </div> -->
           
           <!-- Stats -->
           <div class="flex flex-wrap gap-8 justify-center lg:justify-start pt-2">
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[2+]</p>
-              <p class="text-sm font-mono text-gray-500">Years Experience</p>
+              <p class="text-3xl sm:text-4xl font-bold text-white">[ 1+ ]</p>
+              <p class="text-base font-mono text-gray-500">Years Experience</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[10+]</p>
-              <p class="text-sm font-mono text-gray-500">Projects Completed</p>
+              <p class="text-3xl sm:text-4xl font-bold text-white">[ 10+ ]</p>
+              <p class="text-base font-mono text-gray-500">Projects Completed</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-bold text-white">[2]</p>
-              <p class="text-sm font-mono text-gray-500">Companies</p>
+              <p class="text-3xl sm:text-4xl font-bold text-white">[ 2 ]</p>
+              <p class="text-base font-mono text-gray-500">Companies</p>
             </div>
           </div>
           
           <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
-            <button class="px-8 py-4 bg-cyan-500 text-black font-mono font-bold text-base rounded hover:bg-cyan-400 transition-colors duration-200">
+            <button class="px-8 py-4 bg-cyan-500 text-black font-mono font-bold text-base rounded-4xl hover:bg-cyan-400 transition-colors duration-200">
               Contact Me
             </button>
-            <button class="px-8 py-4 border border-gray-700 text-gray-300 font-mono text-base rounded hover:border-cyan-500 hover:text-cyan-400 transition-colors duration-200">
+            <button class="px-8 py-4 border border-gray-700 text-gray-300 font-mono text-base rounded-4xl hover:border-cyan-500 hover:text-cyan-400 transition-colors duration-200">
               View Projects
             </button>
           </div>
@@ -97,7 +80,7 @@ function bite(color) {
           <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10"></div>
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center relative z-10">
-              <img src="https://pub-64f9509f377f4746abc03aba2add5b1c.r2.dev/ProfileImages/Untitled%20design%20(5).png" alt="Shrek" class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain">
+              <img src="https://pub-64f9509f377f4746abc03aba2add5b1c.r2.dev/ProfileImages/Untitled%20design%20(5).png" alt="Shrek" class="w-25 h-25 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain">
             </div>
           </div>
           <div class="absolute inset-0 border border-cyan-500/30 rounded-full"></div>

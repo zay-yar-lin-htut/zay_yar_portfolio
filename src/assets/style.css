@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./theme.css";
+@import "./liquid-glass.css";
 
 .font-display {
   font-family: 'Inter', sans-serif;
@@ -10,4 +11,11 @@
 .font-body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lavishly Your";
+  src: url('fonts/LavishlyYours-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
