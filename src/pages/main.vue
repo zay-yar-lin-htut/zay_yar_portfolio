@@ -22,7 +22,7 @@ onMounted(() => {
 <template>
     <div class="relative">
         <NavBar/>
-        <HeroSection ref="heroRef" :style="{height: '100vh'}" :hero-height-px="heroHeightPx"/>
+        <HeroSection id="hero-section" ref="heroRef" :style="{height: '100vh'}" :hero-height-px="heroHeightPx"/>
         <div class="blurred-sections">
             <AboutMe id="about-me"/>
             <Education id="education"/>

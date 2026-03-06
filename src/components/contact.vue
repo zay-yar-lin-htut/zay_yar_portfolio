@@ -1,7 +1,10 @@
+<script setup>
+import contentBox from './contentBox.vue'
+</script>
+
 <template>
   <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32">
     <div class="max-w-7xl mx-auto">
-      <!-- Section Header -->
       <div class="text-center mb-20">
         <span class="text-sm font-mono text-purple-400 uppercase tracking-wider">Get In Touch</span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-3">
@@ -10,9 +13,8 @@
       </div>
 
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
-        <!-- Contact Info -->
         <div class="lg:w-1/2">
-          <div class="card p-8 h-full">
+          <contentBox padding="p-8" :custom-class="'h-full'">
             <h3 class="text-2xl font-bold text-white mb-6">Let's work together</h3>
             <p class="text-gray-400 text-lg leading-relaxed mb-8">
               [Add a brief message about how you can help others or what kind of opportunities you're looking for.]
@@ -68,45 +70,46 @@
                 </div>
               </div>
             </div>
-          </div>
+          </contentBox>
         </div>
 
-        <!-- Contact Form -->
         <div class="lg:w-1/2">
-          <form class="card p-8" @submit.prevent>
-            <div class="space-y-6">
-              <div class="grid sm:grid-cols-2 gap-6">
+          <contentBox padding="p-8">
+            <form @submit.prevent>
+              <div class="space-y-6">
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-mono text-gray-400 mb-2">Name</label>
+                    <input type="text" placeholder="Your name" 
+                      class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-mono text-gray-400 mb-2">Email</label>
+                    <input type="email" placeholder="your@email.com"
+                      class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                  </div>
+                </div>
+
                 <div>
-                  <label class="block text-sm font-mono text-gray-400 mb-2">Name</label>
-                  <input type="text" placeholder="Your name" 
+                  <label class="block text-sm font-mono text-gray-400 mb-2">Subject</label>
+                  <input type="text" placeholder="What's this about?"
                     class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
                 </div>
+
                 <div>
-                  <label class="block text-sm font-mono text-gray-400 mb-2">Email</label>
-                  <input type="email" placeholder="your@email.com"
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                  <label class="block text-sm font-mono text-gray-400 mb-2">Message</label>
+                  <textarea rows="5" placeholder="Your message..."
+                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label class="block text-sm font-mono text-gray-400 mb-2">Subject</label>
-                <input type="text" placeholder="What's this about?"
-                  class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                <button type="submit" 
+                  class="w-full py-4 rounded-lg font-mono font-bold text-white transition-all duration-200 hover:opacity-90"
+                  style="background: linear-gradient(135deg, #a855f7, #c084fc);">
+                  Send Message
+                </button>
               </div>
-
-              <div>
-                <label class="block text-sm font-mono text-gray-400 mb-2">Message</label>
-                <textarea rows="5" placeholder="Your message..."
-                  class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
-              </div>
-
-              <button type="submit" 
-                class="w-full py-4 rounded-lg font-mono font-bold text-white transition-all duration-200 hover:opacity-90"
-                style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-                Send Message
-              </button>
-            </div>
-          </form>
+            </form>
+          </contentBox>
         </div>
       </div>
     </div>

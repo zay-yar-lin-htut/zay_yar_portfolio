@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import contentBox from './contentBox.vue';
 
 const showCertModal = ref(false);
 const selectedCert = ref(null);
@@ -59,7 +60,7 @@ function closeCertModal() {
       <!-- Education Cards -->
       <div class="grid md:grid-cols-2 gap-8 mb-20">
         <!-- Education Card 1 -->
-        <div class="card p-8 sm:p-10 hover:border-cyan-500/50 transition-all duration-300 group">
+        <contentBox padding="p-8 sm:p-10" hover-effect hover-color="cyan">
           <div class="flex items-start gap-5">
             <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-black font-mono font-bold text-2xl">🎓</span>
@@ -79,10 +80,10 @@ function closeCertModal() {
               </div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
         <!-- Education Card 2 -->
-        <div class="card p-8 sm:p-10 hover:border-purple-500/50 transition-all duration-300 group">
+        <contentBox padding="p-8 sm:p-10" hover-effect hover-color="purple">
           <div class="flex items-start gap-5">
             <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
               <span class="text-white font-mono font-bold text-2xl">📜</span>
@@ -102,10 +103,10 @@ function closeCertModal() {
               </div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
         <!-- Education Card 3 -->
-        <div class="card p-8 sm:p-10 hover:border-cyan-500/50 transition-all duration-300 group">
+        <contentBox padding="p-8 sm:p-10" hover-effect hover-color="cyan">
           <div class="flex items-start gap-5">
             <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-black font-mono font-bold text-2xl">📚</span>
@@ -125,10 +126,10 @@ function closeCertModal() {
               </div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
         <!-- View All Certifications Card -->
-        <div class="card p-8 sm:p-10 hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer" @click="showCertModal = true">
+        <contentBox padding="p-8 sm:p-10" hover-effect hover-color="cyan" :custom-class="'cursor-pointer'" @click="showCertModal = true">
           <div class="flex items-start gap-5">
             <div class="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-black font-mono font-bold text-2xl">🏆</span>
@@ -149,7 +150,7 @@ function closeCertModal() {
               </div>
             </div>
           </div>
-        </div>
+        </contentBox>
       </div>
 
       <!-- Skills Grid -->
@@ -158,26 +159,26 @@ function closeCertModal() {
           Technical <span class="text-cyan-400">Expertise</span>
         </h3>
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="card p-8 text-center hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer">
+          <contentBox padding="p-8" hover-effect hover-color="cyan" :custom-class="'text-center cursor-pointer'">
             <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">💻</div>
             <h4 class="font-bold text-white text-xl">Backend</h4>
             <p class="text-base font-mono text-gray-500 mt-2">Node.js, Python, Go</p>
-          </div>
-          <div class="card p-8 text-center hover:border-purple-500/50 transition-all duration-300 group cursor-pointer">
+          </contentBox>
+          <contentBox padding="p-8" hover-effect hover-color="purple" :custom-class="'text-center cursor-pointer'">
             <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🎨</div>
             <h4 class="font-bold text-white text-xl">Frontend</h4>
             <p class="text-base font-mono text-gray-500 mt-2">Vue.js, React, Tailwind</p>
-          </div>
-          <div class="card p-8 text-center hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer">
+          </contentBox>
+          <contentBox padding="p-8" hover-effect hover-color="cyan" :custom-class="'text-center cursor-pointer'">
             <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">☁️</div>
             <h4 class="font-bold text-white text-xl">DevOps</h4>
             <p class="text-base font-mono text-gray-500 mt-2">Docker, AWS, CI/CD</p>
-          </div>
-          <div class="card p-8 text-center hover:border-purple-500/50 transition-all duration-300 group cursor-pointer">
+          </contentBox>
+          <contentBox padding="p-8" hover-effect hover-color="purple" :custom-class="'text-center cursor-pointer'">
             <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🗄️</div>
             <h4 class="font-bold text-white text-xl">Database</h4>
             <p class="text-base font-mono text-gray-500 mt-2">PostgreSQL, MongoDB</p>
-          </div>
+          </contentBox>
         </div>
       </div>
     </div>

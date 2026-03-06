@@ -27,6 +27,7 @@ const indicatorStyle = computed(() => ({
   width: `${indicator.width}px`,
   height: `${indicator.height}px`,
   opacity: indicator.show ? 1 : 0,
+  borderRadius: "12px",
 }));
 
 function onEnter(e) {
@@ -56,15 +57,15 @@ function scrollToSection(href) {
 </script>
 
 <template>
-  <nav class="w-full fixed top-0 left-0 z-50" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px);">
-    <div class="flex justify-between items-center p-4 md:px-8 h-16 border-b border-gray-800">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #a855f7);">
-          <span class="text-white font-mono font-bold text-xl">&lt;Z/&gt;</span>
-        </div>
-        <div>
-          <h1 class="font-mono text-lg md:text-xl text-white font-bold">[Your Name]</h1>
-          <p class="text-xs md:text-sm text-gray-500 font-mono">[Your Title]</p>
+  <nav class="liquid-glass fixed top-5 left-5 right-5 z-50">
+    <div class="flex justify-between items-center p-4 md:px-8 h-16 border-gray-800">
+      <div class="flex space-x-3" @class="isMenuOpen ? 'text-center' : 'text-left'">
+        <div @click="scrollToSection('#hero-section')" class="cursor-pointer">
+          <h1 
+          class="font-mono text-lg md:text-2xl text-white" 
+          style="font-family: 'Lavishly Your';">
+            Zay&nbsp;&nbsp;&nbsp;Yar&nbsp;&nbsp;&nbsp;Lin&nbsp;&nbsp;&nbsp;Htut
+          </h1>
         </div>
       </div>
 
@@ -91,7 +92,7 @@ function scrollToSection(href) {
           </a>
         </div>
         
-        <button @click="scrollToSection('#contact')" class="ml-4 px-6 py-2 text-black font-mono font-bold rounded text-sm transition-all duration-200 hover:opacity-90" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+        <button @click="scrollToSection('#contact')" class="ml-4 px-6 py-2 text-black font-mono font-bold rounded-4xl text-sm transition-all duration-200 hover:opacity-90" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
           Contact Me
         </button>
       </div>
@@ -107,18 +108,18 @@ function scrollToSection(href) {
       </button>
     </div>
 
-    <div v-show="isMenuOpen" class="md:hidden border-t border-gray-800" style="background: rgba(15, 23, 42, 0.98);">
+    <div v-show="isMenuOpen" class="md:hidden border-t border-gray-800">
       <div class="px-4 py-4 space-y-2">
         <a
           v-for="item in navItems"
           :key="item.name"
           :href="item.href"
           @click.prevent="scrollToSection(item.href)"
-          class="block px-4 py-3 text-gray-400 hover:text-white font-mono transition-colors duration-200 cursor-pointer"
+          class="block px-4 py-3 text-gray-400 hover:text-white font-mono transition-colors duration-200 cursor-pointer border-b border-gray-800"
         >
           {{ item.name }}
         </a>
-        <button @click="scrollToSection('#contact')" class="w-full mt-4 px-6 py-3 text-black font-mono font-bold rounded transition-all duration-200" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+        <button @click="scrollToSection('#contact')" class="w-full mt-4 px-6 py-3 text-black font-mono font-bold rounded-4xl transition-all duration-200" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
           Contact Me
         </button>
       </div>

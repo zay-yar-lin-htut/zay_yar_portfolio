@@ -1,7 +1,10 @@
+<script setup>
+import contentBox from './contentBox.vue'
+</script>
+
 <template>
   <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32">
     <div class="max-w-7xl mx-auto">
-      <!-- Section Header -->
       <div class="text-center mb-20">
         <span class="text-sm font-mono text-purple-400 uppercase tracking-wider">What I Work With</span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-3">
@@ -9,10 +12,8 @@
         </h2>
       </div>
 
-      <!-- Skills Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <!-- Backend -->
-        <div class="card p-8 hover:border-cyan-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="cyan">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-2xl">💻</span>
@@ -49,10 +50,9 @@
               <div class="h-full rounded-full" style="width: 70%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
-        <!-- Frontend -->
-        <div class="card p-8 hover:border-purple-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="purple">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
               <span class="text-2xl">🎨</span>
@@ -89,10 +89,9 @@
               <div class="h-full rounded-full" style="width: 85%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
-        <!-- DevOps -->
-        <div class="card p-8 hover:border-cyan-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="cyan">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-2xl">☁️</span>
@@ -129,10 +128,9 @@
               <div class="h-full rounded-full" style="width: 75%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
-        <!-- Database -->
-        <div class="card p-8 hover:border-purple-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="purple">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
               <span class="text-2xl">🗄️</span>
@@ -169,10 +167,9 @@
               <div class="h-full rounded-full" style="width: 70%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
             </div>
           </div>
-        </div>
+        </contentBox>
 
-        <!-- Tools -->
-        <div class="card p-8 hover:border-cyan-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="cyan">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
               <span class="text-2xl">🛠️</span>
@@ -188,10 +185,9 @@
             <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">Postman</span>
             <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">Figma</span>
           </div>
-        </div>
+        </contentBox>
 
-        <!-- Soft Skills -->
-        <div class="card p-8 hover:border-purple-500/50 transition-all duration-300 group">
+        <contentBox hover-effect hover-color="purple">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
               <span class="text-2xl">🤝</span>
@@ -207,7 +203,7 @@
             <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Communication</span>
             <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Adaptability</span>
           </div>
-        </div>
+        </contentBox>
       </div>
     </div>
   </section>

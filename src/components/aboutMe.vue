@@ -1,7 +1,10 @@
+<script setup>
+import contentBox from './contentBox.vue'
+</script>
+
 <template>
   <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32">
     <div class="max-w-7xl mx-auto">
-      <!-- Section Header -->
       <div class="text-center mb-20">
         <span class="text-sm font-mono text-cyan-400 uppercase tracking-wider">Get to Know Me</span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-3">
@@ -9,11 +12,9 @@
         </h2>
       </div>
 
-      <!-- Content -->
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
-        <!-- Left: Image/Avatar -->
         <div class="lg:w-1/3">
-          <div class="card p-8 text-center">
+          <contentBox padding="p-8" :custom-class="'text-center'">
             <div class="w-48 h-48 mx-auto rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #a855f7);">
               <span class="text-6xl">👨‍💻</span>
             </div>
@@ -30,38 +31,24 @@
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
               </a>
             </div>
-          </div>
+          </contentBox>
         </div>
 
-        <!-- Right: About Text -->
         <div class="lg:w-2/3">
           <div class="space-y-8">
-            <div class="card p-8">
+            <contentBox>
               <h3 class="text-2xl font-bold text-white mb-4">Who I Am</h3>
               <p class="text-gray-400 text-lg leading-relaxed">
                 [Write a brief introduction about yourself. Describe your passion for development, your background, and what drives you. Mention your key strengths and what you bring to projects.]
               </p>
-            </div>
+            </contentBox>
 
-            <div class="card p-8">
+            <contentBox>
               <h3 class="text-2xl font-bold text-white mb-4">What I Do</h3>
               <p class="text-gray-400 text-lg leading-relaxed">
                 [Describe your professional focus. Mention the types of projects you work on, technologies you specialize in, and the kind of problems you enjoy solving.]
               </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div class="card p-6">
-                <span class="text-3xl">🎯</span>
-                <h4 class="text-lg font-bold text-white mt-3">Mission</h4>
-                <p class="text-gray-500 mt-2">[Your mission or goal in your career.]</p>
-              </div>
-              <div class="card p-6">
-                <span class="text-3xl">💡</span>
-                <h4 class="text-lg font-bold text-white mt-3">Vision</h4>
-                <p class="text-gray-500 mt-2">[Your vision for the future or what you aspire to achieve.]</p>
-              </div>
-            </div>
+            </contentBox>
           </div>
         </div>
       </div>
