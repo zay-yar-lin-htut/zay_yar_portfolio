@@ -24,3 +24,18 @@ defineProps({
     <slot></slot>
   </div>
 </template>
+
+<style scoped>
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+</style>

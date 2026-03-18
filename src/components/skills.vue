@@ -1,224 +1,69 @@
 <script setup>
 import contentBox from './contentBox.vue'
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const skills = [
+  { id: 1, icon: '💻', title: 'skills.backend.title', subtitle: 'skills.backend.subtitle', color: 'cyan', items: [{ name: 'Node.js', level: 90 }, { name: 'Python', level: 80 }, { name: 'Go', level: 70 }] },
+  { id: 2, icon: '🎨', title: 'skills.frontend.title', subtitle: 'skills.frontend.subtitle', color: 'purple', items: [{ name: 'Vue.js', level: 90 }, { name: 'React', level: 80 }, { name: 'Tailwind CSS', level: 85 }] },
+  { id: 3, icon: '☁️', title: 'skills.devops.title', subtitle: 'skills.devops.subtitle', color: 'cyan', items: [{ name: 'Docker', level: 85 }, { name: 'AWS', level: 80 }, { name: 'CI/CD', level: 75 }] },
+  { id: 4, icon: '🗄️', title: 'skills.database.title', subtitle: 'skills.database.subtitle', color: 'purple', items: [{ name: 'PostgreSQL', level: 85 }, { name: 'MongoDB', level: 80 }, { name: 'Redis', level: 70 }] },
+  { id: 5, icon: '🛠️', title: 'skills.tools.title', subtitle: 'skills.tools.subtitle', color: 'cyan', items: ['Git', 'VS Code', 'Postman', 'Figma'] },
+  { id: 6, icon: '🤝', title: 'skills.soft.title', subtitle: 'skills.soft.subtitle', color: 'purple', items: ['Teamwork', 'Problem Solving', 'Communication', 'Adaptability'] },
+];
 </script>
 
 <template>
-  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32">
+  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32" id="skills">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
-        <span class="text-sm font-mono text-purple-400 uppercase tracking-wider">What I Work With</span>
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-3">
-          Technical <span class="text-purple-400">Skills</span>
+        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--purple);">What I Work With</span>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 section-title">
+          Technical <span style="color: var(--purple);">Skills</span>
         </h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <contentBox hover-effect hover-color="cyan">
+        <contentBox v-for="skill in skills" :key="skill.id" :hover-effect="true" :hover-color="skill.color">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
-              <span class="text-2xl">💻</span>
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center" 
+                 :style="{ background: skill.color === 'cyan' ? 'linear-gradient(135deg, #06b6d4, #22d3ee)' : 'linear-gradient(135deg, #a855f7, #c084fc)' }">
+              <span class="text-2xl">{{ skill.icon }}</span>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-white">Backend</h3>
-              <p class="text-sm font-mono text-gray-500">Server-side development</p>
+              <h3 class="text-xl font-bold section-title">{{ t(skill.title) }}</h3>
+              <p class="text-sm font-mono" :style="{ color: 'var(--text-muted)' }">{{ t(skill.subtitle) }}</p>
             </div>
           </div>
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Node.js</span>
-              <span class="text-cyan-400 font-mono text-sm">[90%]</span>
+          
+          <template v-if="skill.items && typeof skill.items[0] === 'object'">
+            <div v-for="item in skill.items" :key="item.name" class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="section-title">{{ item.name }}</span>
+                <span class="font-mono text-sm" :style="{ color: skill.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">[{{ item.level }}%]</span>
+              </div>
+              <div class="h-2 rounded-full" style="background: var(--border-color);">
+                <div class="h-full rounded-full" :style="{ width: item.level + '%', background: skill.color === 'cyan' ? 'linear-gradient(90deg, #06b6d4, #22d3ee)' : 'linear-gradient(90deg, #a855f7, #c084fc)' }"></div>
+              </div>
             </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 90%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
+          </template>
+          
+          <template v-else>
+            <div class="flex flex-wrap gap-2">
+              <span v-for="item in skill.items" :key="item" 
+                    class="px-3 py-1 text-sm font-mono rounded border"
+                    :style="{ 
+                      borderColor: skill.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)', 
+                      color: skill.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)',
+                      background: skill.color === 'cyan' ? 'rgba(6, 182, 212, 0.1)' : 'rgba(168, 85, 247, 0.1)'
+                    }">
+                {{ item }}
+              </span>
             </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Python</span>
-              <span class="text-cyan-400 font-mono text-sm">[80%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 80%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Go</span>
-              <span class="text-cyan-400 font-mono text-sm">[70%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 70%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
-            </div>
-          </div>
-        </contentBox>
-
-        <contentBox hover-effect hover-color="purple">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-              <span class="text-2xl">🎨</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">Frontend</h3>
-              <p class="text-sm font-mono text-gray-500">User interface development</p>
-            </div>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Vue.js</span>
-              <span class="text-purple-400 font-mono text-sm">[90%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 90%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">React</span>
-              <span class="text-purple-400 font-mono text-sm">[80%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 80%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Tailwind CSS</span>
-              <span class="text-purple-400 font-mono text-sm">[85%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 85%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-        </contentBox>
-
-        <contentBox hover-effect hover-color="cyan">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
-              <span class="text-2xl">☁️</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">DevOps</h3>
-              <p class="text-sm font-mono text-gray-500">Cloud & Infrastructure</p>
-            </div>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Docker</span>
-              <span class="text-cyan-400 font-mono text-sm">[85%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 85%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">AWS</span>
-              <span class="text-cyan-400 font-mono text-sm">[80%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 80%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">CI/CD</span>
-              <span class="text-cyan-400 font-mono text-sm">[75%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 75%; background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
-            </div>
-          </div>
-        </contentBox>
-
-        <contentBox hover-effect hover-color="purple">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-              <span class="text-2xl">🗄️</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">Database</h3>
-              <p class="text-sm font-mono text-gray-500">Data management</p>
-            </div>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">PostgreSQL</span>
-              <span class="text-purple-400 font-mono text-sm">[85%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 85%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">MongoDB</span>
-              <span class="text-purple-400 font-mono text-sm">[80%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 80%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-          <div class="space-y-3 mt-4">
-            <div class="flex items-center justify-between">
-              <span class="text-gray-300">Redis</span>
-              <span class="text-purple-400 font-mono text-sm">[70%]</span>
-            </div>
-            <div class="h-2 rounded-full bg-gray-700">
-              <div class="h-full rounded-full" style="width: 70%; background: linear-gradient(90deg, #a855f7, #c084fc);"></div>
-            </div>
-          </div>
-        </contentBox>
-
-        <contentBox hover-effect hover-color="cyan">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
-              <span class="text-2xl">🛠️</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">Tools</h3>
-              <p class="text-sm font-mono text-gray-500">Development tools</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">Git</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">VS Code</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">Postman</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(6, 182, 212, 0.3); color: #22d3ee; background: rgba(6, 182, 212, 0.1);">Figma</span>
-          </div>
-        </contentBox>
-
-        <contentBox hover-effect hover-color="purple">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-              <span class="text-2xl">🤝</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-white">Soft Skills</h3>
-              <p class="text-sm font-mono text-gray-500">Personal qualities</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Teamwork</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Problem Solving</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Communication</span>
-            <span class="px-3 py-1 text-sm font-mono rounded border" style="border-color: rgba(168, 85, 247, 0.3); color: #c084fc; background: rgba(168, 85, 247, 0.1);">Adaptability</span>
-          </div>
+          </template>
         </contentBox>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  background: #1e293b;
-  transform: translateY(-3px);
-}
-</style>

@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "notAvailable": "Not Available for now",
+    "title": "Zay Yar Lin Htut",
+    "subtitle": "Full-Stack Developer",
+    "description": "I'm rapper, BRUH!",
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "projects": "Projects",
+      "companies": "Companies"
+    },
+    "contactBtn": "Contact Me",
+    "viewProjectsBtn": "View Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to Know Me",
+    "name": "[Your Name]",
+    "role": "[Your Role]",
+    "whoAmI": "Who I Am",
+    "whoAmIText": "[Write a brief introduction about yourself. Describe your passion for development, your background, and what drives you. Mention your key strengths and what you bring to projects.]",
+    "whatIDo": "What I Do",
+    "whatIDoText": "[Describe your professional focus. Mention the types of projects you work on, technologies you specialize in, and the kind of problems you enjoy solving.]"
+  },
+  "experience": {
+    "title": "Work & Experience",
+    "subtitle": "My Journey",
+    "job1": {
+      "title": "[Job Title]",
+      "company": "[Company Name]",
+      "period": "Jan 2023 - Present",
+      "description": "[Description of your role, responsibilities, and achievements. Mention technologies used and impact made.]"
+    },
+    "job2": {
+      "title": "[Previous Job Title]",
+      "company": "[Previous Company]",
+      "period": "Jan 2022 - Dec 2023",
+      "description": "[Description of your role, responsibilities, and achievements.]"
+    },
+    "job3": {
+      "title": "[Internship/Project Title]",
+      "company": "[Company/Organization]",
+      "period": "Jan 2021 - Dec 2021",
+      "description": "[Description of your role or project work.]"
+    }
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "subtitle": "My Background",
+    "expertise": "Technical Expertise",
+    "cert1": {
+      "title": "[Certification Name]",
+      "issuer": "[Issuing Organization]"
+    },
+    "cert2": {
+      "title": "[Certification Name]",
+      "issuer": "[Issuing Organization]"
+    },
+    "cert3": {
+      "title": "[Certification Name]",
+      "issuer": "[Issuing Organization]"
+    },
+    "degree1": {
+      "period": "2020 - 2024",
+      "title": "[Degree Name]",
+      "school": "[University Name]",
+      "description": "[Description of your degree, relevant coursework, achievements, or any honors.]"
+    },
+    "degree2": {
+      "period": "2023 - Present",
+      "title": "[Online Course / Bootcamp]",
+      "school": "[Platform / Institution]",
+      "description": "[Description of what you learned or any projects completed.]"
+    },
+    "degree3": {
+      "period": "2019 - 2020",
+      "title": "[High School / Foundation]",
+      "school": "[School Name]",
+      "description": "[Description of your high school education or foundation program.]"
+    },
+    "skill1": {
+      "title": "Backend",
+      "subtitle": "Server-side development"
+    },
+    "skill2": {
+      "title": "Frontend",
+      "subtitle": "User interface development"
+    },
+    "skill3": {
+      "title": "DevOps",
+      "subtitle": "Cloud & Infrastructure"
+    },
+    "skill4": {
+      "title": "Database",
+      "subtitle": "Data management"
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "What I Work With",
+    "backend": {
+      "title": "Backend",
+      "subtitle": "Server-side development"
+    },
+    "frontend": {
+      "title": "Frontend",
+      "subtitle": "User interface development"
+    },
+    "devops": {
+      "title": "DevOps",
+      "subtitle": "Cloud & Infrastructure"
+    },
+    "database": {
+      "title": "Database",
+      "subtitle": "Data management"
+    },
+    "tools": {
+      "title": "Tools",
+      "subtitle": "Development tools"
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "subtitle": "Personal qualities"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Recent Work",
+    "type": {
+      "webapp": "Web App",
+      "api": "API",
+      "mobile": "Mobile",
+      "tool": "Tool",
+      "cloud": "Cloud",
+      "data": "Data"
+    },
+    "project1": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "project2": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "project3": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "project4": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "project5": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "project6": {
+      "title": "[Project Name]",
+      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+    },
+    "code": "Code",
+    "demo": "Demo"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Get In Touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sendBtn": "Send Message",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Your message..."
+  }
+}

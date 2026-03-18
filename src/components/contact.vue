@@ -1,22 +1,25 @@
 <script setup>
 import contentBox from './contentBox.vue'
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>
 
 <template>
-  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32">
+  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32" id="contact">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
-        <span class="text-sm font-mono text-purple-400 uppercase tracking-wider">Get In Touch</span>
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-3">
-          Contact <span class="text-purple-400">Me</span>
+        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--purple);">Get In Touch</span>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 section-title">
+          Contact <span style="color: var(--purple);">Me</span>
         </h2>
       </div>
 
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
         <div class="lg:w-1/2">
           <contentBox padding="p-8" :custom-class="'h-full'">
-            <h3 class="text-2xl font-bold text-white mb-6">Let's work together</h3>
-            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            <h3 class="text-2xl font-bold mb-6 section-title">Let's work together</h3>
+            <p class="text-lg leading-relaxed mb-8" :style="{ color: 'var(--text-secondary)' }">
               [Add a brief message about how you can help others or what kind of opportunities you're looking for.]
             </p>
 
@@ -28,8 +31,8 @@ import contentBox from './contentBox.vue'
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-mono text-gray-500">Email</p>
-                  <p class="text-white">[your.email@example.com]</p>
+                  <p class="text-sm font-mono" :style="{ color: 'var(--text-muted)' }">Email</p>
+                  <p class="section-title">[your.email@example.com]</p>
                 </div>
               </div>
 
@@ -41,8 +44,8 @@ import contentBox from './contentBox.vue'
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-mono text-gray-500">Location</p>
-                  <p class="text-white">[Your City, Country]</p>
+                  <p class="text-sm font-mono" :style="{ color: 'var(--text-muted)' }">Location</p>
+                  <p class="section-title">[Your City, Country]</p>
                 </div>
               </div>
 
@@ -53,8 +56,8 @@ import contentBox from './contentBox.vue'
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-mono text-gray-500">GitHub</p>
-                  <p class="text-white">[github.com/yourusername]</p>
+                  <p class="text-sm font-mono" :style="{ color: 'var(--text-muted)' }">GitHub</p>
+                  <p class="section-title">[github.com/yourusername]</p>
                 </div>
               </div>
 
@@ -65,8 +68,8 @@ import contentBox from './contentBox.vue'
                   </svg>
                 </div>
                 <div>
-                  <p class="text-sm font-mono text-gray-500">LinkedIn</p>
-                  <p class="text-white">[linkedin.com/in/yourusername]</p>
+                  <p class="text-sm font-mono" :style="{ color: 'var(--text-muted)' }">LinkedIn</p>
+                  <p class="section-title">[linkedin.com/in/yourusername]</p>
                 </div>
               </div>
             </div>
@@ -79,27 +82,27 @@ import contentBox from './contentBox.vue'
               <div class="space-y-6">
                 <div class="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-mono text-gray-400 mb-2">Name</label>
+                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Name</label>
                     <input type="text" placeholder="Your name" 
-                      class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                      class="w-full px-4 py-3 rounded-lg input-field">
                   </div>
                   <div>
-                    <label class="block text-sm font-mono text-gray-400 mb-2">Email</label>
+                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Email</label>
                     <input type="email" placeholder="your@email.com"
-                      class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                      class="w-full px-4 py-3 rounded-lg input-field">
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-mono text-gray-400 mb-2">Subject</label>
+                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Subject</label>
                   <input type="text" placeholder="What's this about?"
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors">
+                    class="w-full px-4 py-3 rounded-lg input-field">
                 </div>
 
                 <div>
-                  <label class="block text-sm font-mono text-gray-400 mb-2">Message</label>
+                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Message</label>
                   <textarea rows="5" placeholder="Your message..."
-                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
+                    class="w-full px-4 py-3 rounded-lg input-field resize-none"></textarea>
                 </div>
 
                 <button type="submit" 
@@ -115,17 +118,3 @@ import contentBox from './contentBox.vue'
     </div>
   </section>
 </template>
-
-<style scoped>
-.card {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  background: #1e293b;
-  transform: translateY(-3px);
-}
-</style>
