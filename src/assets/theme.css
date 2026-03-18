@@ -3,23 +3,45 @@
   --cyan-light: #22d3ee;
   --purple: #a855f7;
   --purple-light: #c084fc;
-  --dark-bg: #0f172a;
-  --dark-surface: #1e293b;
-  --dark-border: #334155;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
+  
+  --bg-primary: #111827;
+  --bg-card: #1f2937;
+  --bg-card-hover: #374151;
+  --border-color: #374151;
+  
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  --grid-color: rgba(6, 182, 212, 0.03);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.light {
+  --bg-primary: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f4f6;
+  --border-color: #e5e7eb;
+  
+  --text-primary: #212529;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  
+  --grid-color: rgba(6, 182, 212, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--dark-bg);
+  background-color: var(--bg-primary);
   background-image: 
-    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 50px 50px;
   background-position: 0 0;
   min-height: 100vh;
-  color: #e2e8f0;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   animation: moveGrid 1s linear infinite;
 }
 
@@ -39,8 +61,13 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
   pointer-events: none;
+  z-index: -1;
+}
+
+.light body::before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
 }
 
 .font-mono {
@@ -56,7 +83,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-surface);
+  background: var(--bg-card);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -71,4 +98,233 @@ html {
 ::selection {
   background: rgba(6, 182, 212, 0.3);
   color: #fff;
+}
+
+.light ::selection {
+  background: rgba(6, 182, 212, 0.4);
+  color: #0f172a;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.bg-card {
+  background: var(--bg-card) !important;
+}
+
+.border-default {
+  border-color: var(--border-color) !important;
+}
+
+.liquid-glass {
+  background: rgba(17, 24, 39, 0.85) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color) !important;
+}
+
+.light .liquid-glass {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.light .text-white {
+  color: #111827 !important;
+}
+
+.light .hover\:text-white:hover {
+  color: #111827 !important;
+}
+
+.light .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+.light .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .border-gray-700 {
+  border-color: #d1d5db !important;
+}
+
+.light .border-gray-800 {
+  border-color: #e5e7eb !important;
+}
+
+.light .border-t {
+  border-top-color: #e5e7eb !important;
+}
+
+.light .border-b {
+  border-bottom-color: #e5e7eb !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #06b6d4, #22d3ee);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+.accent-text {
+  color: var(--cyan);
+}
+
+.accent-text-purple {
+  color: var(--purple);
+}
+
+.light .accent-text {
+  color: #0891b2;
+}
+
+.light .accent-text-purple {
+  color: #9333ea;
+}
+
+.bg-surface {
+  background: var(--bg-card);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.circle {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.light .circle {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: var(--shadow-card);
+}
+
+.nav-link {
+  color: var(--text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.light .nav-link {
+  color: #4b5563;
+}
+
+.light .nav-link:hover {
+  color: #111827;
+}
+
+.badge {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--cyan);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.light .badge {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-purple {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--purple);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.light .badge-purple {
+  background: rgba(168, 85, 247, 0.1);
+  color: #9333ea;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.section-title {
+  color: var(--text-primary);
+}
+
+.light .section-title {
+  color: #111827;
+}
+
+.section-subtitle {
+  color: var(--cyan);
+}
+
+.light .section-subtitle {
+  color: #0891b2;
+}
+
+.input-field {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.light .input-field {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.light .input-field::placeholder {
+  color: #9ca3af;
+}
+
+.input-field:focus {
+  border-color: var(--cyan);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
 }
