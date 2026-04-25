@@ -2,14 +2,11 @@
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { heroData } from '@/data';
-import { useHoverIndicator } from '@/composables/useHoverIndicator';
 
 const { t } = useI18n();
 
 const front = ref('cyan');
 const biting = ref(false);
-
-const { container: statsContainer, indicatorStyle: statsIndicatorStyle, onEnter: statsOnEnter, onLeave: statsOnLeave } = useHoverIndicator();
 
 function bite(color: string) {
   if (biting.value) return;
@@ -48,16 +45,9 @@ function bite(color: string) {
             {{ t(heroData.description) }}
           </p>
           
-          <div ref="statsContainer" class="flex flex-wrap gap-4 justify-center lg:justify-start pt-6 relative">
-            <div
-              :style="statsIndicatorStyle"
-              class="pointer-events-none absolute rounded-xl transition-all duration-300"
-              style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(168, 85, 247, 0.15)); border: 1px solid rgba(6, 182, 212, 0.3);"
-            ></div>
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-6">
             <div v-for="stat in heroData.stats" :key="stat.labelKey"
-              class="card px-5 py-4 rounded-2xl transition-all duration-300 cursor-pointer relative z-10"
-                @mouseenter="statsOnEnter"
-                @mouseleave="statsOnLeave">
+              class="card px-5 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
               <p class="text-3xl font-bold gradient-text">
                 {{ stat.value }}
               </p>

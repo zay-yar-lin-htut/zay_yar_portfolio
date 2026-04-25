@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useHoverIndicator } from '@/composables/useHoverIndicator'
 import { projectsData } from '@/data'
 
 const { t } = useI18n()
-const { container: projectsContainer, indicatorStyle, onEnter, onLeave } = useHoverIndicator()
 </script>
 
 <template>
@@ -17,20 +15,12 @@ const { container: projectsContainer, indicatorStyle, onEnter, onLeave } = useHo
         </h2>
       </div>
 
-      <div ref="projectsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-        <div
-          :style="indicatorStyle"
-          class="pointer-events-none absolute rounded-2xl transition-all duration-300"
-          style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); z-index: 0;"
-        ></div>
-
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="project in projectsData.projects"
           :key="project.id"
-          class="card overflow-hidden cursor-pointer group relative z-10"
+          class="card overflow-hidden cursor-pointer group"
           :style="{ borderColor: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)' }"
-          @mouseenter="onEnter"
-          @mouseleave="onLeave"
         >
           <div
             class="aspect-video flex items-center justify-center"
