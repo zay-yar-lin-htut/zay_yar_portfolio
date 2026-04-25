@@ -12,7 +12,7 @@
     "notAvailable": "Not Available for now",
     "title": "Zay Yar Lin Htut",
     "subtitle": "Full-Stack Developer",
-    "description": "I'm rapper, BRUH!",
+    "description": "I build clean, efficient software and love making great user experiences.",
     "stats": {
       "yearsExperience": "Years Experience",
       "projects": "Projects",
@@ -24,9 +24,9 @@
   "about": {
     "title": "About Me",
     "subtitle": "Get to Know Me",
-    "name": "[Your Name]",
-    "role": "[Your Role]",
-    "whoAmI": "Who I Am",
+    "name": "Zay Yar Lin Htut",
+    "role": "Full-Stack Developer",
+    "whoAmI": "Who Am I",
     "whoAmIText": "[Write a brief introduction about yourself. Describe your passion for development, your background, and what drives you. Mention your key strengths and what you bring to projects.]",
     "whatIDo": "What I Do",
     "whatIDoText": "[Describe your professional focus. Mention the types of projects you work on, technologies you specialize in, and the kind of problems you enjoy solving.]"
@@ -175,9 +175,12 @@
     "subtitle": "Get In Touch",
     "name": "Name",
     "email": "Email",
+    "subject": "Subject",
     "message": "Message",
     "sendBtn": "Send Message",
-    "emailPlaceholder": "your@email.com",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your{'@'}email.com",
+    "subjectPlaceholder": "What's this about?",
     "messagePlaceholder": "Your message..."
   }
 }
