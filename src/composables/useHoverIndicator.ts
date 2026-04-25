@@ -1,14 +1,14 @@
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed } from 'vue'
 
 export function useHoverIndicator() {
-  const container = ref(null);
+  const container = ref<HTMLElement | null>(null)
   const indicator = reactive({
     left: 0,
     top: 0,
     width: 0,
     height: 0,
     show: false,
-  });
+  })
 
   const indicatorStyle = computed(() => ({
     left: `${indicator.left}px`,
@@ -17,24 +17,25 @@ export function useHoverIndicator() {
     height: `${indicator.height}px`,
     opacity: indicator.show ? 1 : 0,
     borderRadius: '12px',
-  }));
+  }))
 
-  function onEnter(e) {
-    const target = e.currentTarget;
-    const tRect = target.getBoundingClientRect();
+  function onEnter(e: MouseEvent) {
+    const target = e.currentTarget as HTMLElement | null
+    if (!target) return
+    const tRect = target.getBoundingClientRect()
     const cRect = container.value?.getBoundingClientRect() ?? {
       left: 0,
       top: 0,
-    };
-    indicator.left = tRect.left - cRect.left;
-    indicator.top = tRect.top - cRect.top;
-    indicator.width = tRect.width;
-    indicator.height = tRect.height;
-    indicator.show = true;
+    }
+    indicator.left = tRect.left - cRect.left
+    indicator.top = tRect.top - cRect.top
+    indicator.width = tRect.width
+    indicator.height = tRect.height
+    indicator.show = true
   }
 
   function onLeave() {
-    indicator.show = false;
+    indicator.show = false
   }
 
   return {
@@ -43,5 +44,5 @@ export function useHoverIndicator() {
     indicatorStyle,
     onEnter,
     onLeave,
-  };
+  }
 }

@@ -19,8 +19,11 @@
     "vue-tippy": "^6.7.1"
   },
   "devDependencies": {
+    "@types/node": "^22.15.3",
     "@vitejs/plugin-vue": "^6.0.2",
+    "typescript": "^5.8.3",
     "vite": "^7.2.4",
-    "vite-plugin-vue-devtools": "^8.0.5"
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^2.2.4"
   }
 }

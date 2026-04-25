@@ -1,5 +1,5 @@
-<script setup>
-import contentBox from './contentBox.vue'
+<script setup lang="ts">
+import contentBox from '@/components/ui/ContentBox.vue'
 import { useI18n } from 'vue-i18n';
 import { experienceData } from '@/data';
 
@@ -26,7 +26,7 @@ const { t } = useI18n();
               <h4 class="text-2xl font-bold section-title">{{ t(exp.jobTitle) }}</h4>
               <p class="font-mono text-lg" :style="{ color: index % 2 === 0 ? 'var(--cyan)' : 'var(--purple)' }">{{ t(exp.company) }}</p>
             </div>
-            <span class="font-mono px-4 py-2 rounded-lg border" :style="{ borderColor: 'var(--border-color)', color: 'var(--text-muted)' }">{{ exp.period }}</span>
+            <span class="font-mono px-4 py-2 rounded-lg border" :style="{ borderColor: 'var(--border-color)', color: 'var(--text-muted)' }">{{ t(exp.period) }}</span>
           </div>
           <p class="text-lg leading-relaxed mb-6" :style="{ color: 'var(--text-secondary)' }">
             {{ t(exp.description) }}
@@ -47,3 +47,4 @@ const { t } = useI18n();
     </div>
   </section>
 </template>
+

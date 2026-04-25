@@ -1,5 +1,5 @@
-<script setup>
-import contentBox from './contentBox.vue'
+<script setup lang="ts">
+import contentBox from '@/components/ui/ContentBox.vue'
 import { useI18n } from 'vue-i18n';
 import { aboutData } from '@/data';
 
@@ -20,7 +20,9 @@ const { t } = useI18n();
         <div class="lg:w-1/3">
           <contentBox padding="p-8" :custom-class="'text-center'">
             <div class="w-48 h-48 mx-auto rounded-full mb-6 flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #a855f7);">
-              <span class="text-6xl">👨‍💻</span>
+              <svg class="w-20 h-20 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
             </div>
             <h3 class="text-2xl font-bold section-title">{{ t(aboutData.name) }}</h3>
             <p class="font-mono mt-2 section-subtitle">{{ t(aboutData.role) }}</p>
@@ -59,3 +61,4 @@ const { t } = useI18n();
     </div>
   </section>
 </template>
+

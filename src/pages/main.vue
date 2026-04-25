@@ -1,7 +1,7 @@
-<script setup>
-import { ref, onMounted } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 import HeroSection from '@/components/heroSection.vue';
-import NavBar from '../components/navBar.vue';
+import NavBar from '@/components/navBar.vue';
 import AboutMe from '@/components/aboutMe.vue';
 import Education from '@/components/education.vue';
 import Experience from '@/components/experience.vue';
@@ -9,20 +9,19 @@ import Skills from '@/components/skills.vue';
 import Projects from '@/components/projects.vue';
 import Contact from '@/components/contact.vue';
 
-const heroRef = ref(null)
-const heroHeightPx = ref(100)
+const heroHeightPx = ref(window.innerHeight)
 
-onMounted(() => {
-    heroHeightPx.value = window.innerHeight
-    window.addEventListener('resize', () => {
-        heroHeightPx.value = window.innerHeight
-    })
-})
+function onResize() {
+  heroHeightPx.value = window.innerHeight
+}
+
+onMounted(() => window.addEventListener('resize', onResize))
+onUnmounted(() => window.removeEventListener('resize', onResize))
 </script>
 <template>
     <div class="relative">
         <NavBar/>
-        <HeroSection id="hero-section" ref="heroRef" :style="{height: '100vh'}" :hero-height-px="heroHeightPx"/>
+        <HeroSection id="hero-section" :style="{height: '100vh'}" :hero-height-px="heroHeightPx"/>
         <div class="blurred-sections">
             <AboutMe id="about-me"/>
             <Education id="education"/>

@@ -1,29 +1,46 @@
-<script setup>
-import contentBox from './contentBox.vue'
-import { useI18n } from 'vue-i18n';
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+import ContentBox from '@/components/ui/ContentBox.vue'
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
+
+const form = reactive({ name: '', email: '', subject: '', message: '' })
+const submitted = ref(false)
+
+function handleSubmit() {
+  // TODO: Replace with your preferred form API (e.g. EmailJS, Formspree, etc.)
+  console.log('Form submitted:', { ...form })
+  submitted.value = true
+  setTimeout(() => { submitted.value = false }, 4000)
+  form.name = ''
+  form.email = ''
+  form.subject = ''
+  form.message = ''
+}
 </script>
 
 <template>
   <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32" id="contact">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
-        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--purple);">Get In Touch</span>
+        <span class="text-sm font-mono uppercase tracking-wider" style="color: var(--purple);">{{ t('contact.subtitle') }}</span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 section-title">
-          Contact <span style="color: var(--purple);">Me</span>
+          {{ t('contact.title') }}
         </h2>
       </div>
 
       <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <!-- Contact info -->
         <div class="lg:w-1/2">
-          <contentBox padding="p-8" :custom-class="'h-full'">
+          <ContentBox padding="p-8" custom-class="h-full">
             <h3 class="text-2xl font-bold mb-6 section-title">Let's work together</h3>
             <p class="text-lg leading-relaxed mb-8" :style="{ color: 'var(--text-secondary)' }">
               [Add a brief message about how you can help others or what kind of opportunities you're looking for.]
             </p>
 
             <div class="space-y-6">
+              <!-- Email -->
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
                   <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,6 +53,7 @@ const { t } = useI18n();
                 </div>
               </div>
 
+              <!-- Location -->
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,6 +67,7 @@ const { t } = useI18n();
                 </div>
               </div>
 
+              <!-- GitHub -->
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
                   <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -61,6 +80,7 @@ const { t } = useI18n();
                 </div>
               </div>
 
+              <!-- LinkedIn -->
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #a855f7, #c084fc);">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -73,48 +93,75 @@ const { t } = useI18n();
                 </div>
               </div>
             </div>
-          </contentBox>
+          </ContentBox>
         </div>
 
+        <!-- Contact form -->
         <div class="lg:w-1/2">
-          <contentBox padding="p-8">
-            <form @submit.prevent>
+          <ContentBox padding="p-8">
+            <div v-if="submitted" class="mb-6 p-4 rounded-lg text-center font-mono" style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--cyan);">
+              Message sent! I'll get back to you soon.
+            </div>
+            <form @submit.prevent="handleSubmit">
               <div class="space-y-6">
                 <div class="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Name</label>
-                    <input type="text" placeholder="Your name" 
-                      class="w-full px-4 py-3 rounded-lg input-field">
+                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">{{ t('contact.name') }}</label>
+                    <input
+                      v-model="form.name"
+                      type="text"
+                      :placeholder="t('contact.namePlaceholder')"
+                      required
+                      class="w-full px-4 py-3 rounded-lg input-field"
+                    >
                   </div>
                   <div>
-                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Email</label>
-                    <input type="email" placeholder="your@email.com"
-                      class="w-full px-4 py-3 rounded-lg input-field">
+                    <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">{{ t('contact.email') }}</label>
+                    <input
+                      v-model="form.email"
+                      type="email"
+                      :placeholder="t('contact.emailPlaceholder')"
+                      required
+                      class="w-full px-4 py-3 rounded-lg input-field"
+                    >
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Subject</label>
-                  <input type="text" placeholder="What's this about?"
-                    class="w-full px-4 py-3 rounded-lg input-field">
+                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">{{ t('contact.subject') }}</label>
+                  <input
+                    v-model="form.subject"
+                    type="text"
+                    :placeholder="t('contact.subjectPlaceholder')"
+                    required
+                    class="w-full px-4 py-3 rounded-lg input-field"
+                  >
                 </div>
 
                 <div>
-                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">Message</label>
-                  <textarea rows="5" placeholder="Your message..."
-                    class="w-full px-4 py-3 rounded-lg input-field resize-none"></textarea>
+                  <label class="block text-sm font-mono mb-2" :style="{ color: 'var(--text-secondary)' }">{{ t('contact.message') }}</label>
+                  <textarea
+                    v-model="form.message"
+                    rows="5"
+                    :placeholder="t('contact.messagePlaceholder')"
+                    required
+                    class="w-full px-4 py-3 rounded-lg input-field resize-none"
+                  ></textarea>
                 </div>
 
-                <button type="submit" 
+                <button
+                  type="submit"
                   class="w-full py-4 rounded-lg font-mono font-bold text-white transition-all duration-200 hover:opacity-90"
-                  style="background: linear-gradient(135deg, #a855f7, #c084fc);">
-                  Send Message
+                  style="background: linear-gradient(135deg, #a855f7, #c084fc);"
+                >
+                  {{ t('contact.sendBtn') }}
                 </button>
               </div>
             </form>
-          </contentBox>
+          </ContentBox>
         </div>
       </div>
     </div>
   </section>
 </template>
+
