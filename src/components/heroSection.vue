@@ -54,16 +54,6 @@ function bite(color: string) {
               <p class="text-xs uppercase tracking-widest font-mono mt-1" :style="{ color: 'var(--text-muted)' }">{{ t(stat.labelKey) }}</p>
             </div>
           </div>
-
-          <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
-            <button class="px-9 py-4 btn-primary font-mono font-bold text-base rounded-4xl transition-all duration-200">
-              {{ t(heroData.contactBtn) }}
-            </button>
-            <button class="px-8 py-4 border font-mono text-base rounded-4xl transition-colors duration-200" 
-                    style="border-color: var(--border-color); color: var(--text-secondary);">
-              {{ t(heroData.viewProjectsBtn) }}
-            </button>
-          </div>
         </div>
       </div>
 

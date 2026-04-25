@@ -7,7 +7,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32" id="about-me">
+  <section class="w-full min-h-screen px-6 sm:px-8 lg:px-12 py-20 lg:py-32 border-t" style="border-color: var(--border-color);" id="about-me">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
         <span class="text-sm font-mono uppercase tracking-wider section-subtitle">{{ t('about.subtitle') }}</span>
