@@ -17,9 +17,7 @@
       "yearsExperience": "Years Experience",
       "projects": "Projects",
       "companies": "Companies"
-    },
-    "contactBtn": "Contact Me",
-    "viewProjectsBtn": "View Projects"
+    }
   },
   "about": {
     "title": "About Me",

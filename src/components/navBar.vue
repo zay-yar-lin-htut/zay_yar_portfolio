@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from '@/composables/useTheme'
 import { useHoverIndicator } from '@/composables/useHoverIndicator'
@@ -10,9 +10,30 @@ const { isDark, toggleTheme } = useTheme()
 const { container: navContainer, indicatorStyle, onEnter, onLeave } = useHoverIndicator()
 
 const isMenuOpen = ref(false)
+const activeHref = ref('')
+
+function updateActiveSection() {
+  const viewportMarker = window.innerHeight * 0.5
+
+  for (const item of navItems) {
+    const section = document.querySelector(item.href) as HTMLElement | null
+
+    if (!section) continue
+
+    const rect = section.getBoundingClientRect()
+
+    if (rect.top <= viewportMarker && rect.bottom > viewportMarker) {
+      activeHref.value = item.href
+      return
+    }
+  }
+
+  activeHref.value = ''
+}
 
 function scrollToSection(href: string) {
   isMenuOpen.value = false
+  activeHref.value = href
   const el = document.querySelector(href)
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
@@ -20,6 +41,17 @@ function scrollToSection(href: string) {
 function toggleLanguage() {
   locale.value = locale.value === 'en' ? 'mm' : 'en'
 }
+
+onMounted(() => {
+  updateActiveSection()
+  window.addEventListener('scroll', updateActiveSection, { passive: true })
+  window.addEventListener('resize', updateActiveSection)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', updateActiveSection)
+  window.removeEventListener('resize', updateActiveSection)
+})
 </script>
 
 <template>
@@ -53,19 +85,11 @@ function toggleLanguage() {
             @mouseenter="onEnter"
             @mouseleave="onLeave"
             class="relative px-4 py-2 font-mono text-sm md:text-base transition-colors duration-200 cursor-pointer"
-            :style="{ color: 'var(--text-secondary)' }"
+            :style="{ color: activeHref === item.href ? '#0bbbd9' : 'var(--text-secondary)', fontWeight: activeHref === item.href ? '600' : '400' }"
           >
             {{ t(item.name) }}
           </a>
         </div>
-
-        <button
-          @click="scrollToSection('#contact')"
-          class="ml-4 px-6 py-2 text-black font-mono font-bold rounded-4xl text-sm transition-all duration-200 hover:opacity-90"
-          style="background: linear-gradient(135deg, #06b6d4, #22d3ee);"
-        >
-          {{ t('nav.contact') }}
-        </button>
 
         <button
           @click="toggleLanguage"
@@ -111,7 +135,7 @@ function toggleLanguage() {
           :href="item.href"
           @click.prevent="scrollToSection(item.href)"
           class="block px-4 py-3 font-mono transition-colors duration-200 cursor-pointer border-b"
-          :style="{ color: 'var(--text-secondary)', borderColor: 'var(--border-color)' }"
+          :style="{ color: activeHref === item.href ? '#0bbbd9' : 'var(--text-secondary)', borderColor: 'var(--border-color)', fontWeight: activeHref === item.href ? '600' : '400' }"
         >
           {{ t(item.name) }}
         </a>
