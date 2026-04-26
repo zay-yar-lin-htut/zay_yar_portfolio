@@ -45,13 +45,13 @@ onUnmounted(() => window.removeEventListener('resize', onResize))
     left: 0;
     right: 0;
     height: 200px;
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0));
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--bg-primary) 96%, transparent), transparent);
     pointer-events: none;
     z-index: 10;
 }
 
 .blurred-sections > * {
-    backdrop-filter: blur(20px);
-    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(16px);
+    background: color-mix(in srgb, var(--bg-primary) 92%, transparent);
 }
 </style>
