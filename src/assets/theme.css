@@ -1,34 +1,39 @@
 :root {
-  --cyan: #00e5c0;
-  --cyan-light: #00d4ff;
+  --cyan: #22d3ee;
+  --cyan-light: #67e8f9;
   --purple: #a78bfa;
   --purple-light: #c4b5fd;
   
-  --bg-primary: #0a0f1c;
-  --bg-card: #161b2e;
-  --bg-card-hover: #1e2942;
-  --border-color: rgba(255, 255, 255, 0.08);
+  --bg-primary: #0b1220;
+  --bg-card: #111827;
+  --bg-card-hover: #172033;
+  --border-color: rgba(148, 163, 184, 0.14);
   
-  --text-primary: #e2e8f0;
+  --text-primary: #e5eef8;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   
-  --grid-color: rgba(0, 229, 192, 0.04);
-  --shadow-card: 0 10px 30px -12px rgba(0, 0, 0, 0.45);
+  --grid-color: rgba(34, 211, 238, 0.035);
+  --shadow-card: 0 12px 30px -16px rgba(2, 8, 23, 0.55), 0 8px 18px -18px rgba(15, 23, 42, 0.42);
 }
 
 .light {
+  --cyan: #0f8fa8;
+  --cyan-light: #14b8c4;
+  --purple: #7c3aed;
+  --purple-light: #8b5cf6;
+
   --bg-primary: #f8fafc;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --border-color: rgba(15, 23, 42, 0.1);
+  --bg-card-hover: #fcfdfe;
+  --border-color: #e2e8f0;
   
   --text-primary: #1e293b;
   --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-muted: #64748b;
   
-  --grid-color: rgba(14, 165, 233, 0.05);
-  --shadow-card: 0 10px 24px -16px rgba(15, 23, 42, 0.15);
+  --grid-color: rgba(148, 163, 184, 0.08);
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(15 23 42 / 0.04);
 }
 
 body {
@@ -43,6 +48,16 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   animation: moveGrid 8s linear infinite;
+}
+
+.light body {
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    radial-gradient(circle at top, rgba(15, 143, 168, 0.045), transparent 42%);
+  background-size: 64px 64px, 64px 64px, auto;
+  animation-duration: 18s;
 }
 
 @keyframes moveGrid {
@@ -61,13 +76,13 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 192, 0.11) 0%, transparent 58%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(34, 211, 238, 0.11) 0%, transparent 58%);
   pointer-events: none;
   z-index: -1;
 }
 
 .light body::before {
-  background: radial-gradient(ellipse at 50% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 58%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(15, 143, 168, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
 }
 
 .font-mono {
@@ -119,6 +134,19 @@ html {
   border-color: color-mix(in srgb, var(--cyan) 40%, var(--border-color));
 }
 
+.light .card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+}
+
+.light .card:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 20px -8px rgb(15 23 42 / 0.08), 0 4px 8px -4px rgb(15 23 42 / 0.05);
+}
+
 .text-primary {
   color: var(--text-primary) !important;
 }
@@ -140,11 +168,11 @@ html {
 }
 
 .light .text-white {
-  color: #111827 !important;
+  color: #1e293b !important;
 }
 
 .light .hover\:text-white:hover {
-  color: #111827 !important;
+  color: #1e293b !important;
 }
 
 .light .text-gray-400 {
@@ -152,7 +180,7 @@ html {
 }
 
 .light .text-gray-500 {
-  color: #9ca3af !important;
+  color: #64748b !important;
 }
 
 .light .bg-white\/5 {
@@ -181,14 +209,20 @@ html {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--cyan), var(--cyan-light));
-  color: #0f172a;
+  color: #082f49;
   font-weight: 600;
-  box-shadow: 0 12px 28px -12px rgba(0, 229, 192, 0.6);
+  box-shadow: 0 12px 28px -14px rgba(34, 211, 238, 0.42);
+}
+
+.light .btn-primary {
+  background: linear-gradient(135deg, #0f8fa8, #14b8c4);
+  color: #ffffff;
+  box-shadow: 0 10px 20px -10px rgba(15, 143, 168, 0.32);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 16px 34px -12px rgba(0, 229, 192, 0.7);
+  box-shadow: 0 16px 34px -14px rgba(34, 211, 238, 0.5);
 }
 
 .btn-secondary {
@@ -210,11 +244,11 @@ html {
 }
 
 .light .accent-text {
-  color: #0891b2;
+  color: #0f8fa8;
 }
 
 .light .accent-text-purple {
-  color: #9333ea;
+  color: #7c3aed;
 }
 
 .bg-surface {
@@ -235,8 +269,8 @@ html {
 
 .light .circle {
   background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: var(--shadow-card);
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 8px 20px -14px rgb(15 23 42 / 0.12);
 }
 
 .nav-link {
@@ -248,11 +282,11 @@ html {
 }
 
 .light .nav-link {
-  color: #4b5563;
+  color: #475569;
 }
 
 .light .nav-link:hover {
-  color: #111827;
+  color: #1e293b;
 }
 
 .badge {
@@ -262,9 +296,9 @@ html {
 }
 
 .light .badge {
-  background: rgba(6, 182, 212, 0.1);
-  color: #0891b2;
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: rgba(15, 143, 168, 0.1);
+  color: #0f8fa8;
+  border: 1px solid rgba(15, 143, 168, 0.22);
 }
 
 .badge-purple {
@@ -274,9 +308,9 @@ html {
 }
 
 .light .badge-purple {
-  background: rgba(168, 85, 247, 0.1);
-  color: #9333ea;
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .section-title {
@@ -284,7 +318,7 @@ html {
 }
 
 .light .section-title {
-  color: #111827;
+  color: #1e293b;
 }
 
 .section-subtitle {
@@ -292,7 +326,7 @@ html {
 }
 
 .light .section-subtitle {
-  color: #0891b2;
+  color: #0f8fa8;
 }
 
 .input-field {
@@ -303,8 +337,8 @@ html {
 
 .light .input-field {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  color: #111827;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
 }
 
 .input-field::placeholder {
@@ -312,11 +346,16 @@ html {
 }
 
 .light .input-field::placeholder {
-  color: #9ca3af;
+  color: #64748b;
 }
 
 .input-field:focus {
   border-color: var(--cyan);
   outline: none;
   box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+.light .input-field:focus {
+  border-color: rgba(15, 143, 168, 0.45);
+  box-shadow: 0 0 0 3px rgba(15, 143, 168, 0.12);
 }
