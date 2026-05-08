@@ -56,11 +56,11 @@
     "subtitle": "My Background",
     "expertise": "Technical Expertise",
     "cert1": {
-      "title": "[Certification Name]",
+      "title": "NCC Level 4 (Diploma in Computing)",
       "issuer": "[Issuing Organization]"
     },
     "cert2": {
-      "title": "[Certification Name]",
+      "title": "NCC Level 5 (Advance Diploma in Computing)",
       "issuer": "[Issuing Organization]"
     },
     "cert3": {
