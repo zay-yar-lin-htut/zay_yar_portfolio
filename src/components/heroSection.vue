@@ -22,18 +22,18 @@ function bite(color: string) {
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-full w-full px-6 sm:px-8 lg:px-12 py-16 lg:py-24">
-    <div class="flex flex-col-reverse lg:flex-row w-full max-w-7xl items-center justify-center gap-12 lg:gap-24">
+  <div class="flex justify-start lg:justify-center items-center h-full w-full px-6 sm:px-8 lg:px-12 py-6 sm:py-12 lg:py-24">
+    <div class="flex flex-col-reverse lg:flex-row w-full max-w-7xl items-center justify-center gap-6 sm:gap-8 lg:gap-24">
 
       <div class="flex w-full lg:w-3/5 justify-center items-center text-center lg:text-left">
-        <div class="space-y-8">
+        <div class="space-y-4 sm:space-y-6 lg:space-y-8">
 
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
             <span class="w-2 h-2 rounded-full" style="background: #dc2626;"></span>
             <span class="text-sm font-mono" style="color: #f87171;">{{ t(heroData.notAvailable) }}</span>
           </div>
           
-          <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-extrabold leading-tight title-gradient">
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight title-gradient">
             {{ t(heroData.title) }}
           </h1>
           
@@ -57,7 +57,7 @@ function bite(color: string) {
         </div>
       </div>
 
-      <div class="relative flex justify-center items-center w-full lg:w-2/5 h-[280px] sm:h-[320px] md:h-[360px] lg:h-[480px]">
+      <div class="relative flex justify-center items-center w-full lg:w-2/5 h-[220px] sm:h-[280px] md:h-[360px] lg:h-[480px]">
 
         <div
           class="circle hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden"
