@@ -12,7 +12,7 @@ const { t } = useI18n()
       <div class="text-center mb-20">
         <span class="text-sm font-mono uppercase tracking-wider section-subtitle">{{ t(skillsData.subtitle) }}</span>
         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 section-title">
-          Technical <span class="section-subtitle">{{ t(skillsData.title) }}</span>
+          {{ t(skillsData.title) }}
         </h2>
       </div>
 

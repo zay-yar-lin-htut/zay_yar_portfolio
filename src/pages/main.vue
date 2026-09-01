@@ -21,7 +21,7 @@ onUnmounted(() => window.removeEventListener('resize', onResize))
 <template>
     <div class="relative">
         <NavBar/>
-        <HeroSection id="hero-section" :style="{height: '100vh'}" :hero-height-px="heroHeightPx"/>
+        <HeroSection id="hero-section" :style="{minHeight: '100vh'}" :hero-height-px="heroHeightPx"/>
         <div class="blurred-sections">
             <AboutMe id="about-me"/>
             <Education id="education"/>
