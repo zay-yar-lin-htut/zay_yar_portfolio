@@ -97,7 +97,7 @@
     "subtitle": "ကျွန်ုပ် အသုံးပြုသော နည်းပညာများ",
     "languages": {
       "title": "ဘာသာစကားများနှင့် Framework များ",
-      "subtitle": "Production တွင် လက်တွေ့အသုံးပြုထား"
+      "subtitle": "Production တွင် လက်တွေ့အသုံးပြုထားသော"
     },
     "databases": {
       "title": "Database များ",
@@ -126,19 +126,19 @@
       "ai": "AI"
     },
     "project1": {
-      "title": "Vehicle Rental Platform",
+      "title": "Vehicle Rental Platform (Journey Wheel)",
       "description": "Final-Year Project အဖြစ် Cloud ပေါ်တွင် Deploy ပြုလုပ်ထားသော Vehicle Rental Platform။ Docker ဖြင့် Backend ကို Containerize လုပ်ပြီး Vercel၊ Render နှင့် Aiven တို့တွင် Host ပြုလုပ်ထားသည်။"
     },
     "project2": {
-      "title": "School Magazine Website",
+      "title": "School Magazine Website (Aurora)",
       "description": "School Magazine Website ၏ Backend Development — Laravel ဖြင့် REST APIs များ ရေးသားပြီး AWS S3 ဖြင့် Media Assets များကို စီမံခန့်ခွဲသည်။"
     },
     "project3": {
-      "title": "HR Management Platform",
+      "title": "HR Management Platform (Jarviz)",
       "description": "HR Platform ၏ Frontend Features များကို တိုးတက်အောင် ဆောင်ရွက်ခဲ့ပြီး Companion Mobile App ကို FlutterFlow မှ Native Flutter အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ခဲ့သည်။"
     },
     "project4": {
-      "title": "Document OCR Processing Platform",
+      "title": "Document OCR Processing Platform (DOVA)",
       "description": "C# .NET Core ဖြင့် Backend APIs များနှင့် Vue 3 Frontend Components များ တည်ဆောက်ထားသည်။ Hangfire ဖြင့် Background Job Processing၊ PDF/Excel အစီရင်ခံစာများ အလိုအလျောက် ထုတ်လုပ်ခြင်းနှင့် Email Notification Service တို့ ပါဝင်သည်။"
     },
     "code": "Source Code",
