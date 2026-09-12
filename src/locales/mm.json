@@ -11,79 +11,69 @@
   "hero": {
     "notAvailable": "လောလောဆယ် မရရှိနိုင်သေးပါ",
     "title": "Zay Yar Lin Htut",
-    "subtitle": "Full-Stack Developer",
-    "description": "I'm a developer who loves clean code and efficiency.",
+    "subtitle": "Mid-Level Full-Stack Developer",
+    "description": "Scalable Web Application များ၊ RESTful API များ၊ AI Background Workflow များနှင့် Cloud Storage Infrastructure များကို Clean Code ဖြင့် တည်ဆောက်ပါသည်။",
     "stats": {
       "yearsExperience": "လုပ်ငန်းသက်တမ်း",
       "projects": "ပရောဂျက်စုစုပေါင်း",
       "companies": "လုပ်ကိုင်ခဲ့သော ကုမ္ပဏီများ"
-    }
+    },
+    "contactBtn": "ဆက်သွယ်ရန်",
+    "viewProjectsBtn": "ပရောဂျက်များကြည့်ရှုရန်"
   },
   "about": {
     "title": "ကျွန်ုပ်အကြောင်း",
     "subtitle": "အသေးစိတ်သိရှိရန်",
     "name": "Zay Yar Lin Htut",
-    "role": "Full-Stack Developer",
+    "role": "Mid-Level Full-Stack Developer",
     "whoAmI": "ကျွန်ုပ်သည် မည်သူနည်း",
-    "whoAmIText": "ကျွန်ုပ်သည် နည်းပညာအသစ်များကို လေ့လာသင်ယူရန် စိတ်အားထက်သန်သော junior web developer တစ်ဦးဖြစ်ပါသည်။ software engineering နယ်ပယ်တွင် ခိုင်မာသော အခြေခံအုတ်မြစ်ရှိပြီး စနစ်တကျရှိသော code များ ရေးသားခြင်းကို နှစ်သက်ပါသည်။",
+    "whoAmIText": "Clean Architecture ပိုင်းကို စိတ်ဝင်စားပြီး နည်းပညာအသစ်များကို အမြဲမပြတ် လေ့လာစုံစမ်းနေသော Mid-Level Full-Stack Developer တစ်ဦးဖြစ်ပါသည်။ Scalable ဖြစ်သော Web Application များ တည်ဆောက်ခြင်း၊ RESTful API များ ရေးသားခြင်း၊ AI Background Workflow များကို ချိတ်ဆက်ခြင်းနှင့် Cloud Storage Infrastructure များကို စီမံခန့်ခွဲခြင်းတို့တွင် အတွေ့အကြုံရှိပြီး Clean Code နှင့် ရေရှည် ထိန်းသိမ်းရလွယ်ကူသော Architecture များကို အလေးထား တည်ဆောက်ပါသည်။",
     "whatIDo": "ကျွန်ုပ် လုပ်ဆောင်နိုင်သည်များ",
-    "whatIDoText": "Frontend နှင့် Backend နည်းပညာများကို အသုံးပြု၍ စွမ်းဆောင်ရည်မြင့် web application များကို တည်ဆောက်ပါသည်။ ပြဿနာများကို ထိရောက်စွာ ဖြေရှင်းရခြင်းနှင့် အသုံးပြုသူများအတွက် အဆင်ပြေစေမည့် interface များ ဖန်တီးရခြင်းကို စိတ်ဝင်စားပါသည်။"
+    "whatIDoText": "Clean ဖြစ်ပြီး Testable ဖြစ်သော Architecture များကို အလေးထား၍ Full-Stack Web Application များ တည်ဆောက်ပါသည်။ C# .NET Core နှင့် Laravel ဖြင့် Backend Development၊ Vue 3 နှင့် React ဖြင့် Modern Frontend၊ Hangfire ဖြင့် Background Job Processing၊ Docker ၊ MinIO နှင့် Cloud Object Storage များကဲ့သို့ Infrastructure များ စီမံခန့်ခွဲမှုတို့ ပါဝင်ပါသည်။"
   },
   "experience": {
     "title": "လုပ်ငန်းအတွေ့အကြုံ",
     "subtitle": "ဖြတ်သန်းခဲ့သော ခရီးစဉ်",
     "job1": {
-      "title": "[ရာထူးအမည်]",
-      "company": "[ကုမ္ပဏီအမည်]",
-      "period": "၂၀၂၃ ဇန်နဝါရီ - လက်ရှိ",
-      "description": "လုပ်ငန်းတာဝန်များ၊ အောင်မြင်မှုများနှင့် အသုံးပြုခဲ့သော နည်းပညာများကို ဤနေရာတွင် ရေးသားနိုင်ပါသည်။"
+      "title": "Junior Developer",
+      "company": "Thetys Myanmar",
+      "period": "၂၀၂၅ - ၂၀၂၆",
+      "description": "Key Client Products များတွင် Full-Stack Development နှင့် Platform Maintenance များကို ဆောင်ရွက်ခဲ့သည်။ C# .NET Core ဖြင့် Backend API များ တည်ဆောက်ခြင်း၊ Vue 3 UI Components များ ရေးသားခြင်း၊ Hangfire Background Jobs များ ချိတ်ဆက်ခြင်း၊ OCR Processing Platform အတွက် PDF/Excel ထုတ်လုပ်ခြင်းနှင့် Email Services များ ပြုလုပ်ခဲ့သည်။ HR Platform ၏ Frontend Features များကိုလည်း အသစ်ပြင်ဆင်ခဲ့ပြီး Client တစ်ဦး၏ Mobile App ကို FlutterFlow မှ Native Flutter Code အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ပေးခဲ့သည်။"
     },
     "job2": {
-      "title": "[ယခင်ရာထူးအမည်]",
-      "company": "[ယခင်ကုမ္ပဏီအမည်]",
-      "period": "၂၀၂၂ ဇန်နဝါရီ - ၂၀၂၃ ဒီဇင်ဘာ",
-      "description": "ယခင်အလုပ်တွင် လုပ်ကိုင်ခဲ့သော အတွေ့အကြုံများနှင့် တာဝန်ယူခဲ့မှုများ။"
+      "title": "Data / AI Infrastructure Intern",
+      "company": "My Day Thu Kywal",
+      "period": "၂၀၂၅",
+      "description": "AI Initiatives များအတွက် Infrastructure နှင့် Integration Pipelines များကို ကိုယ်တိုင် တည်ဆောက်ခဲ့သည်။ SSH ဖြင့် Linux Servers များကို စီမံခန့်ခွဲခြင်း၊ အဖွဲ့၏ Datasets များကို စုစည်းရန် MinIO Object Storage ကို Deploy ပြုလုပ်ခြင်းနှင့် Environment Architecture များကို Configure လုပ်ခဲ့သည်။ Web Applications များအတွက် Trained ML Models များကို ထုတ်ဖော်ရန် RESTful APIs များ ရေးသားခဲ့ပြီး Git ဖြင့် ပူးပေါင်းလုပ်ဆောင်ခဲ့သည်။"
     },
     "job3": {
-      "title": "[အလုပ်သင်/ပရောဂျက်အမည်]",
-      "company": "[အဖွဲ့အစည်းအမည်]",
-      "period": "၂၀၂၁ ဇန်နဝါရီ - ၂၀၂၁ ဒီဇင်ဘာ",
-      "description": "အလုပ်သင်အဖြစ် ဆောင်ရွက်ခဲ့သော တာဝန်များနှင့် သင်ယူခဲ့ရသည်များ။"
+      "title": "School Projects & Hands-on Practice",
+      "company": "Academic Projects",
+      "period": "၂၀၂၄ - ၂၀၂၅",
+      "description": "နောက်ဆုံးနှစ် Final-Year Project အဖြစ် Cloud ပေါ်တွင် Deploy ပြုလုပ်ထားသော Vehicle Rental Platform ကို တည်ဆောက်ခဲ့သည်။ ထို့အပြင် School Magazine Website တစ်ခု၏ Backend Developer အဖြစ် Laravel ဖြင့် REST APIs များ ရေးသားပြီး AWS S3 မှတစ်ဆင့် Media Assets များကို စီမံခဲ့သည်။"
     }
   },
   "education": {
-    "title": "ပညာရေးနှင့် လက်မှတ်များ",
+    "title": "ပညာရေး",
     "subtitle": "နောက်ခံသမိုင်းကြောင်း",
     "expertise": "နည်းပညာပိုင်းဆိုင်ရာ ကျွမ်းကျင်မှု",
-    "cert1": {
-      "title": "[လက်မှတ်အမည်]",
-      "issuer": "[ထုတ်ပေးသည့် အဖွဲ့အစည်း]"
-    },
-    "cert2": {
-      "title": "[လက်မှတ်အမည်]",
-      "issuer": "[ထုတ်ပေးသည့် အဖွဲ့အစည်း]"
-    },
-    "cert3": {
-      "title": "[လက်မှတ်အမည်]",
-      "issuer": "[ထုတ်ပေးသည့် အဖွဲ့အစည်း]"
-    },
     "degree1": {
-      "period": "၂၀၂၀ - ၂၀၂၄",
-      "title": "[ဘွဲ့အမည်]",
-      "school": "[တက္ကသိုလ်အမည်]",
-      "description": "တက္ကသိုလ်ပညာရေး၊ သင်ယူခဲ့သော ဘာသာရပ်များနှင့် အောင်မြင်မှုများ။"
+      "period": "၂၀၂၄ - ၂၀၂၅",
+      "title": "Bachelor of Science (Computing)",
+      "school": "KMD / University of Greenwich",
+      "description": "Software Engineering အခြေခံများ၊ Web Technologies နှင့် Database Design များ ပါဝင်သော Computing ဘွဲ့ကို ပြီးမြောက်ခဲ့သည်။"
     },
     "degree2": {
-      "period": "၂၀၂၃ - လက်ရှိ",
-      "title": "[အွန်လိုင်းသင်တန်း / Bootcamp]",
-      "school": "[သင်တန်းဌာန]",
-      "description": "သင်ယူခဲ့သော အကြောင်းအရာများနှင့် လက်တွေ့လုပ်ဆောင်ခဲ့သော ပရောဂျက်များ။"
+      "period": "၂၀၂၃ - ၂၀၂၄",
+      "title": "NCC Level 5 — Advanced Diploma in Computing",
+      "school": "MST College",
+      "description": "Programming၊ Systems Analysis နှင့် Software Design ကျွမ်းကျင်မှုများအပေါ် အခြေခံ၍ Advanced Diploma in Computing ကို ပြီးမြောက်ခဲ့သည်။"
     },
     "degree3": {
-      "period": "၂၀၁၉ - ၂၀၂၀",
-      "title": "[အထက်တန်း / Foundation]",
-      "school": "[ကျောင်းအမည်]",
-      "description": "အခြေခံပညာရေး နောက်ခံအကြောင်းအရာ။"
+      "period": "၂၀၂၀ - ၂၀၂၃",
+      "title": "NCC Level 4 — Diploma in Computing",
+      "school": "MST College",
+      "description": "Programming အခြေခံများ၊ Database Management နှင့် System Development များကို သင်ယူခဲ့သော Diploma in Computing ဖြစ်သည်။"
     },
     "skill1": {
       "title": "Backend",
@@ -105,68 +95,54 @@
   "skills": {
     "title": "နည်းပညာဆိုင်ရာ ကျွမ်းကျင်မှုများ",
     "subtitle": "ကျွန်ုပ် အသုံးပြုသော နည်းပညာများ",
-    "backend": {
-      "title": "Backend",
-      "subtitle": "Server ပိုင်းဆိုင်ရာ ဖွံ့ဖြိုးတိုးတက်မှု"
+    "languages": {
+      "title": "ဘာသာစကားများနှင့် Framework များ",
+      "subtitle": "Production တွင် လက်တွေ့အသုံးပြုထား"
     },
-    "frontend": {
-      "title": "Frontend",
-      "subtitle": "User Interface ဖန်တီးမှု"
-    },
-    "devops": {
-      "title": "DevOps",
-      "subtitle": "Cloud နှင့် အခြေခံအဆောက်အအုံ"
-    },
-    "database": {
-      "title": "Database",
+    "databases": {
+      "title": "Database များ",
       "subtitle": "ဒေတာ စီမံခန့်ခွဲမှု"
     },
-    "tools": {
-      "title": "ကိရိယာများ",
-      "subtitle": "ဖွံ့ဖြိုးတိုးတက်ရေးသုံး ကိရိယာများ"
-    },
-    "soft": {
-      "title": "လူမှုဆက်ဆံရေး ကျွမ်းကျင်မှု",
-      "subtitle": "ပုဂ္ဂိုလ်ရေးဆိုင်ရာ အရည်အသွေးများ"
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "subtitle": "Infrastructure နှင့် ကိရိယာများ"
     }
   },
   "projects": {
-    "title": "ကျွန်ုပ်၏ ပရောဂျက်များ",
-    "subtitle": "မကြာသေးမီက ဆောင်ရွက်ချက်များ",
+    "title": {
+      "main": "ကျွန်ုပ်၏ ပရောဂျက်များ",
+      "main_subtitle": "မကြာသေးမီက ဆောင်ရွက်ချက်များ",
+      "personal": "ပုဂ္ဂလိက ပရောဂျက်များ",
+      "school": "ကျောင်းပရောဂျက်များ",
+      "work": "အလုပ်ပရောဂျက်များ"
+    },
     "type": {
       "webapp": "Web App",
       "api": "API",
       "mobile": "Mobile",
       "tool": "Tool",
       "cloud": "Cloud",
-      "data": "Data"
+      "data": "Data",
+      "ai": "AI"
     },
     "project1": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်အကြောင်း အကျဉ်းချုပ်။ မည်သည့်ပြဿနာကို ဖြေရှင်းပေးသနည်းနှင့် မည်သည့်နည်းပညာများ အသုံးပြုထားသနည်း။"
+      "title": "Vehicle Rental Platform",
+      "description": "Final-Year Project အဖြစ် Cloud ပေါ်တွင် Deploy ပြုလုပ်ထားသော Vehicle Rental Platform။ Docker ဖြင့် Backend ကို Containerize လုပ်ပြီး Vercel၊ Render နှင့် Aiven တို့တွင် Host ပြုလုပ်ထားသည်။"
     },
     "project2": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်၏ ရည်ရွယ်ချက်နှင့် အသုံးပြုထားသော stack များ။"
+      "title": "School Magazine Website",
+      "description": "School Magazine Website ၏ Backend Development — Laravel ဖြင့် REST APIs များ ရေးသားပြီး AWS S3 ဖြင့် Media Assets များကို စီမံခန့်ခွဲသည်။"
     },
     "project3": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်၏ အသေးစိတ်အချက်အလက်များ။"
+      "title": "HR Management Platform",
+      "description": "HR Platform ၏ Frontend Features များကို တိုးတက်အောင် ဆောင်ရွက်ခဲ့ပြီး Companion Mobile App ကို FlutterFlow မှ Native Flutter အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ခဲ့သည်။"
     },
     "project4": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်၏ အသေးစိတ်အချက်အလက်များ။"
-    },
-    "project5": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်၏ အသေးစိတ်အချက်အလက်များ။"
-    },
-    "project6": {
-      "title": "[ပရောဂျက်အမည်]",
-      "description": "ပရောဂျက်၏ အသေးစိတ်အချက်အလက်များ။"
+      "title": "Document OCR Processing Platform",
+      "description": "C# .NET Core ဖြင့် Backend APIs များနှင့် Vue 3 Frontend Components များ တည်ဆောက်ထားသည်။ Hangfire ဖြင့် Background Job Processing၊ PDF/Excel အစီရင်ခံစာများ အလိုအလျောက် ထုတ်လုပ်ခြင်းနှင့် Email Notification Service တို့ ပါဝင်သည်။"
     },
     "code": "Source Code",
-    "demo": "လက်တွေ့ကြည့်ရန်"
+    "demo": "Live Demo"
   },
   "contact": {
     "title": "ဆက်သွယ်ရန်",
@@ -176,6 +152,7 @@
     "subject": "အကြောင်းအရာ",
     "message": "ပေးပို့လိုသည့်အကြောင်းအရာ",
     "sendBtn": "ပေးပို့ရန်",
+    "submitted": "စာပေးပို့ပြီးပါပြီ။ မကြာမီ ပြန်လည်ဆက်သွယ်ပါမည်။",
     "namePlaceholder": "သင့်အမည် ရိုက်ထည့်ပါ",
     "emailPlaceholder": "သင့်အီးမေးလ် ရိုက်ထည့်ပါ",
     "subjectPlaceholder": "အကြောင်းအရာ ရိုက်ထည့်ပါ",

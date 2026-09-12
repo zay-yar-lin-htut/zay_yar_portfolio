@@ -11,79 +11,69 @@
   "hero": {
     "notAvailable": "Not Available for now",
     "title": "Zay Yar Lin Htut",
-    "subtitle": "Full-Stack Developer",
-    "description": "I build clean, efficient software and love making great user experiences.",
+    "subtitle": "Mid-Level Full-Stack Developer",
+    "description": "I build scalable web applications, RESTful APIs, AI background workflows and cloud storage infrastructure — with clean, maintainable code.",
     "stats": {
       "yearsExperience": "Years Experience",
       "projects": "Projects",
       "companies": "Companies"
-    }
+    },
+    "contactBtn": "Contact Me",
+    "viewProjectsBtn": "View Projects"
   },
   "about": {
     "title": "About Me",
     "subtitle": "Get to Know Me",
     "name": "Zay Yar Lin Htut",
-    "role": "Full-Stack Developer",
+    "role": "Mid-Level Full-Stack Developer",
     "whoAmI": "Who Am I",
-    "whoAmIText": "[Write a brief introduction about yourself. Describe your passion for development, your background, and what drives you. Mention your key strengths and what you bring to projects.]",
+    "whoAmIText": "Mid-Level Full-Stack Developer with a strong interest in Clean Architecture and exploring modern software technologies. Experienced in building scalable web applications, designing RESTful APIs, integrating AI background workflows, and managing cloud storage infrastructure. Passionate about continuous learning and writing maintainable, structured code.",
     "whatIDo": "What I Do",
-    "whatIDoText": "[Describe your professional focus. Mention the types of projects you work on, technologies you specialize in, and the kind of problems you enjoy solving.]"
+    "whatIDoText": "I build full-stack web applications with a focus on clean, testable architecture. My work spans backend development with C# .NET Core and Laravel, modern frontends with Vue 3 and React, background job processing with Hangfire, and infrastructure such as Docker, MinIO and cloud object storage."
   },
   "experience": {
     "title": "Work & Experience",
     "subtitle": "My Journey",
     "job1": {
-      "title": "[Job Title]",
-      "company": "[Company Name]",
-      "period": "Jan 2023 - Present",
-      "description": "[Description of your role, responsibilities, and achievements. Mention technologies used and impact made.]"
+      "title": "Junior Developer",
+      "company": "Thetys Myanmar",
+      "period": "2025 - 2026",
+      "description": "Full-stack development and platform maintenance across key client products. Built backend APIs using C# .NET Core, developed Vue 3 UI components, integrated Hangfire background jobs, automated PDF/Excel generation and email services for an OCR-processing platform. Also updated frontend features on an HR platform and used AI-assisted workflows to migrate a client's mobile app from FlutterFlow to clean, native Flutter code."
     },
     "job2": {
-      "title": "[Previous Job Title]",
-      "company": "[Previous Company]",
-      "period": "Jan 2022 - Dec 2023",
-      "description": "[Description of your role, responsibilities, and achievements.]"
+      "title": "Data / AI Infrastructure Intern",
+      "company": "My Day Thu Kywal",
+      "period": "2025",
+      "description": "Built infrastructure and integration pipelines for AI initiatives, working independently. Managed Linux servers via SSH, deployed MinIO Object Storage to centralize team datasets, and configured environment architecture. Authored RESTful APIs to expose trained ML models to web applications, collaborating through Git."
     },
     "job3": {
-      "title": "[Internship/Project Title]",
-      "company": "[Company/Organization]",
-      "period": "Jan 2021 - Dec 2021",
-      "description": "[Description of your role or project work.]"
+      "title": "School Projects & Hands-on Practice",
+      "company": "Academic Projects",
+      "period": "2024 - 2025",
+      "description": "Final-year project: a cloud-deployed vehicle rental platform. Also worked as Backend Developer for a team school magazine site — designing REST APIs in Laravel and managing media assets via AWS S3."
     }
   },
   "education": {
-    "title": "Education & Certifications",
+    "title": "Education",
     "subtitle": "My Background",
     "expertise": "Technical Expertise",
-    "cert1": {
-      "title": "NCC Level 4 (Diploma in Computing)",
-      "issuer": "[Issuing Organization]"
-    },
-    "cert2": {
-      "title": "NCC Level 5 (Advance Diploma in Computing)",
-      "issuer": "[Issuing Organization]"
-    },
-    "cert3": {
-      "title": "[Certification Name]",
-      "issuer": "[Issuing Organization]"
-    },
     "degree1": {
-      "period": "2020 - 2024",
-      "title": "[Degree Name]",
-      "school": "[University Name]",
-      "description": "[Description of your degree, relevant coursework, achievements, or any honors.]"
+      "period": "2024 - 2025",
+      "title": "Bachelor of Science (Computing)",
+      "school": "KMD / University of Greenwich",
+      "description": "Completed a computing degree covering software engineering fundamentals, web technologies and database design."
     },
     "degree2": {
-      "period": "2023 - Present",
-      "title": "[Online Course / Bootcamp]",
-      "school": "[Platform / Institution]",
-      "description": "[Description of what you learned or any projects completed.]"
+      "period": "2023 - 2024",
+      "title": "NCC Level 5 — Advanced Diploma in Computing",
+      "school": "MST College",
+      "description": "Advanced diploma in computing building on core programming, systems analysis and software design skills."
     },
     "degree3": {
-      "period": "2019 - 2020",
-      "title": "[High School / Foundation]",
-      "school": "[School Name]",
-      "description": "[Description of your high school education or foundation program.]"
+      "period": "2020 - 2023",
+      "title": "NCC Level 4 — Diploma in Computing",
+      "school": "MST College",
+      "description": "Diploma in computing covering programming fundamentals, database management and system development."
     },
     "skill1": {
       "title": "Backend",
@@ -105,68 +95,58 @@
   "skills": {
     "title": "Technical Skills",
     "subtitle": "What I Work With",
-    "backend": {
-      "title": "Backend",
-      "subtitle": "Server-side development"
+    "languages": {
+      "title": "Languages & Frameworks",
+      "subtitle": "Tried and tested in production"
     },
-    "frontend": {
-      "title": "Frontend",
-      "subtitle": "User interface development"
-    },
-    "devops": {
-      "title": "DevOps",
-      "subtitle": "Cloud & Infrastructure"
-    },
-    "database": {
-      "title": "Database",
+    "databases": {
+      "title": "Databases",
       "subtitle": "Data management"
     },
-    "tools": {
-      "title": "Tools",
-      "subtitle": "Development tools"
-    },
-    "soft": {
-      "title": "Soft Skills",
-      "subtitle": "Personal qualities"
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "subtitle": "Infrastructure & tooling"
     }
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "Recent Work",
+    "title":{
+      "main": "My Projects",
+      "main_subtitle": "Recent Work",
+      "personal": "Personal Projects",
+      "school": "School Projects",
+      "work": "Work Projects"
+    },
     "type": {
       "webapp": "Web App",
       "api": "API",
       "mobile": "Mobile",
       "tool": "Tool",
       "cloud": "Cloud",
-      "data": "Data"
+      "data": "Data",
+      "ai": "AI"
     },
     "project1": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+      "title": "Vehicle Rental Platform",
+      "description": "Cloud-deployed vehicle rental platform built as a final-year project. Containerized backend with Docker, hosted across Vercel, Render and Aiven."
     },
     "project2": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+      "title": "School Magazine Website (Aroura)",
+      "description": "Backend development for a team school magazine site — REST APIs designed in Laravel with media assets managed through AWS S3."
     },
     "project3": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+      "title": "HR Management Platform (Jarviz)",
+      "description": "Frontend feature development on an existing HR platform, including an AI-assisted migration of the companion mobile app from FlutterFlow to native Flutter. "
     },
     "project4": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+      "title": "Document OCR Processing Platform (DOVA)",
+      "description": "Backend APIs built with C# .NET Core and Vue 3 frontend components. Features background job processing with Hangfire, automated PDF/Excel report generation and an email notification service."
     },
     "project5": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
+      "title": "We Day",
+      "description": "Assist AI development for the We Day project at 'My Day Thu Kwyal LTD.', helping testing and managing data collection team members."  
     },
-    "project6": {
-      "title": "[Project Name]",
-      "description": "[Brief description of the project. What problem does it solve? What technologies were used?]"
-    },
-    "code": "Code",
-    "demo": "Demo"
+    "code": "Source Code",
+    "demo": "Live Demo"
   },
   "contact": {
     "title": "Contact Me",
@@ -176,6 +156,7 @@
     "subject": "Subject",
     "message": "Message",
     "sendBtn": "Send Message",
+    "submitted": "Message sent! I'll get back to you soon.",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your{'@'}email.com",
     "subjectPlaceholder": "What's this about?",

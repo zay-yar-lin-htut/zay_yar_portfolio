@@ -1,15 +1,12 @@
 import { ref } from 'vue'
+import { applyCssVariables } from '@/design/design-tokens'
 
 const isDark = ref(true)
 
 export function useTheme() {
   const applyTheme = () => {
     if (typeof document === 'undefined') return
-    if (isDark.value) {
-      document.documentElement.classList.remove('light')
-    } else {
-      document.documentElement.classList.add('light')
-    }
+    applyCssVariables(isDark.value ? 'dark' : 'light')
   }
 
   const initTheme = () => {

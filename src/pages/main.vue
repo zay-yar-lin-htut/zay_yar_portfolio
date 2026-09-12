@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted } from 'vue';
 import HeroSection from '@/components/heroSection.vue';
 import NavBar from '@/components/navBar.vue';
 import AboutMe from '@/components/aboutMe.vue';
@@ -8,50 +8,24 @@ import Experience from '@/components/experience.vue';
 import Skills from '@/components/skills.vue';
 import Projects from '@/components/projects.vue';
 import Contact from '@/components/contact.vue';
+import { useTheme } from '@/composables/useTheme'
+import { applyCssVariables } from '@/design/design-tokens'
 
-const heroHeightPx = ref(window.innerHeight)
+const { isDark } = useTheme()
 
-function onResize() {
-  heroHeightPx.value = window.innerHeight
-}
-
-onMounted(() => window.addEventListener('resize', onResize))
-onUnmounted(() => window.removeEventListener('resize', onResize))
+onMounted(() => {
+  applyCssVariables(isDark.value ? 'dark' : 'light')
+})
 </script>
 <template>
     <div class="relative">
         <NavBar/>
-        <HeroSection id="hero-section" :style="{minHeight: '100vh'}" :hero-height-px="heroHeightPx"/>
-        <div class="blurred-sections">
-            <AboutMe id="about-me"/>
-            <Education id="education"/>
-            <Experience id="experience"/>
-            <Skills id="skills"/>
-            <Projects id="projects"/>
-            <Contact id="contact"/>
-        </div>
+        <HeroSection id="hero-section" :style="{minHeight: '100vh'}"/>
+        <AboutMe id="about-me"/>
+        <Education id="education"/>
+        <Experience id="experience"/>
+        <Skills id="skills"/>
+        <Projects id="projects"/>
+        <Contact id="contact"/>
     </div>
 </template>
-
-<style scoped>
-.blurred-sections {
-    position: relative;
-}
-
-.blurred-sections::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, color-mix(in srgb, var(--bg-primary) 96%, transparent), transparent);
-    pointer-events: none;
-    z-index: 10;
-}
-
-.blurred-sections > * {
-    backdrop-filter: blur(16px);
-    background: color-mix(in srgb, var(--bg-primary) 92%, transparent);
-}
-</style>
