@@ -126,7 +126,7 @@
       "ai": "AI"
     },
     "project1": {
-      "title": "Vehicle Rental Platform",
+      "title": "Vehicle Rental Platform (Journey Wheel)",
       "description": "Cloud-deployed vehicle rental platform built as a final-year project. Containerized backend with Docker, hosted across Vercel, Render and Aiven."
     },
     "project2": {
