@@ -1,134 +1,135 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { projectsData } from '@/data'
+import { icons } from '@/data/icons'
 
 const { t } = useI18n()
 </script>
 
 <template>
-  <section class="w-full px-6 sm:px-8 lg:px-12 py-20 lg:py-32 border-t" style="border-color: var(--border-color);" id="projects">
+  <section class="section py-24 lg:py-32" style="border-top: 1px solid var(--color-border);" id="projects">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="text-sm font-mono uppercase tracking-wider section-subtitle">{{ t(projectsData.subtitle) }}</span>
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 section-title">
-          {{ t(projectsData.title) }}
-        </h2>
+      <div class="section-head mb-12">
+        <h2>{{ t(projectsData.title) }}</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
-          v-for="project in projectsData.projects"
-          :key="project.id"
-          class="card overflow-hidden cursor-pointer group"
-          :style="{ borderColor: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)' }"
-        >
-          <div
-            class="aspect-video flex items-center justify-center"
-            style="background: linear-gradient(135deg, var(--bg-card), var(--bg-primary)); border-bottom: 1px solid var(--border-color);"
-          >
-            <!-- rocket-launch -->
-            <svg v-if="project.icon === 'rocket'" class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-            </svg>
-            <!-- bolt -->
-            <svg v-else-if="project.icon === 'zap'" class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 13.5 14.25 2.25 12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-            </svg>
-            <!-- device-phone-mobile -->
-            <svg v-else-if="project.icon === 'mobile'" class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-            </svg>
-            <!-- wrench-screwdriver -->
-            <svg v-else-if="project.icon === 'tools'" class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" />
-            </svg>
-            <!-- cloud-arrow-up -->
-            <svg v-else-if="project.icon === 'cloud'" class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.338-2.32 5.75 5.75 0 0 1 .988 5.395A5.25 5.25 0 0 1 17.25 19.5H6.75Z" />
-            </svg>
-            <!-- chart-bar -->
-            <svg v-else class="w-16 h-16 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-            </svg>
+      <div class="space-y-16">
+        <div v-for="(category, key) in projectsData.projects" :key="key" class="space-y-6">
+          
+          <!-- Section Title -->
+          <div class="section-head">
+            <p class="text-xl font-bold">{{ t(category.title) }}</p>
           </div>
 
-          <div class="p-8">
-            <div class="flex items-center gap-2 mb-3">
-              <span
-                class="px-2 py-1 text-xs font-mono rounded border"
-                :style="{
-                  borderColor: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)',
-                  color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)',
-                  background: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.1)' : 'rgba(168, 85, 247, 0.1)'
-                }"
+          <!-- Projects Container -->
+          <div class="space-y-8">
+            <div
+              v-for="project in category.projects"
+              :key="project.id"
+              class="grid lg:grid-cols-2 gap-0 overflow-hidden"
+              style="border: 1px solid var(--color-border);"
+            >
+              <!-- Left Column: Details -->
+              <div
+                class="p-8 lg:p-12 flex flex-col justify-between gap-6"
+                style="background: var(--color-surface);"
               >
-                {{ t(project.type) }}
-              </span>
-              <span class="px-2 py-1 text-xs font-mono" :style="{ color: 'var(--text-muted)' }">{{ project.year }}</span>
-            </div>
+                <div>
+                  <div class="flex items-center gap-3 mb-4 flex-wrap">
+                    <span class="font-mono text-xs px-2.5 py-1" style="background: var(--color-accent); color: #0E1116;">
+                      {{ t(project.type) }}
+                    </span>
+                    <span class="font-mono text-xs" style="color: var(--color-text-secondary);">
+                      {{ project.year }}
+                    </span>
+                    <span
+                      class="inline-flex items-center gap-1.5 font-mono text-xs px-2.5 py-1"
+                      style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
+                    >
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="project.private ? icons.private : icons.public" />
+                      </svg>
+                      <span>{{ project.privateStatus }}</span>
+                    </span>
+                  </div>
 
-            <h3 class="text-xl font-bold group-hover:text-cyan-400 transition-colors section-title">
-              {{ t(project.title) }}
-            </h3>
-            <p class="text-sm mt-3 leading-relaxed" :style="{ color: 'var(--text-secondary)' }">
-              {{ t(project.description) }}
-            </p>
+                  <h3 class="font-display text-2xl sm:text-3xl mb-4" style="color: var(--color-text-primary);">
+                    {{ t(project.title) }}
+                  </h3>
+                  <p class="text-sm leading-relaxed max-w-prose" style="color: var(--color-text-secondary);">
+                    {{ t(project.description) }}
+                  </p>
 
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span
-                v-for="tech in project.technologies"
-                :key="tech"
-                class="px-2 py-1 text-xs font-mono rounded border"
-                :style="{
-                  borderColor: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : 'rgba(168, 85, 247, 0.3)',
-                  color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)',
-                  background: project.color === 'cyan' ? 'rgba(6, 182, 212, 0.1)' : 'rgba(168, 85, 247, 0.1)'
-                }"
-              >
-                {{ tech }}
-              </span>
-            </div>
+                  <div class="flex flex-wrap gap-2 mt-6">
+                    <span
+                      v-for="tech in project.technologies"
+                      :key="tech"
+                      class="px-3 py-1.5 font-mono text-xs"
+                      style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
+                    >
+                      {{ tech }}
+                    </span>
+                  </div>
+                </div>
 
-            <div class="flex gap-4 mt-6">
-              <a
-                :href="project.codeLink"
-                class="text-sm font-mono flex items-center gap-1 transition-colors"
-                :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }"
+                <!-- Code Link (Public project ဖြစ်ပြီး codeLink ရှိရင် ပေါ်မည်) -->
+                <div class="flex flex-wrap gap-6 mt-6" v-if="!project.private && project.codeLink">
+                  <a
+                    :href="project.codeLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 font-mono text-sm transition-colors"
+                    style="color: var(--color-accent);"
+                  >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path :d="icons.github"/>
+                    </svg>
+                    {{ t('projects.code') }}
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Image + See Demo Overlay -->
+              <div
+                class="relative group min-h-[250px] lg:min-h-full flex items-center justify-center overflow-hidden"
+                style="background: var(--color-surface-raised); border-top: 1px solid var(--color-border);"
               >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                {{ t('projects.code') }}
-              </a>
-              <a
-                :href="project.demoLink"
-                class="text-sm font-mono flex items-center gap-1 transition-colors"
-                :style="{ color: project.color === 'cyan' ? 'var(--cyan)' : 'var(--purple)' }"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                </svg>
-                {{ t('projects.demo') }}
-              </a>
+                <!-- Project Image (Image မရှိလျှင် Fallback Icon ပြပါမည်) -->
+                <img
+                  v-if="project.demoImage"
+                  :src="project.demoImage"
+                  :alt="t(project.title)"
+                  :class="project.imageClass"
+                />
+                <div v-else class="flex flex-col items-center justify-center p-8 text-center opacity-60">
+                  <svg class="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--color-accent);">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" :d="icons.noPreview" />
+                  </svg>
+                  <span class="font-mono text-xs" style="color: var(--color-text-secondary);">No preview available</span>
+                </div>
+
+                <!-- See Demo Hover Overlay -->
+                <div
+                  v-if="!project.private && project.demoLink"
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                >
+                  <a
+                    :href="project.demoLink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-6 py-3 font-mono text-sm font-semibold transition-transform transform translate-y-2 group-hover:translate-y-0"
+                    style="background: var(--color-accent); color: #0E1116;"
+                  >
+                    See Demo &rarr;
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  background: var(--bg-card-hover);
-}
-</style>
-

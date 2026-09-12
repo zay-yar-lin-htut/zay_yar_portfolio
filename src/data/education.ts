@@ -2,29 +2,6 @@ export const educationData = {
   title: 'education.title',
   subtitle: 'education.subtitle',
   expertise: 'education.expertise',
-  certificates: [
-    {
-      id: 1,
-      title: 'education.cert1.title',
-      issuer: 'education.cert1.issuer',
-      date: '2023',
-      skills: ['AWS', 'Cloud']
-    },
-    {
-      id: 2,
-      title: 'education.cert2.title',
-      issuer: 'education.cert2.issuer',
-      date: '2023',
-      skills: ['Docker', 'Kubernetes']
-    },
-    {
-      id: 3,
-      title: 'education.cert3.title',
-      issuer: 'education.cert3.issuer',
-      date: '2024',
-      skills: ['JavaScript', 'TypeScript']
-    }
-  ],
   educations: [
     {
       id: 1,
@@ -32,7 +9,7 @@ export const educationData = {
       title: 'education.degree1.title',
       school: 'education.degree1.school',
       description: 'education.degree1.description',
-      tags: ['Relevant Course', 'GPA: X.XX']
+      tags: ['Web Development', 'Database Design']
     },
     {
       id: 2,
@@ -40,7 +17,7 @@ export const educationData = {
       title: 'education.degree2.title',
       school: 'education.degree2.school',
       description: 'education.degree2.description',
-      tags: ['Web Development', 'Programming']
+      tags: ['Programming', 'Systems Analysis']
     },
     {
       id: 3,
@@ -48,7 +25,7 @@ export const educationData = {
       title: 'education.degree3.title',
       school: 'education.degree3.school',
       description: 'education.degree3.description',
-      tags: ['Science', 'Mathematics']
+      tags: ['Programming Fundamentals', 'Database Management']
     }
   ],
   /** Simplified 4-category grid shown under "Technical Expertise" in the Education section */
