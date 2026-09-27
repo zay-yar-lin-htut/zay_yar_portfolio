@@ -6,16 +6,33 @@ const { t } = useI18n()
 
 const form = reactive({ name: '', email: '', subject: '', message: '' })
 const submitted = ref(false)
+const submitError = ref(false)
+const submitting = ref(false)
 
-function handleSubmit() {
-  // TODO: Replace with your preferred form API (e.g. EmailJS, Formspree, etc.)
-  console.log('Form submitted:', { ...form })
-  submitted.value = true
-  setTimeout(() => { submitted.value = false }, 4000)
-  form.name = ''
-  form.email = ''
-  form.subject = ''
-  form.message = ''
+async function handleSubmit() {
+  submitting.value = true
+  submitError.value = false
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    })
+
+    if (!response.ok) throw new Error('Contact request failed')
+
+    submitted.value = true
+    setTimeout(() => { submitted.value = false }, 4000)
+    form.name = ''
+    form.email = ''
+    form.subject = ''
+    form.message = ''
+  } catch {
+    submitError.value = true
+  } finally {
+    submitting.value = false
+  }
 }
 
 function openEmail() {
@@ -79,6 +96,13 @@ const channels = [
           >
             {{ t('contact.submitted') }}
           </div>
+          <div
+            v-if="submitError"
+            class="mb-6 px-4 py-3 font-mono text-sm"
+            style="background: rgba(248, 81, 73, 0.1); border: 1px solid rgba(248, 81, 73, 0.35); color: #f85149;"
+          >
+            {{ t('contact.error') }}
+          </div>
 
           <form @submit.prevent="handleSubmit">
             <div class="space-y-6">
@@ -133,6 +157,7 @@ const channels = [
 
               <button
                 type="submit"
+                :disabled="submitting"
                 class="h-12 px-8 font-medium text-sm transition-opacity hover:opacity-85"
                 style="background: var(--color-accent); color: #0E1116;"
               >
