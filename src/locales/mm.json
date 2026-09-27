@@ -145,16 +145,41 @@
       "title": "Document OCR Processing Platform (DOVA)",
       "description": "C# .NET Core ဖြင့် Backend APIs များနှင့် Vue 3 Frontend Components များ တည်ဆောက်ထားသည်။ Hangfire ဖြင့် Background Job Processing၊ PDF/Excel အစီရင်ခံစာများ အလိုအလျောက် ထုတ်လုပ်ခြင်းနှင့် Email Notification Service တို့ ပါဝင်သည်။"
     },
+    "project5": {
+      "title": "We Day",
+      "description": "My Day Thu Kywal LTD. ၏ We Day Project တွင် AI Development ကို ကူညီခြင်း၊ Testing ပြုလုပ်ခြင်းနှင့် Data Collection Team Members များကို စီမံခန့်ခွဲခြင်းတို့ ဆောင်ရွက်ခဲ့သည်။"
+    },
     "project6": {
       "title": "FreeVibe — Local Music Player",
       "description": "YouTube မှ သီချင်းများကို ရှာဖွေပြီး Download ပြုလုပ်နိုင်ကာ Offline နားထောင်နိုင်သော Flutter Music App ဖြစ်သည်။ Local Library နှင့် Playlist များ စီမံခြင်း၊ Queue၊ Resume၊ Sleep Timer နှင့် Android Media Controls များ ပါဝင်သည်။"
     },
     "code": "Source Code",
-    "demo": "Live Demo"
+    "demo": "Live Demo",
+    "noPreview": "Preview မရရှိနိုင်သေးပါ",
+    "repository": {
+      "main": "Repository",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "status": {
+      "public": "Public Project",
+      "school": "School / Group Project",
+      "private": "Company / Private Project"
+    }
   },
   "contact": {
     "title": "ဆက်သွယ်ရန်",
     "subtitle": "သတင်းစကားပေးပို့ရန်",
+    "channels": {
+      "email": "အီးမေးလ်",
+      "phone": "ဖုန်း",
+      "location": "တည်နေရာ",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "twitter": "Twitter / X",
+      "reddit": "Reddit"
+    },
     "formTitle": "သတင်းစကား ပေးပို့ရန်",
     "formSubtitle": "Project အကြောင်း ဆွေးနွေးလိုပါက သတင်းစကား ပေးပို့နိုင်ပါတယ်။ မကြာမီ ပြန်လည်ဆက်သွယ်ပါမယ်။",
     "name": "အမည်",
@@ -167,6 +192,7 @@
     "requiredError": "အကွက်အားလုံးကို ဖြည့်ပေးပါ။",
     "emailError": "မှန်ကန်သော email address ထည့်ပေးပါ။",
     "attachmentError": "3 MB ထက်သေးသော ဖိုင်ကို ရွေးပေးပါ။",
+    "rateLimitError": "စာပေးပို့မှု limit ပြည့်သွားပါပြီ။ မိနစ်အနည်းငယ်ကြာပြီးမှ ပြန်ကြိုးစားပေးပါ။",
     "namePlaceholder": "သင့်အမည် ရိုက်ထည့်ပါ",
     "emailPlaceholder": "သင့်အီးမေးလ် ရိုက်ထည့်ပါ",
     "subjectPlaceholder": "အကြောင်းအရာ ရိုက်ထည့်ပါ",

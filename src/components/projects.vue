@@ -47,7 +47,7 @@ const { t } = useI18n()
                       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="project.private ? icons.private : icons.public" />
                       </svg>
-                      <span>{{ project.privateStatus }}</span>
+                      <span>{{ t(project.privateStatus) }}</span>
                     </span>
                   </div>
 
@@ -84,7 +84,7 @@ const { t } = useI18n()
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                       <path :d="icons.github"/>
                     </svg>
-                    {{ repository.label || `${t('projects.code')} ${index + 1}` }}
+                    {{ repository.label ? t(repository.label) : `${t('projects.code')} ${index + 1}` }}
                   </a>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const { t } = useI18n()
                   <svg class="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--color-accent);">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" :d="icons.noPreview" />
                   </svg>
-                  <span class="font-mono text-xs" style="color: var(--color-text-secondary);">No preview available</span>
+                  <span class="font-mono text-xs" style="color: var(--color-text-secondary);">{{ t('projects.noPreview') }}</span>
                 </div>
 
                 <!-- See Demo Hover Overlay -->
@@ -120,7 +120,7 @@ const { t } = useI18n()
                     class="px-6 py-3 font-mono text-sm font-semibold transition-transform transform translate-y-2 group-hover:translate-y-0"
                     style="background: var(--color-accent); color: #0E1116;"
                   >
-                    See Demo &rarr;
+                    {{ t('projects.demo') }} &rarr;
                   </a>
                 </div>
               </div>

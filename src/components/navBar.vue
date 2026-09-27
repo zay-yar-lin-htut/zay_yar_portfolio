@@ -84,7 +84,20 @@ onBeforeUnmount(() => {
             class="ml-3 px-3 h-11 text-sm font-mono cursor-pointer transition-colors duration-200"
             style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
           >
-            {{ locale === 'en' ? 'MM' : 'EN' }}
+            <svg v-if="locale === 'en'" class="flag-svg" viewBox="0 0 24 16" aria-label="Myanmar flag" role="img">
+              <rect width="24" height="16" fill="#34B233" />
+              <rect width="24" height="5.33" fill="#FECB00" />
+              <rect y="10.67" width="24" height="5.33" fill="#EA2839" />
+              <polygon fill="#fff" points="12,2.1 13.35,6.15 17.62,6.15 14.17,8.65 15.49,12.7 12,10.2 8.51,12.7 9.83,8.65 6.38,6.15 10.65,6.15" />
+            </svg>
+            <svg v-else class="flag-svg" viewBox="0 0 24 16" aria-label="United Kingdom flag" role="img">
+              <rect width="24" height="16" fill="#012169" />
+              <path fill="#fff" d="M0 0h3l21 13v3h-3L0 3zM21 0h3v3L3 16H0v-3z" />
+              <path fill="#C8102E" d="M0 0h1.5L24 14v2h-1.5L0 2zM22.5 0H24v2L1.5 16H0v-2z" />
+              <path fill="#fff" d="M10 0h4v16h-4zM0 6h24v4H0z" />
+              <path fill="#C8102E" d="M11 0h2v16h-2zM0 7h24v2H0z" />
+            </svg>
+            <span class="ml-1">{{ locale === 'en' ? 'MM' : 'EN' }}</span>
           </button>
 
           <button
@@ -108,6 +121,8 @@ onBeforeUnmount(() => {
           class="md:hidden h-11 w-11 inline-flex items-center justify-center cursor-pointer transition-colors duration-200"
           :style="{ color: 'var(--color-text-primary)' }"
           aria-label="Toggle menu"
+          :aria-expanded="isMenuOpen"
+          aria-controls="mobile-navigation"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -118,15 +133,16 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- Mobile menu -->
-    <div v-show="isMenuOpen" class="md:hidden" style="border-top: 1px solid var(--color-border); background: var(--color-background);">
+    <div id="mobile-navigation" v-show="isMenuOpen" class="md:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto" style="border-top: 1px solid var(--color-border); background: var(--color-background);">
       <div class="section">
-        <div class="py-3">
+        <div class="mobile-menu-content py-3 px-1">
           <a
             v-for="item in navItems"
             :key="item.name"
             :href="item.href"
             @click.prevent="scrollToSection(item.href)"
-            class="block h-11 inline-flex items-center font-mono text-sm cursor-pointer transition-colors duration-200"
+            class="mobile-nav-link font-mono text-sm cursor-pointer transition-colors duration-200"
+            style="border-bottom: 1px solid var(--color-border);"
             :style="{ color: activeHref === item.href ? 'var(--color-accent)' : 'var(--color-text-secondary)' }"
           >
             {{ t(item.name) }}
@@ -137,6 +153,13 @@ onBeforeUnmount(() => {
               class="h-11 flex-1 font-mono text-sm cursor-pointer transition-colors duration-200"
               style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
             >
+              <svg v-if="locale === 'en'" class="flag-svg mr-2" viewBox="0 0 24 16" aria-label="Myanmar flag" role="img">
+                <rect width="24" height="16" fill="#34B233" /><rect width="24" height="5.33" fill="#FECB00" /><rect y="10.67" width="24" height="5.33" fill="#EA2839" />
+                <polygon fill="#fff" points="12,2.1 13.35,6.15 17.62,6.15 14.17,8.65 15.49,12.7 12,10.2 8.51,12.7 9.83,8.65 6.38,6.15 10.65,6.15" />
+              </svg>
+              <svg v-else class="flag-svg mr-2" viewBox="0 0 24 16" aria-label="United Kingdom flag" role="img">
+                <rect width="24" height="16" fill="#012169" /><path fill="#fff" d="M0 0h3l21 13v3h-3L0 3zM21 0h3v3L3 16H0v-3z" /><path fill="#C8102E" d="M0 0h1.5L24 14v2h-1.5L0 2zM22.5 0H24v2L1.5 16H0v-2z" /><path fill="#fff" d="M10 0h4v16h-4zM0 6h24v4H0z" /><path fill="#C8102E" d="M11 0h2v16h-2zM0 7h24v2H0z" />
+              </svg>
               {{ locale === 'en' ? 'Switch to Myanmar' : 'Switch to English' }}
             </button>
             <button
@@ -152,3 +175,26 @@ onBeforeUnmount(() => {
     </div>
   </nav>
 </template>
+
+<style scoped>
+.flag-svg {
+  display: inline-block;
+  width: 1.25rem;
+  height: 0.875rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-text-secondary) 45%, transparent);
+  vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  .mobile-nav-link {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    padding: 0 0.75rem;
+    text-align: left;
+  }
+}
+</style>
