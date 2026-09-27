@@ -1,4 +1,5 @@
 export const heroData = {
+  profile: '/images/profile.jpg',
   stats: [
     { value: '2+', labelKey: 'hero.stats.yearsExperience' },
     { value: '6+', labelKey: 'hero.stats.projects' },

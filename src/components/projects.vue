@@ -4,6 +4,7 @@ import { projectsData } from '@/data'
 import { icons } from '@/data/icons'
 
 const { t } = useI18n()
+
 </script>
 
 <template>
@@ -15,13 +16,10 @@ const { t } = useI18n()
 
       <div class="space-y-16">
         <div v-for="(category, key) in projectsData.projects" :key="key" class="space-y-6">
-          
-          <!-- Section Title -->
           <div class="section-head">
             <p class="text-xl font-bold">{{ t(category.title) }}</p>
           </div>
 
-          <!-- Projects Container -->
           <div class="space-y-8">
             <div
               v-for="project in category.projects"
@@ -72,10 +70,12 @@ const { t } = useI18n()
                   </div>
                 </div>
 
-                <!-- Code Link (Public project ဖြစ်ပြီး codeLink ရှိရင် ပေါ်မည်) -->
-                <div class="flex flex-wrap gap-6 mt-6" v-if="!project.private && project.codeLink">
+                <!-- Repository Links (a project can have multiple repositories) -->
+                <div class="flex flex-wrap gap-6 mt-6" v-if="!project.private && (project.codeLinks?.length || project.codeLink)">
                   <a
-                    :href="project.codeLink"
+                    v-for="(repository, index) in (project.codeLinks || [{ url: project.codeLink }])"
+                    :key="repository.url"
+                    :href="repository.url"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center gap-2 font-mono text-sm transition-colors"
@@ -84,7 +84,7 @@ const { t } = useI18n()
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                       <path :d="icons.github"/>
                     </svg>
-                    {{ t('projects.code') }}
+                    {{ repository.label || `${t('projects.code')} ${index + 1}` }}
                   </a>
                 </div>
               </div>
@@ -127,7 +127,6 @@ const { t } = useI18n()
 
             </div>
           </div>
-
         </div>
       </div>
     </div>

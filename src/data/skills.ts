@@ -8,7 +8,7 @@ export const skillsData = {
       title: 'skills.languages.title',
       subtitle: 'skills.languages.subtitle',
       color: 'accent',
-      items: ['Laravel', 'Vue 3', 'React.js', 'TypeScript', 'C# (.NET Core)', 'Python', 'Flutter']
+      items: ['Laravel', 'Vue.js', 'React.js', 'TypeScript', 'C# (.NET Core)', 'Flutter']
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export const skillsData = {
       title: 'skills.cloud.title',
       subtitle: 'skills.cloud.subtitle',
       color: 'accent',
-      items: ['AWS (S3)', 'Cloudflare (R2)', 'Docker', 'MinIO', 'Git', 'Linux/SSH']
+      items: ['AWS (S3)', 'Docker', 'Git', 'Linux/SSH']
     }
   ]
 }

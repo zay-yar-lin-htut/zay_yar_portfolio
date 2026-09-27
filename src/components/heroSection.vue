@@ -71,7 +71,7 @@ function scrollToSection(href: string) {
         <div class="relative inline-block">
           <div class="photo-frame overflow-hidden" style="border: 1px solid var(--color-border);">
             <img
-              src="https://media.licdn.com/dms/image/v2/D5603AQGUP1PXpAq9bw/profile-displayphoto-scale_400_400/B56Z3vRsGTKgAg-/0/1777835886575?e=1790208000&v=beta&t=ruDy25NZPpeQR1GbeRWjtxzhGIdmxhhC0hHA1YH1ZPo"
+              :src="heroData.profile"
               alt="Profile photo of Zay Yar Lin Htut"
               class="w-full h-full object-cover"
             >

@@ -51,7 +51,7 @@ const { t } = useI18n();
       <!-- Expertise — inline list, no card boxes -->
       <div class="mt-24">
         <h2 class="font-display" style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-text-primary);">{{ t(educationData.expertise) }}</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background: var(--color-border);">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px" style="background: var(--color-background);">
           <div
             v-for="skill in educationData.expertiseCards"
             :key="skill.id"
