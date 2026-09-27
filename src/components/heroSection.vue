@@ -11,12 +11,12 @@ function scrollToSection(href: string) {
 </script>
 
 <template>
-  <section class="section min-h-screen flex items-center" id="hero-section">
-    <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-20 items-center py-24">
+  <section class="section min-h-[100svh] flex items-center" id="hero-section">
+    <div class="max-w-7xl mx-auto w-full min-w-0 grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-center pt-24 pb-16 sm:py-24">
       <!-- Left: text -->
       <div class="hero-reveal">
         <span
-          class="inline-flex items-center gap-2 font-mono text-sm px-3 py-1.5 rounded-sm"
+          class="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-3 py-1.5 rounded-sm"
           style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
         >
           <span class="w-1.5 h-1.5 rounded-full" style="background: var(--color-accent);"></span>
@@ -24,33 +24,33 @@ function scrollToSection(href: string) {
         </span>
 
         <h1
-          class="font-display mt-6 text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02]"
+          class="font-display mt-6 break-words text-[clamp(2.4rem,11vw,5.5rem)] leading-[1.04]"
           style="color: var(--color-text-primary);"
         >
           {{ t(heroData.title) }}
         </h1>
 
-        <p class="mt-5 font-mono text-sm sm:text-base" style="color: var(--color-accent);">
+        <p class="mt-4 font-mono text-xs sm:text-base" style="color: var(--color-accent);">
           &lt;{{ t(heroData.subtitle) }}&gt;
         </p>
 
-        <p class="mt-6 text-base sm:text-lg leading-relaxed max-w-xl" style="color: var(--color-text-secondary);">
+        <p class="mt-5 text-sm sm:text-lg leading-7 sm:leading-relaxed max-w-xl" style="color: var(--color-text-secondary);">
           {{ t(heroData.description) }}
         </p>
 
         <!-- Inline typographic stats — no boxes -->
-        <div class="mt-10 flex flex-wrap gap-x-10 gap-y-5">
-          <div v-for="stat in heroData.stats" :key="stat.labelKey" class="flex items-baseline gap-2">
-            <span class="font-display text-3xl sm:text-4xl" style="color: var(--color-text-primary);">{{ stat.value }}</span>
-            <span class="font-mono text-xs sm:text-sm" style="color: var(--color-text-secondary);">{{ t(stat.labelKey) }}</span>
+        <div class="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-x-10 sm:gap-y-5">
+          <div v-for="stat in heroData.stats" :key="stat.labelKey" class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 min-w-0">
+            <span class="font-display text-2xl sm:text-4xl" style="color: var(--color-text-primary);">{{ stat.value }}</span>
+            <span class="font-mono text-[10px] sm:text-sm leading-tight" style="color: var(--color-text-secondary);">{{ t(stat.labelKey) }}</span>
           </div>
         </div>
 
-        <div class="mt-10 flex flex-wrap gap-4">
+        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
           <a
             href="#projects"
             @click.prevent="scrollToSection('#projects')"
-            class="inline-flex items-center justify-center px-6 h-12 font-medium text-sm transition-colors"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-6 h-12 font-medium text-sm transition-colors"
             :style="{ backgroundColor: 'var(--color-accent)', color: '#0E1116' }"
           >
             {{ t('hero.viewProjectsBtn') }}
@@ -58,7 +58,7 @@ function scrollToSection(href: string) {
           <a
             href="#contact"
             @click.prevent="scrollToSection('#contact')"
-            class="inline-flex items-center justify-center px-6 h-12 font-medium text-sm transition-colors"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-6 h-12 font-medium text-sm transition-colors"
             style="border: 1px solid var(--color-border); color: var(--color-text-primary);"
           >
             {{ t('hero.contactBtn') }}
@@ -110,6 +110,9 @@ function scrollToSection(href: string) {
 }
 
 .hero-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation-delay: 150ms;
 }
 

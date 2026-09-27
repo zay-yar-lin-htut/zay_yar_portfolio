@@ -14,11 +14,11 @@ export const projectsData = {
           technologies: ['Laravel', 'React.js', 'Cloudflare R2', 'MySQL'],
           codeLinks: [
             {
-              label: 'Frontend',
+              label: 'projects.repository.frontend',
               url: 'https://github.com/zay-yar-lin-htut/car_rental_frontend'
             },
             {
-              label: 'Backend',
+              label: 'projects.repository.backend',
               url: 'https://github.com/zay-yar-lin-htut/car_rental_backend'
             }
           ],
@@ -26,7 +26,7 @@ export const projectsData = {
           demoImage: "/images/carRental.png",
           imageClass: "h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105",
           private: false,
-          privateStatus: 'Public Project'
+          privateStatus: 'projects.status.public'
         },
         {
           id: 2,
@@ -44,7 +44,7 @@ export const projectsData = {
           ],
           codeLinks: [
             {
-              label: 'Repository',
+              label: 'projects.repository.main',
               url: 'https://github.com/zay-yar-lin-htut/youtube-mp3-downloader---player'
             }
           ],
@@ -52,7 +52,7 @@ export const projectsData = {
           demoImage: '/images/freevibe.png',
           imageClass: 'h-80 w-full object-contain p-12 transition-transform duration-500 group-hover:scale-105',
           private: false,
-          privateStatus: 'Public Project'
+          privateStatus: 'projects.status.public'
         },
       ]
     },
@@ -68,7 +68,7 @@ export const projectsData = {
           technologies: ['Laravel', 'REST API', 'AWS S3'],
           codeLinks: [
             {
-              label: 'Repository',
+              label: 'projects.repository.main',
               url: 'https://github.com/Group-4-EWSD/Website'
             }
           ],
@@ -76,7 +76,7 @@ export const projectsData = {
           demoImage: "/images/aurora.png",
           imageClass: "h-30 w-30 object-cover transition-transform duration-500 group-hover:scale-105",
           private: false,
-          privateStatus: 'School / Group project'
+          privateStatus: 'projects.status.school'
         },
       ],
     },
@@ -95,7 +95,7 @@ export const projectsData = {
           demoImage: null,
           imageClass: null,
           private: true,
-          privateStatus: 'Company / Private project'
+          privateStatus: 'projects.status.private'
         },
         {
           id: 2,
@@ -109,7 +109,7 @@ export const projectsData = {
           demoImage: null,
           imageClass: null,
           private: true,
-          privateStatus: 'Company / Private project'
+          privateStatus: 'projects.status.private'
         },
         {
           id: 3,
@@ -123,7 +123,7 @@ export const projectsData = {
           demoImage: null,
           imageClass: null,
           private: true,
-          privateStatus: 'Company / Private project'
+          privateStatus: 'projects.status.private'
         }
       ]
     }
