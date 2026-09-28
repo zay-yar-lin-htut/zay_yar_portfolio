@@ -156,6 +156,7 @@
     },
     "code": "Source Code",
     "demo": "Live Demo",
+    "requestCredentials": "Credentials တောင်းရန်",
     "noPreview": "Preview မရရှိနိုင်သေးပါ",
     "repository": {
       "main": "Repository",
@@ -198,6 +199,8 @@
     "emailPlaceholder": "သင့်အီးမေးလ် ရိုက်ထည့်ပါ",
     "subjectPlaceholder": "အကြောင်းအရာ ရိုက်ထည့်ပါ",
     "messagePlaceholder": "ဤနေရာတွင် ရေးသားနိုင်ပါသည်။",
+    "credentialSubject": "{project} အတွက် Credential တောင်းဆိုခြင်း",
+    "credentialMessage": "မင်္ဂလာပါ။ {project} ကို စမ်းသပ်ကြည့်ရန် demo credentials တောင်းလိုပါတယ်။ ကျေးဇူးတင်ပါတယ်။",
     "attachment": "ဖိုင် (မဖြစ်မနေမဟုတ်ပါ)",
     "attachmentHint": "Image, PDF, DOC, DOCX သို့မဟုတ် ZIP — အများဆုံး 3 MB။"
   }

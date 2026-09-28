@@ -202,7 +202,7 @@ function closeCertificates() {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   color: var(--color-accent);
   background: transparent;
   opacity: 0;

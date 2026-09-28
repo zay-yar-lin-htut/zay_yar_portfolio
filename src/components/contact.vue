@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { contactChannels, contactIcons } from '@/data/contact'
 
@@ -10,6 +10,18 @@ const submitted = ref(false)
 const errorMessage = ref('')
 const submitting = ref(false)
 const selectedFile = ref<File | null>(null)
+
+function handleCredentialRequest(event: Event) {
+  const projectTitle = (event as CustomEvent<{ projectTitle?: string }>).detail?.projectTitle
+  if (!projectTitle) return
+
+  form.subject = t('contact.credentialSubject', { project: projectTitle })
+  form.message = t('contact.credentialMessage', { project: projectTitle })
+  errorMessage.value = ''
+}
+
+onMounted(() => window.addEventListener('request-credentials', handleCredentialRequest))
+onBeforeUnmount(() => window.removeEventListener('request-credentials', handleCredentialRequest))
 
 async function handleSubmit() {
   errorMessage.value = ''

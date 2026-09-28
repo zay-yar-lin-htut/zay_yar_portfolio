@@ -9,6 +9,11 @@ function getRepositoryLinks(project: any) {
   return project.codeLinks || (project.codeLink ? [{ url: project.codeLink }] : [])
 }
 
+function requestCredentials(projectTitle: string) {
+  window.dispatchEvent(new CustomEvent('request-credentials', { detail: { projectTitle } }))
+  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+}
+
 </script>
 
 <template>
@@ -117,15 +122,25 @@ function getRepositoryLinks(project: any) {
                   v-if="!project.private && project.demoLink"
                   class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                 >
-                  <a
-                    :href="project.demoLink"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="px-6 py-3 font-mono text-sm font-semibold transition-transform transform translate-y-2 group-hover:translate-y-0"
-                    style="background: var(--color-accent); color: #0E1116;"
-                  >
-                    {{ t('projects.demo') }} &rarr;
-                  </a>
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <a
+                      :href="project.demoLink"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
+                      style="background: var(--color-accent); color: #0E1116;"
+                    >
+                      {{ t('projects.demo') }} &rarr;
+                    </a>
+                    <button
+                      type="button"
+                      class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
+                      style="border: 1px solid var(--color-accent); color: var(--color-accent); background: rgba(14, 17, 22, 0.72);"
+                      @click.stop="requestCredentials(t(project.title))"
+                    >
+                      {{ t('projects.requestCredentials') }}
+                    </button>
+                  </div>
                 </div>
               </div>
 
