@@ -156,6 +156,7 @@
     },
     "code": "Source Code",
     "demo": "Live Demo",
+    "requestCredentials": "Request Credentials",
     "noPreview": "No preview available",
     "repository": {
       "main": "Repository",
@@ -198,6 +199,8 @@
     "emailPlaceholder": "your{'@'}email.com",
     "subjectPlaceholder": "What's this about?",
     "messagePlaceholder": "Your message...",
+    "credentialSubject": "Credential request — {project}",
+    "credentialMessage": "Hello, I would like to request demo credentials for {project}. Thank you.",
     "attachment": "Attachment (optional)",
     "attachmentHint": "Images, PDF, DOC, DOCX or ZIP — maximum 3 MB."
   }
