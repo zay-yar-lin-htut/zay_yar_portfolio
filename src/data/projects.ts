@@ -11,7 +11,17 @@ export const projectsData = {
           year: '2025',
           title: 'projects.project1.title',
           description: 'projects.project1.description',
-          technologies: ['Laravel', 'React.js', 'Cloudflare R2', 'MySQL'],
+          technologies: [
+            'Laravel', 
+            'React.js', 
+            'Cloudflare R2', 
+            'MySQL', 
+            'Avien', 
+            'Docker', 
+            'Vercel', 
+            'Render', 
+            'Cloudflare R2'
+          ],
           codeLinks: [
             {
               label: 'projects.repository.frontend',
@@ -23,6 +33,7 @@ export const projectsData = {
             }
           ],
           demoLink: 'https://car-rental-frontend-weu1.vercel.app/',
+          credential: true,
           demoImage: "/images/carRental.png",
           imageClass: "h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105",
           private: false,
@@ -40,7 +51,9 @@ export const projectsData = {
             'YouTube Explode',
             'just_audio',
             'audio_service',
-            'SQLite'
+            'SQLite',
+            'Node.js',
+            'Kotlin'
           ],
           codeLinks: [
             {
@@ -49,6 +62,8 @@ export const projectsData = {
             }
           ],
           demoLink: null,
+          downloadApiUrl: 'https://youtube-mp3-downloader-player.vercel.app/api/version',
+          credential: false,
           demoImage: '/images/freevibe.png',
           imageClass: 'h-80 w-full object-contain p-12 transition-transform duration-500 group-hover:scale-105',
           private: false,
@@ -73,6 +88,7 @@ export const projectsData = {
             }
           ],
           demoLink: "https://aurora-university.vercel.app/home",
+          credential: true,
           demoImage: "/images/aurora.png",
           imageClass: "h-30 w-30 object-cover transition-transform duration-500 group-hover:scale-105",
           private: false,

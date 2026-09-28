@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { projectsData } from '@/data'
 import { icons } from '@/data/icons'
 
 const { t } = useI18n()
+const resolvedDemoLinks = ref<Record<string, string>>({})
 
 function getRepositoryLinks(project: any) {
   return project.codeLinks || (project.codeLink ? [{ url: project.codeLink }] : [])
@@ -13,6 +15,36 @@ function requestCredentials(projectTitle: string) {
   window.dispatchEvent(new CustomEvent('request-credentials', { detail: { projectTitle } }))
   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function projectKey(categoryKey: string, project: any) {
+  return `${categoryKey}-${project.id}`
+}
+
+function getDemoLink(categoryKey: string, project: any) {
+  return project.demoLink || resolvedDemoLinks.value[projectKey(categoryKey, project)] || ''
+}
+
+async function loadDownloadLinks() {
+  const requests = Object.entries(projectsData.projects).flatMap(([categoryKey, category]) =>
+    category.projects
+      .filter((project: any) => project.downloadApiUrl)
+      .map(async (project: any) => {
+        try {
+          const response = await fetch(project.downloadApiUrl)
+          if (!response.ok) return
+          const data = await response.json()
+          if (typeof data.downloadUrl === 'string' && data.downloadUrl.startsWith('http')) {
+            resolvedDemoLinks.value[projectKey(categoryKey, project)] = data.downloadUrl
+          }
+        } catch {
+          // Leave the project without a demo link when the release API is unavailable.
+        }
+      })
+  )
+  await Promise.all(requests)
+}
+
+onMounted(loadDownloadLinks)
 
 </script>
 
@@ -32,7 +64,7 @@ function requestCredentials(projectTitle: string) {
           <div class="space-y-8">
             <div
               v-for="project in category.projects"
-              :key="project.id"
+              :key="projectKey(key, project)"
               class="grid lg:grid-cols-2 gap-0 overflow-hidden"
               style="border: 1px solid var(--color-border);"
             >
@@ -119,20 +151,21 @@ function requestCredentials(projectTitle: string) {
 
                 <!-- See Demo Hover Overlay -->
                 <div
-                  v-if="!project.private && project.demoLink"
+                  v-if="!project.private && getDemoLink(key, project)"
                   class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                 >
                   <div class="flex flex-col sm:flex-row gap-3">
                     <a
-                      :href="project.demoLink"
+                      :href="getDemoLink(key, project)"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
                       style="background: var(--color-accent); color: #0E1116;"
                     >
-                      {{ t('projects.demo') }} &rarr;
+                      {{ project.downloadApiUrl ? t('projects.download') : t('projects.demo') }} &rarr;
                     </a>
                     <button
+                      v-if="project.credential"
                       type="button"
                       class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
                       style="border: 1px solid var(--color-accent); color: var(--color-accent); background: rgba(14, 17, 22, 0.72);"
