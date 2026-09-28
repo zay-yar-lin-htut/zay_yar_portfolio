@@ -152,10 +152,11 @@
     },
     "project6": {
       "title": "FreeVibe — Local Music Player",
-      "description": "YouTube မှ သီချင်းများကို ရှာဖွေပြီး Download ပြုလုပ်နိုင်ကာ Offline နားထောင်နိုင်သော Flutter Music App ဖြစ်သည်။ Local Library နှင့် Playlist များ စီမံခြင်း၊ Queue၊ Resume၊ Sleep Timer နှင့် Android Media Controls များ ပါဝင်သည်။"
+      "description": "YouTube မှ သီချင်းများကို ရှာဖွေပြီး ဒေါင်းလုတ် ပြုလုပ်နိုင်ကာ Offline နားထောင်နိုင်သော Flutter Music App ဖြစ်သည်။ Local Library နှင့် Playlist များ စီမံခြင်း၊ Queue၊ Resume၊ Sleep Timer နှင့် Android Media Controls များ ပါဝင်သည်။ Node.js Backend ကို အသုံးပြု၍ Update အသစ်ရှိမရှိ စစ်ဆေးနိုင်သည်။"
     },
     "code": "Source Code",
     "demo": "Live Demo",
+    "download": "ဒေါင်းလုတ် လုပ်ရန်",
     "requestCredentials": "Credentials တောင်းရန်",
     "noPreview": "Preview မရရှိနိုင်သေးပါ",
     "repository": {

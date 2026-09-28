@@ -152,10 +152,11 @@
     },
     "project6": {
       "title": "FreeVibe — Local Music Player",
-      "description": "Offline-first Flutter music app for searching YouTube, downloading tracks for offline listening, organizing a local library and playlists, and controlling playback with queue, resume, sleep timer and Android media-session features."
+      "description": "Offline-first Flutter music app for searching YouTube, downloading tracks for offline listening, organizing a local library and playlists, and controlling playback with queue, resume, sleep timer and Android media-session features. Node.js backend checks for updates."
     },
     "code": "Source Code",
     "demo": "Live Demo",
+    "download": "Download",
     "requestCredentials": "Request Credentials",
     "noPreview": "No preview available",
     "repository": {
