@@ -1,8 +1,30 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { educationData } from '@/data';
+import SecureCertificateViewer from '@/components/secureCertificateViewer.vue';
 
 const { t } = useI18n();
+const certificateSources = ref<readonly string[]>([]);
+const certificateVerificationLinks = ref<readonly (string | undefined)[]>([]);
+const certificateTitle = ref('');
+
+function openCertificates(education: typeof educationData.educations[number]) {
+  const certificates = education.certificates;
+  certificateSources.value = certificates
+    ? [certificates.cer, certificates.tran].filter((source): source is string => Boolean(source))
+    : [];
+  certificateVerificationLinks.value = certificates
+    ? [certificates.cer_verification, certificates.tran_verification]
+    : [];
+  certificateTitle.value = t(education.title);
+}
+
+function closeCertificates() {
+  certificateSources.value = [];
+  certificateVerificationLinks.value = [];
+  certificateTitle.value = '';
+}
 </script>
 
 <template>
@@ -24,7 +46,16 @@ const { t } = useI18n();
             <span class="timeline-dot-inner" style="background: var(--color-accent);"></span>
           </div>
 
-          <div class="timeline-card">
+          <div class="timeline-card education-card">
+            <button
+              v-if="edu.certificates"
+              type="button"
+              class="certificate-trigger"
+              :aria-label="`View certificates for ${t(edu.title)}`"
+              @click="openCertificates(edu)"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
               <span class="font-mono text-sm" style="color: var(--color-accent);">/* {{ t(edu.period) }} */</span>
               <span class="font-mono text-xs" style="color: var(--color-text-secondary);">0{{ index + 1 }}</span>
@@ -66,6 +97,14 @@ const { t } = useI18n();
       </div>
     </div>
   </section>
+
+  <SecureCertificateViewer
+    :sources="certificateSources"
+    :verification-links="certificateVerificationLinks"
+    :visible="certificateSources.length > 0"
+    :title="certificateTitle"
+    @close="closeCertificates"
+  />
 </template>
 
 <style scoped>
@@ -115,6 +154,80 @@ const { t } = useI18n();
 }
 
 .timeline-card {
-  padding: 1.5rem 0;
+  padding: 1.5rem;
+}
+
+.education-card {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-right: 5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 42%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.education-card:hover {
+  z-index: 1;
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--color-surface-raised) 38%, transparent) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 42%, transparent);
+  backdrop-filter: blur(14px) saturate(145%);
+  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.education-card:hover::before {
+  opacity: 1;
+}
+
+.certificate-trigger {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  z-index: 2;
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--color-accent);
+  background: transparent;
+  opacity: 0;
+  cursor: pointer;
+  transform: translate(0, -50%);
+  transition: opacity 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.education-card:hover .certificate-trigger,
+.certificate-trigger:focus-visible {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--color-accent) 60%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  transform: translate(0, -50%);
+}
+
+.certificate-trigger:hover {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  transform: translate(2px, -50%);
+}
+
+@media (max-width: 639px) {
+  .certificate-trigger {
+    right: 1rem;
+    opacity: 0.8;
+  }
 }
 </style>
