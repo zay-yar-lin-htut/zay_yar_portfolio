@@ -13,8 +13,8 @@ export const contactIcons = {
 
 export const contactChannels = [
   { id: 'email', icon: 'mail', label: 'contact.channels.email', value: 'yaza9036@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=yaza9036@gmail.com', external: true },
-  { id: 'phone-1', icon: 'phone', label: 'contact.channels.phone', value: '+959 973944946', href: 'tel:+959973944946' },
-  { id: 'phone-2', icon: 'phone', label: 'contact.channels.phone', value: '+959 767520288', href: 'tel:+959767520288' },
+  { id: 'phone-1', icon: 'phone', label: 'contact.channels.phone', value: '+959 973944946', href: 'tel:+959973944946', external: false },
+  { id: 'phone-2', icon: 'phone', label: 'contact.channels.phone', value: '+959 767520288', href: 'tel:+959767520288', external: false },
   { id: 'location', icon: 'location', label: 'contact.channels.location', value: 'Yangon, Myanmar', href: 'https://maps.app.goo.gl/TYkxLRSmYVxAEXKG7', external: true },
   { id: 'github', icon: 'github', label: 'contact.channels.github', value: 'Zay Yar Lin Htut', href: 'https://github.com/zay-yar-lin-htut', external: true },
   { id: 'linkedin', icon: 'linkedin', label: 'contact.channels.linkedin', value: 'Zay Yar Lin Htut', href: 'https://www.linkedin.com/in/zay-yar-lin-htut-290785326', external: true },

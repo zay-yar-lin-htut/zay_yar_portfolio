@@ -5,6 +5,10 @@ import { icons } from '@/data/icons'
 
 const { t } = useI18n()
 
+function getRepositoryLinks(project: any) {
+  return project.codeLinks || (project.codeLink ? [{ url: project.codeLink }] : [])
+}
+
 </script>
 
 <template>
@@ -71,9 +75,9 @@ const { t } = useI18n()
                 </div>
 
                 <!-- Repository Links (a project can have multiple repositories) -->
-                <div class="flex flex-wrap gap-6 mt-6" v-if="!project.private && (project.codeLinks?.length || project.codeLink)">
+                <div class="flex flex-wrap gap-6 mt-6" v-if="!project.private && getRepositoryLinks(project).length">
                   <a
-                    v-for="(repository, index) in (project.codeLinks || [{ url: project.codeLink }])"
+                    v-for="(repository, index) in getRepositoryLinks(project)"
                     :key="repository.url"
                     :href="repository.url"
                     target="_blank"

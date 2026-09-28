@@ -35,10 +35,10 @@
     "title": "လုပ်ငန်းအတွေ့အကြုံ",
     "subtitle": "ဖြတ်သန်းခဲ့သော ခရီးစဉ်",
     "job1": {
-      "title": "Junior Developer",
-      "company": "Thetys Myanmar",
-      "period": "၂၀၂၅ - ၂၀၂၆",
-      "description": "Key Client Products များတွင် Full-Stack Development နှင့် Platform Maintenance များကို ဆောင်ရွက်ခဲ့သည်။ C# .NET Core ဖြင့် Backend API များ တည်ဆောက်ခြင်း၊ Vue 3 UI Components များ ရေးသားခြင်း၊ Hangfire Background Jobs များ ချိတ်ဆက်ခြင်း၊ OCR Processing Platform အတွက် PDF/Excel ထုတ်လုပ်ခြင်းနှင့် Email Services များ ပြုလုပ်ခဲ့သည်။ HR Platform ၏ Frontend Features များကိုလည်း အသစ်ပြင်ဆင်ခဲ့ပြီး Client တစ်ဦး၏ Mobile App ကို FlutterFlow မှ Native Flutter Code အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ပေးခဲ့သည်။"
+      "title": "School Projects & Hands-on Practice",
+      "company": "Academic Projects",
+      "period": "၂၀၂၄ - ၂၀၂၅",
+      "description": "နောက်ဆုံးနှစ် Final-Year Project အဖြစ် Cloud ပေါ်တွင် Deploy ပြုလုပ်ထားသော Vehicle Rental Platform ကို တည်ဆောက်ခဲ့သည်။ ထို့အပြင် School Magazine Website တစ်ခု၏ Backend Developer အဖြစ် Laravel ဖြင့် REST APIs များ ရေးသားပြီး AWS S3 မှတစ်ဆင့် Media Assets များကို စီမံခဲ့သည်။"
     },
     "job2": {
       "title": "Data / AI Infrastructure Intern",
@@ -47,10 +47,10 @@
       "description": "AI Initiatives များအတွက် Infrastructure နှင့် Integration Pipelines များကို ကိုယ်တိုင် တည်ဆောက်ခဲ့သည်။ SSH ဖြင့် Linux Servers များကို စီမံခန့်ခွဲခြင်း၊ အဖွဲ့၏ Datasets များကို စုစည်းရန် MinIO Object Storage ကို Deploy ပြုလုပ်ခြင်းနှင့် Environment Architecture များကို Configure လုပ်ခဲ့သည်။ Web Applications များအတွက် Trained ML Models များကို ထုတ်ဖော်ရန် RESTful APIs များ ရေးသားခဲ့ပြီး Git ဖြင့် ပူးပေါင်းလုပ်ဆောင်ခဲ့သည်။"
     },
     "job3": {
-      "title": "School Projects & Hands-on Practice",
-      "company": "Academic Projects",
-      "period": "၂၀၂၄ - ၂၀၂၅",
-      "description": "နောက်ဆုံးနှစ် Final-Year Project အဖြစ် Cloud ပေါ်တွင် Deploy ပြုလုပ်ထားသော Vehicle Rental Platform ကို တည်ဆောက်ခဲ့သည်။ ထို့အပြင် School Magazine Website တစ်ခု၏ Backend Developer အဖြစ် Laravel ဖြင့် REST APIs များ ရေးသားပြီး AWS S3 မှတစ်ဆင့် Media Assets များကို စီမံခဲ့သည်။"
+      "title": "Junior Developer",
+      "company": "Thetys Myanmar",
+      "period": "၂၀၂၅ - လက်ရှိ",
+      "description": "Key Client Products များတွင် Full-Stack Development နှင့် Platform Maintenance များကို ဆောင်ရွက်ခဲ့သည်။ C# .NET Core ဖြင့် Backend API များ တည်ဆောက်ခြင်း၊ Vue 3 UI Components များ ရေးသားခြင်း၊ Hangfire Background Jobs များ ချိတ်ဆက်ခြင်း၊ OCR Processing Platform အတွက် PDF/Excel ထုတ်လုပ်ခြင်းနှင့် Email Services များ ပြုလုပ်ခဲ့သည်။ HR Platform ၏ Frontend Features များကိုလည်း အသစ်ပြင်ဆင်ခဲ့ပြီး Client တစ်ဦး၏ Mobile App ကို FlutterFlow မှ Native Flutter Code အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ပေးခဲ့သည်။"
     }
   },
   "education": {
@@ -58,10 +58,10 @@
     "subtitle": "နောက်ခံသမိုင်းကြောင်း",
     "expertise": "နည်းပညာပိုင်းဆိုင်ရာ ကျွမ်းကျင်မှု",
     "degree1": {
-      "period": "၂၀၂၄ - ၂၀၂၅",
-      "title": "Bachelor of Science (Computing)",
-      "school": "KMD / University of Greenwich",
-      "description": "Software Engineering အခြေခံများ၊ Web Technologies နှင့် Database Design များ ပါဝင်သော Computing ဘွဲ့ကို ပြီးမြောက်ခဲ့သည်။"
+      "period": "၂၀၂၀ - ၂၀၂၃",
+      "title": "NCC Level 4 — Diploma in Computing",
+      "school": "MST College",
+      "description": "Programming အခြေခံများ၊ Database Management နှင့် System Development များကို သင်ယူခဲ့သော Diploma in Computing ဖြစ်သည်။"
     },
     "degree2": {
       "period": "၂၀၂၃ - ၂၀၂၄",
@@ -70,10 +70,10 @@
       "description": "Programming၊ Systems Analysis နှင့် Software Design ကျွမ်းကျင်မှုများအပေါ် အခြေခံ၍ Advanced Diploma in Computing ကို ပြီးမြောက်ခဲ့သည်။"
     },
     "degree3": {
-      "period": "၂၀၂၀ - ၂၀၂၃",
-      "title": "NCC Level 4 — Diploma in Computing",
-      "school": "MST College",
-      "description": "Programming အခြေခံများ၊ Database Management နှင့် System Development များကို သင်ယူခဲ့သော Diploma in Computing ဖြစ်သည်။"
+      "period": "၂၀၂၄ - ၂၀၂၅",
+      "title": "Bachelor of Science (Computing)",
+      "school": "KMD / University of Greenwich",
+      "description": "Software Engineering အခြေခံများ၊ Web Technologies နှင့် Database Design များ ပါဝင်သော Computing ဘွဲ့ကို ပြီးမြောက်ခဲ့သည်။"
     },
     "skill1": {
       "title": "Backend",
@@ -94,7 +94,8 @@
     "skill5": {
       "title": "Mobile",
       "subtitle": "Mobile Application ဖွံ့ဖြိုးတိုးတက်မှု"
-    }
+    },
+    "verify": "အတည်ပြုရန်"
   },
   "skills": {
     "title": "နည်းပညာဆိုင်ရာ ကျွမ်းကျင်မှုများ",

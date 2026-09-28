@@ -35,10 +35,10 @@
     "title": "Work & Experience",
     "subtitle": "My Journey",
     "job1": {
-      "title": "Junior Developer",
-      "company": "Thetys Myanmar",
-      "period": "2025 - 2026",
-      "description": "Full-stack development and platform maintenance across key client products. Built backend APIs using C# .NET Core, developed Vue 3 UI components, integrated Hangfire background jobs, automated PDF/Excel generation and email services for an OCR-processing platform. Also updated frontend features on an HR platform and used AI-assisted workflows to migrate a client's mobile app from FlutterFlow to clean, native Flutter code."
+      "title": "School Projects & Hands-on Practice",
+      "company": "Academic Projects",
+      "period": "2024 - 2025",
+      "description": "Final-year project: a cloud-deployed vehicle rental platform. Also worked as Backend Developer for a team school magazine site — designing REST APIs in Laravel and managing media assets via AWS S3."
     },
     "job2": {
       "title": "Data / AI Infrastructure Intern",
@@ -47,10 +47,10 @@
       "description": "Built infrastructure and integration pipelines for AI initiatives, working independently. Managed Linux servers via SSH, deployed MinIO Object Storage to centralize team datasets, and configured environment architecture. Authored RESTful APIs to expose trained ML models to web applications, collaborating through Git."
     },
     "job3": {
-      "title": "School Projects & Hands-on Practice",
-      "company": "Academic Projects",
-      "period": "2024 - 2025",
-      "description": "Final-year project: a cloud-deployed vehicle rental platform. Also worked as Backend Developer for a team school magazine site — designing REST APIs in Laravel and managing media assets via AWS S3."
+      "title": "Junior Developer",
+      "company": "Thetys Myanmar",
+      "period": "2025 - Present",
+      "description": "Full-stack development and platform maintenance across key client products. Built backend APIs using C# .NET Core, developed Vue 3 UI components, integrated Hangfire background jobs, automated PDF/Excel generation and email services for an OCR-processing platform. Also updated frontend features on an HR platform and used AI-assisted workflows to migrate a client's mobile app from FlutterFlow to clean, native Flutter code."
     }
   },
   "education": {
@@ -58,10 +58,10 @@
     "subtitle": "My Background",
     "expertise": "Technical Expertise",
     "degree1": {
-      "period": "2024 - 2025",
-      "title": "Bachelor of Science (Computing)",
-      "school": "KMD / University of Greenwich",
-      "description": "Completed a computing degree covering software engineering fundamentals, web technologies and database design."
+      "period": "2020 - 2023",
+      "title": "NCC Level 4 — Diploma in Computing",
+      "school": "MST College",
+      "description": "Diploma in computing covering programming fundamentals, database management and system development."
     },
     "degree2": {
       "period": "2023 - 2024",
@@ -70,10 +70,10 @@
       "description": "Advanced diploma in computing building on core programming, systems analysis and software design skills."
     },
     "degree3": {
-      "period": "2020 - 2023",
-      "title": "NCC Level 4 — Diploma in Computing",
-      "school": "MST College",
-      "description": "Diploma in computing covering programming fundamentals, database management and system development."
+      "period": "2024 - 2025",
+      "title": "Bachelor of Science (Computing)",
+      "school": "KMD / University of Greenwich",
+      "description": "Completed a computing degree covering software engineering fundamentals, web technologies and database design."
     },
     "skill1": {
       "title": "Backend",
@@ -94,7 +94,8 @@
     "skill5": {
       "title": "Mobile",
       "subtitle": "Mobile application development"
-    }
+    },
+    "verify": "Verify"
   },
   "skills": {
     "title": "Technical Skills",

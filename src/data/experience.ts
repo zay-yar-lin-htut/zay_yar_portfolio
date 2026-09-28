@@ -8,7 +8,7 @@ export const experienceData = {
       company: 'experience.job1.company',
       period: 'experience.job1.period',
       description: 'experience.job1.description',
-      skills: ['C# .NET Core', 'Vue 3', 'Flutter', 'Hangfire']
+      skills: ['Laravel', 'React.js', 'Docker', 'AWS S3']
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ export const experienceData = {
       company: 'experience.job3.company',
       period: 'experience.job3.period',
       description: 'experience.job3.description',
-      skills: ['Laravel', 'React.js', 'Docker', 'AWS S3']
+      skills: ['C# .NET Core', 'Vue 3', 'Flutter', 'Hangfire']
     }
   ]
 }

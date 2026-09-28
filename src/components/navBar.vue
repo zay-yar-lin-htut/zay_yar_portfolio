@@ -60,7 +60,10 @@ onBeforeUnmount(() => {
     <div class="section">
       <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
         <button @click="scrollToSection('#hero-section')" class="font-display text-lg cursor-pointer" style="color: var(--color-text-primary);">
-          <span style="color: var(--color-accent);">~</span> H.&nbsp;Zayar
+          <span class="inline-flex items-center gap-2">
+            <img src="/hertz.ico" alt="H. Zayar logo" class="h-5 w-5 object-contain" />
+            <span>H.&nbsp;Zayar</span>
+          </span>
         </button>
 
         <!-- Desktop nav -->
