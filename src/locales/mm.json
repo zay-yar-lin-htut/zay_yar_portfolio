@@ -95,7 +95,9 @@
       "title": "Mobile",
       "subtitle": "Mobile Application ဖွံ့ဖြိုးတိုးတက်မှု"
     },
-    "verify": "အတည်ပြုရန်"
+    "verify": "အတည်ပြုရန်",
+    "loading": "Certificate ကို ဖွင့်နေသည်...",
+    "loadError": "Certificate ကို ဖွင့်၍ မရပါ။"
   },
   "skills": {
     "title": "နည်းပညာဆိုင်ရာ ကျွမ်းကျင်မှုများ",

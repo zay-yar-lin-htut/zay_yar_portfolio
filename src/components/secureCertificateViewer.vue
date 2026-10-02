@@ -15,6 +15,8 @@ const emit = defineEmits<{ close: [] }>()
 const certificateCanvas = ref<HTMLCanvasElement | null>(null)
 const currentIndex = ref(0)
 const isLoading = ref(false)
+const loadError = ref(false)
+let renderToken = 0
 
 function currentVerificationLink() {
   return props.verificationLinks?.[currentIndex.value]
@@ -53,14 +55,31 @@ function drawWatermark(context: CanvasRenderingContext2D, width: number, height:
 async function drawCertificate() {
   const canvas = certificateCanvas.value
   const source = props.sources[currentIndex.value]
-  if (!canvas || !source) return
+  if (!canvas || !source) {
+    isLoading.value = false
+    return
+  }
 
+  const token = ++renderToken
   isLoading.value = true
+  loadError.value = false
+  clearCanvas()
   const image = new Image()
 
   image.onload = () => {
+    if (token !== renderToken) {
+      image.onload = null
+      image.onerror = null
+      image.src = ''
+      return
+    }
+
     const context = canvas.getContext('2d')
-    if (!context) return
+    if (!context) {
+      isLoading.value = false
+      loadError.value = true
+      return
+    }
 
     canvas.width = image.naturalWidth
     canvas.height = image.naturalHeight
@@ -79,7 +98,10 @@ async function drawCertificate() {
     image.onload = null
     image.onerror = null
     image.src = ''
-    isLoading.value = false
+    if (token === renderToken) {
+      isLoading.value = false
+      loadError.value = true
+    }
   }
 
   image.src = source
@@ -91,7 +113,9 @@ async function openCurrentCertificate() {
 }
 
 function closeViewer() {
+  renderToken++
   clearCanvas()
+  isLoading.value = false
   emit('close')
 }
 
@@ -155,7 +179,11 @@ onBeforeUnmount(clearCanvas)
         </div>
 
         <div class="relative flex min-h-0 flex-1 items-center justify-center overflow-auto p-4 sm:p-8">
-          <div v-if="isLoading" class="font-mono text-xs" style="color: var(--color-text-secondary);">Loading…</div>
+          <div v-if="isLoading" class="loading-state" role="status">
+            <span class="loading-spinner" aria-hidden="true"></span>
+            <span class="font-mono text-xs" style="color: var(--color-text-secondary);">{{ t('education.loading') }}</span>
+          </div>
+          <div v-else-if="loadError" class="font-mono text-xs" style="color: var(--color-text-secondary);">{{ t('education.loadError') }}</div>
           <canvas ref="certificateCanvas" class="protected-canvas" aria-hidden="true"></canvas>
 
           <button v-if="sources.length > 1" type="button" class="viewer-arrow viewer-arrow-left" aria-label="Previous certificate" @click="showPrevious">‹</button>
@@ -195,6 +223,31 @@ onBeforeUnmount(clearCanvas)
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.loading-state {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  background: color-mix(in srgb, var(--color-surface-raised) 78%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: certificate-spin 700ms linear infinite;
+}
+
+@keyframes certificate-spin {
+  to { transform: rotate(360deg); }
 }
 
 .viewer-close,
