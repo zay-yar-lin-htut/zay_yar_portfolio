@@ -3,9 +3,11 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from '@/composables/useTheme'
 import { navItems } from '@/data/nav'
+import packageJson from '../../package.json'
 
 const { locale, t } = useI18n()
 const { isDark, toggleTheme } = useTheme()
+const appVersion = packageJson.version
 
 const isMenuOpen = ref(false)
 const activeHref = ref('')
@@ -58,7 +60,7 @@ onBeforeUnmount(() => {
     style="background: color-mix(in srgb, var(--color-background) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border);"
   >
     <div class="section">
-      <div class="max-w-7xl mx-auto flex justify-between items-center h-16">
+      <div class="relative max-w-7xl mx-auto flex justify-between items-center h-16">
         <button @click="scrollToSection('#hero-section')" class="font-display text-lg cursor-pointer" style="color: var(--color-text-primary);">
           <span class="inline-flex items-center gap-2">
             <img src="/hertz.ico" alt="H. Zayar logo" class="h-5 w-5 object-contain" />
@@ -131,9 +133,13 @@ onBeforeUnmount(() => {
             <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
+          </button>
+        </div>
+
+        <span class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 font-mono text-[10px]" style="color: var(--color-text-secondary);">
+          v{{ appVersion }}
+        </span>
       </div>
-    </div>
 
     <!-- Mobile menu -->
     <div id="mobile-navigation" v-show="isMenuOpen" class="md:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto" style="border-top: 1px solid var(--color-border); background: var(--color-background);">
@@ -172,6 +178,9 @@ onBeforeUnmount(() => {
             >
               {{ isDark ? 'Light Mode' : 'Dark Mode' }}
             </button>
+          </div>
+          <div class="pt-1 text-right font-mono text-[10px]" style="color: var(--color-text-secondary);">
+            v{{ appVersion }}
           </div>
         </div>
       </div>
