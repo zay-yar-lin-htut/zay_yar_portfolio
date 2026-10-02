@@ -13,8 +13,8 @@ export const educationData = {
       certificates: {
         cer: '/images/etacifitrec/level4-cer.jpg',
         tran: '/images/etacifitrec/level4-tran.jpg',
-        // cer_verification: '/images/etacifitrec/level4-verification.jpg',
-        // tran_verification: '/images/etacifitrec/level4-tran-verification.jpg'
+        cer_verification: 'https://authentiqual.com/v/?AQ=15bcb7a2-c0eb-4656-becf-eb82cce5fe2e',
+        tran_verification: 'https://authentiqual.com/v/?AQ=15bcb7a2-c0eb-4656-becf-eb82cce5fe2e'
       }
     },
     {
@@ -27,8 +27,8 @@ export const educationData = {
       certificates: {
         cer: '/images/etacifitrec/level5-cer.jpg',
         tran: '/images/etacifitrec/level5-tran.jpg',
-        // cer_verification: 'https://example.com',
-        // tran_verification: 'https://example.com'
+        cer_verification: 'https://authentiqual.com/v/?AQ=334974ac-7492-41a6-b776-e322c0977904',
+        tran_verification: 'https://authentiqual.com/v/?AQ=334974ac-7492-41a6-b776-e322c0977904'
       }
     },
     {
