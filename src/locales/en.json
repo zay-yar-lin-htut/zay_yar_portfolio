@@ -95,7 +95,9 @@
       "title": "Mobile",
       "subtitle": "Mobile application development"
     },
-    "verify": "Verify"
+    "verify": "Verify",
+    "loading": "Loading certificate...",
+    "loadError": "Certificate could not be loaded."
   },
   "skills": {
     "title": "Technical Skills",
