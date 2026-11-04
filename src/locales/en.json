@@ -49,8 +49,14 @@
     "job3": {
       "title": "Junior Developer",
       "company": "Thetys Myanmar",
-      "period": "2025 - Present",
+      "period": "2025 - 2026",
       "description": "Full-stack development and platform maintenance across key client products. Built backend APIs using C# .NET Core, developed Vue 3 UI components, integrated Hangfire background jobs, automated PDF/Excel generation and email services for an OCR-processing platform. Also updated frontend features on an HR platform and used AI-assisted workflows to migrate a client's mobile app from FlutterFlow to clean, native Flutter code."
+    },
+    "job4": {
+      "title": "Mid Level Developer",
+      "company": "Trustlink Myanmar",
+      "period": "2026 - Present",
+      "description": "Collaborating with team members to develop and maintain enterprise applications and backend APIs for various client projects using C# and .NET. Working with Microservices Architecture, RESTful APIs, and database integrations while contributing to system performance improvements, maintenance, and overall application stability."
     }
   },
   "education": {

@@ -15,7 +15,7 @@ const { t } = useI18n();
 
       <div class="grid lg:grid-cols-[0.9fr_1.6fr] gap-12 lg:gap-20">
         <!-- Profile card — 40% -->
-        <div class="lg:sticky lg:top-24 self-start">
+        <div class="lg:center lg:top-24 self-start">
           <div
             class="h-full p-8"
             style="border: 1px solid var(--color-border); background: var(--color-surface);"

@@ -49,8 +49,14 @@
     "job3": {
       "title": "Junior Developer",
       "company": "Thetys Myanmar",
-      "period": "၂၀၂၅ - လက်ရှိ",
+      "period": "၂၀၂၅ - ၂၀၂၆",
       "description": "Key Client Products များတွင် Full-Stack Development နှင့် Platform Maintenance များကို ဆောင်ရွက်ခဲ့သည်။ C# .NET Core ဖြင့် Backend API များ တည်ဆောက်ခြင်း၊ Vue 3 UI Components များ ရေးသားခြင်း၊ Hangfire Background Jobs များ ချိတ်ဆက်ခြင်း၊ OCR Processing Platform အတွက် PDF/Excel ထုတ်လုပ်ခြင်းနှင့် Email Services များ ပြုလုပ်ခဲ့သည်။ HR Platform ၏ Frontend Features များကိုလည်း အသစ်ပြင်ဆင်ခဲ့ပြီး Client တစ်ဦး၏ Mobile App ကို FlutterFlow မှ Native Flutter Code အဖြစ် AI-assisted Workflows များဖြင့် ပြောင်းရွှေ့ပေးခဲ့သည်။"
+    },
+    "job4": {
+      "title": "Mid Level Developer",
+      "company": "Trustlink Myanmar",
+      "period": "၂၀၂၆ - လက်ရှိ",
+      "description": "Client ပရောဂျက်အမျိုးမျိုးအတွက် C# .NET ဖြင့် Enterprise Applications နှင့် Backend APIs များကို အဖွဲ့သားများနှင့် ပူးပေါင်းတည်ဆောက်ခြင်းနှင့် ထိန်းသိမ်းပြုပြင်ခြင်းများ ဆောင်ရွက်လျက်ရှိသည်။ Microservices Architecture များ၊ RESTful APIs များနှင့် Database Integration များကို အကောင်အထည်ဖော်ခြင်း၊ ရှိပြီးသား Systems များ၏ Performance နှင့် Stability ပိုမိုကောင်းမွန်စေရန် ပြုပြင်ထိန်းသိမ်းခြင်းတို့ကို လုပ်ဆောင်လျက်ရှိသည်။"
     }
   },
   "education": {

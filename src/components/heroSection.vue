@@ -93,7 +93,6 @@ function scrollToSection(href: string) {
 .photo-frame {
   width: min(72vw, 340px);
   aspect-ratio: 4 / 5;
-  border-radius: 6px;
   margin-inline: auto;
 }
 

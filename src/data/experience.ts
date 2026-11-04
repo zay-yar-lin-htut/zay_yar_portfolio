@@ -25,6 +25,14 @@ export const experienceData = {
       period: 'experience.job3.period',
       description: 'experience.job3.description',
       skills: ['C# .NET Core', 'Vue 3', 'Flutter', 'Hangfire']
+    },
+    {
+      id: 4,
+      jobTitle: 'experience.job4.title',
+      company: 'experience.job4.company',
+      period: 'experience.job4.period',
+      description: 'experience.job4.description',
+      skills: ['C# .NET Core', 'Microservice', 'RabbitMQ', 'MySQL']
     }
   ]
 }
