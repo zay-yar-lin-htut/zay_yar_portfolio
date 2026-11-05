@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { heroData } from '@/data';
+import CvViewer from '@/components/cvViewer.vue'
+import { available } from '@/data'
 
 const { t } = useI18n();
+const isCvViewerVisible = ref(false)
 
 function scrollToSection(href: string) {
   const el = document.querySelector(href)
@@ -20,7 +24,7 @@ function scrollToSection(href: string) {
           style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
         >
           <span class="w-1.5 h-1.5 rounded-full" style="background: var(--color-accent);"></span>
-          {{ t(heroData.notAvailable) }}
+          {{ t(available.yes) }}
         </span>
 
         <h1
@@ -63,6 +67,14 @@ function scrollToSection(href: string) {
           >
             {{ t('hero.contactBtn') }}
           </a>
+          <button
+            type="button"
+            class="w-full sm:w-auto inline-flex items-center justify-center px-6 h-12 font-medium text-sm transition-colors"
+            style="border: 1px solid var(--color-border); color: var(--color-text-primary);"
+            @click="isCvViewerVisible = true"
+          >
+            {{ t('hero.viewCvBtn') }}
+          </button>
         </div>
       </div>
 
@@ -87,6 +99,12 @@ function scrollToSection(href: string) {
       </div>
     </div>
   </section>
+  <CvViewer
+    :visible="isCvViewerVisible"
+    :title="t('hero.cvTitle')"
+    source="/other_files/cv.pdf"
+    @close="isCvViewerVisible = false"
+  />
 </template>
 
 <style scoped>

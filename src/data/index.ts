@@ -5,4 +5,5 @@ export { educationData } from './education'
 export { skillsData } from './skills'
 export { projectsData } from './projects'
 export { navItems } from './nav'
+export { available } from './available'
 

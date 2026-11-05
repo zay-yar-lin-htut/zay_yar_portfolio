@@ -10,6 +10,7 @@
   },
   "hero": {
     "notAvailable": "Not Available for now",
+    "available" : "Open to work",
     "title": "Zay Yar Lin Htut",
     "subtitle": "Mid-Level Full-Stack Developer",
     "description": "I build scalable web applications, RESTful APIs, AI background workflows and cloud storage infrastructure — with clean, maintainable code.",
@@ -19,7 +20,9 @@
       "companies": "Companies"
     },
     "contactBtn": "Contact Me",
-    "viewProjectsBtn": "View Projects"
+    "viewProjectsBtn": "View Projects",
+    "viewCvBtn": "View CV",
+    "cvTitle": "Curriculum Vitae"
   },
   "about": {
     "title": "About Me",

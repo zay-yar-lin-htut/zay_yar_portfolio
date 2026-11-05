@@ -9,7 +9,8 @@
     "contact": "ဆက်သွယ်ရန်"
   },
   "hero": {
-    "notAvailable": "လောလောဆယ် မရရှိနိုင်သေးပါ",
+    "notAvailable": "လောလောဆယ် အလုပ်လုပ်ရန် အဆင်မပြေသေးပါ",
+    "available" : "အလုပ်လုပ်ရန် အသင့်ရှိပါသည်",
     "title": "Zay Yar Lin Htut",
     "subtitle": "Mid-Level Full-Stack Developer",
     "description": "Scalable Web Application များ၊ RESTful API များ၊ AI Background Workflow များနှင့် Cloud Storage Infrastructure များကို Clean Code ဖြင့် တည်ဆောက်ပါသည်။",
@@ -19,7 +20,9 @@
       "companies": "လုပ်ကိုင်ခဲ့သော ကုမ္ပဏီများ"
     },
     "contactBtn": "ဆက်သွယ်ရန်",
-    "viewProjectsBtn": "ပရောဂျက်များကြည့်ရှုရန်"
+    "viewProjectsBtn": "ပရောဂျက်များကြည့်ရှုရန်",
+    "viewCvBtn": "CV ကြည့်ရန်",
+    "cvTitle": "ကိုယ်ရေးအကျဉ်း"
   },
   "about": {
     "title": "ကျွန်ုပ်အကြောင်း",
