@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
       <div class="relative max-w-7xl mx-auto flex justify-between items-center h-16">
         <button @click="scrollToSection('#hero-section')" class="font-display text-lg cursor-pointer" style="color: var(--color-text-primary);">
           <span class="inline-flex items-center gap-2">
-            <img src="/hertz.ico" alt="H. Zayar logo" class="h-5 w-5 object-contain" />
+            <img src="/logo.svg" alt="H. Zayar logo" class="h-6 w-6 object-contain black" />
             <span>H.&nbsp;Zayar</span>
           </span>
         </button>
