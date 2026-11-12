@@ -7,6 +7,7 @@ import { available } from '@/data'
 
 const { t } = useI18n();
 const isCvViewerVisible = ref(false)
+const currentAvailability = available.no
 
 function scrollToSection(href: string) {
   const el = document.querySelector(href)
@@ -23,8 +24,11 @@ function scrollToSection(href: string) {
           class="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-3 py-1.5 rounded-sm"
           style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
         >
-          <span class="w-1.5 h-1.5 rounded-full" style="background: var(--color-accent);"></span>
-          {{ t(available.yes) }}
+          <span
+            class="w-1.5 h-1.5 rounded-full"
+            :style="{ background: currentAvailability === available.no ? '#F85149' : 'var(--color-accent)' }"
+          ></span>
+          {{ t(currentAvailability) }}
         </span>
 
         <h1

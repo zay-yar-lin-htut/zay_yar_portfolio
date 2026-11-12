@@ -158,12 +158,13 @@ function getContactIcon(icon: keyof typeof contactIcons) {
           </div>
 
           <form @submit.prevent="handleSubmit" novalidate class="w-full min-w-0">
-            <input v-model="form.website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px] h-px w-px opacity-0">
+            <input v-model="form.website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Website" class="absolute -left-[9999px] h-px w-px opacity-0">
             <div class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.name') }}</label>
+                  <label for="contact-name" class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.name') }}</label>
                   <input
+                    id="contact-name"
                     v-model="form.name"
                     type="text"
                     :placeholder="t('contact.namePlaceholder')"
@@ -173,8 +174,9 @@ function getContactIcon(icon: keyof typeof contactIcons) {
                   >
                 </div>
                 <div>
-                  <label class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.email') }}</label>
+                  <label for="contact-email" class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.email') }}</label>
                   <input
+                    id="contact-email"
                     v-model="form.email"
                     type="email"
                     :placeholder="t('contact.emailPlaceholder')"
@@ -186,8 +188,9 @@ function getContactIcon(icon: keyof typeof contactIcons) {
               </div>
 
               <div>
-                <label class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.subject') }}</label>
+                <label for="contact-subject" class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.subject') }}</label>
                 <input
+                  id="contact-subject"
                   v-model="form.subject"
                   type="text"
                   :placeholder="t('contact.subjectPlaceholder')"
@@ -198,8 +201,9 @@ function getContactIcon(icon: keyof typeof contactIcons) {
               </div>
 
               <div>
-                <label class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.message') }}</label>
+                <label for="contact-message" class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.message') }}</label>
                 <textarea
+                  id="contact-message"
                   v-model="form.message"
                   rows="5"
                   :placeholder="t('contact.messagePlaceholder')"
@@ -210,8 +214,15 @@ function getContactIcon(icon: keyof typeof contactIcons) {
               </div>
 
               <div>
-                <label class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.attachment') }}</label>
-                <input type="file" accept="image/*,.pdf,.doc,.docx,.zip" @change="handleFileChange" class="block w-full min-w-0 text-sm" style="color: var(--color-text-secondary);">
+                <label for="contact-attachment" class="block font-mono text-sm mb-2" style="color: var(--color-text-secondary);">{{ t('contact.attachment') }}</label>
+                <input
+                  id="contact-attachment"
+                  type="file"
+                  accept="image/*,.pdf,.doc,.docx,.zip"
+                  @change="handleFileChange"
+                  class="block w-full min-w-0 text-sm"
+                  style="color: var(--color-text-secondary);"
+                >
                 <p class="font-mono text-xs mt-2" style="color: var(--color-text-secondary);">{{ t('contact.attachmentHint') }}</p>
               </div>
 

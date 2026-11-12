@@ -90,7 +90,7 @@ function closeCertificates() {
             style="background: var(--color-surface);"
           >
             <span class="font-mono text-sm" style="color: var(--color-accent);">0{{ skill.id }}</span>
-            <h4 class="font-display text-lg mt-3 mb-1" style="color: var(--color-text-primary);">{{ t(skill.title) }}</h4>
+            <h3 class="font-display text-lg mt-3 mb-1" style="color: var(--color-text-primary);">{{ t(skill.title) }}</h3>
             <p class="text-sm" style="color: var(--color-text-secondary);">{{ t(skill.subtitle) }}</p>
           </div>
         </div>

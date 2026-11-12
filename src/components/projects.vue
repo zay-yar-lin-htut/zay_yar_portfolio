@@ -142,11 +142,11 @@ onMounted(loadDownloadLinks)
                   :alt="t(project.title)"
                   :class="project.imageClass"
                 />
-                <div v-else class="flex flex-col items-center justify-center p-8 text-center opacity-60">
-                  <svg class="w-16 h-16 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--color-accent);">
+                <div v-else class="flex flex-col items-center justify-center p-8 text-center">
+                  <svg class="w-16 h-16 mb-2 opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: var(--color-accent);">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" :d="icons.noPreview" />
                   </svg>
-                  <span class="font-mono text-xs" style="color: var(--color-text-secondary);">{{ t('projects.noPreview') }}</span>
+                  <span class="font-mono text-xs" style="color: var(--color-text-primary);">{{ t('projects.noPreview') }}</span>
                 </div>
 
                 <!-- See Demo Hover Overlay -->
@@ -159,6 +159,7 @@ onMounted(loadDownloadLinks)
                       :href="getDemoLink(key, project)"
                       target="_blank"
                       rel="noopener noreferrer"
+                      :aria-label="`${project.downloadApiUrl ? t('projects.download') : t('projects.demo')} — ${t(project.title)}`"
                       class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
                       style="background: var(--color-accent); color: #0E1116;"
                     >
@@ -167,6 +168,7 @@ onMounted(loadDownloadLinks)
                     <button
                       v-if="project.credential"
                       type="button"
+                      :aria-label="`${t('projects.requestCredentials')} — ${t(project.title)}`"
                       class="px-6 py-3 font-mono text-sm font-semibold text-center transition-transform transform translate-y-2 group-hover:translate-y-0"
                       style="border: 1px solid var(--color-accent); color: var(--color-accent); background: rgba(14, 17, 22, 0.72);"
                       @click.stop="requestCredentials(t(project.title))"

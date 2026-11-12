@@ -20,12 +20,14 @@ onMounted(() => {
 <template>
     <div class="relative">
         <NavBar/>
-        <HeroSection id="hero-section" :style="{minHeight: '100vh'}"/>
-        <AboutMe id="about-me"/>
-        <Education id="education"/>
-        <Experience id="experience"/>
-        <Skills id="skills"/>
-        <Projects id="projects"/>
-        <Contact id="contact"/>
+        <main id="main-content">
+          <HeroSection id="hero-section" :style="{minHeight: '100vh'}"/>
+          <AboutMe id="about-me"/>
+          <Education id="education"/>
+          <Experience id="experience"/>
+          <Skills id="skills"/>
+          <Projects id="projects"/>
+          <Contact id="contact"/>
+        </main>
     </div>
 </template>
