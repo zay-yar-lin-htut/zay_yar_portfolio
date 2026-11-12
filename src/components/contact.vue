@@ -103,9 +103,9 @@ function getContactIcon(icon: keyof typeof contactIcons) {
         <p>{{ t('contact.subtitle') }}</p>
       </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.4fr] gap-12 lg:gap-20 min-w-0">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 max-w-xl lg:max-w-6xl mx-auto items-start min-w-0">
         <!-- Contact channels -->
-        <div class="space-y-3 self-start">
+        <div class="w-full space-y-3 self-start">
           <a
             v-for="channel in contactChannels"
             :key="channel.id"
@@ -134,7 +134,7 @@ function getContactIcon(icon: keyof typeof contactIcons) {
 
         <!-- Minimal form -->
         <div
-          class="form-panel w-full max-w-xl min-w-0 p-6 sm:p-8 lg:p-10"
+          class="form-panel w-full min-w-0 p-6 sm:p-8 lg:p-10"
           style="background: var(--color-surface); border: 1px solid var(--color-border); border-top: 2px solid var(--color-accent);"
         >
           <div class="mb-8">
