@@ -54,7 +54,11 @@ function closeCertificates() {
               :aria-label="`View certificates for ${t(edu.title)}`"
               @click="openCertificates(edu)"
             >
-              <span aria-hidden="true">→</span>
+              <span class="arrow-clip" aria-hidden="true">
+                <svg class="arrow-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </span>
             </button>
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
               <span class="font-mono text-sm" style="color: var(--color-accent);">/* {{ t(edu.period) }} */</span>
@@ -202,13 +206,28 @@ function closeCertificates() {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  /* border-radius: 999px; */
   color: var(--color-accent);
   background: transparent;
   opacity: 0;
   cursor: pointer;
   transform: translate(0, -50%);
-  transition: opacity 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  transition: opacity 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.arrow-clip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  overflow: hidden;
+}
+
+.arrow-svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+  flex-shrink: 0;
 }
 
 .education-card:hover .certificate-trigger,
@@ -220,8 +239,50 @@ function closeCertificates() {
 }
 
 .certificate-trigger:hover {
+  border-color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-accent) 32%, transparent);
   transform: translate(2px, -50%);
+  animation: trigger-pulse 1.2s ease-in-out infinite;
+}
+
+.certificate-trigger:hover .arrow-svg {
+  animation: arrow-glide 1.05s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes arrow-glide {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  38% {
+    transform: translateX(135%);
+    opacity: 0;
+  }
+  42% {
+    transform: translateX(-135%);
+    opacity: 0;
+  }
+  82%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes trigger-pulse {
+  0%, 100% {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-accent) 26%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 22px color-mix(in srgb, var(--color-accent) 48%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certificate-trigger:hover,
+  .certificate-trigger:hover .arrow-svg {
+    animation: none;
+  }
 }
 
 @media (max-width: 639px) {

@@ -82,7 +82,7 @@ export default async function handler(
           const form = new FormData()
           form.append('chat_id', chatId)
           form.append('caption', text.slice(0, 1024))
-          form.append('document', new Blob([file.data], { type: file.type }), file.name)
+          form.append('document', new Blob([new Uint8Array(file.data)], { type: file.type }), file.name)
           return form
         })()
       : JSON.stringify({ chat_id: chatId, text: text.slice(0, 4096) })

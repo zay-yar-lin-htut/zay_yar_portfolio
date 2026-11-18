@@ -174,7 +174,11 @@ onBeforeUnmount(clearCanvas)
             >
               {{ t('education.verify') }} ↗
             </a>
-            <button type="button" class="viewer-close" aria-label="Close certificate viewer" @click="closeViewer">×</button>
+            <button type="button" class="viewer-close" aria-label="Close certificate viewer" @click="closeViewer">
+              <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -272,8 +276,14 @@ onBeforeUnmount(clearCanvas)
 .viewer-close {
   width: 2.25rem;
   height: 2.25rem;
-  font-size: 1.5rem;
-  line-height: 1;
+}
+
+.close-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  display: block;
+  transform-origin: center;
+  transition: transform 220ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .viewer-arrow {
@@ -295,5 +305,11 @@ onBeforeUnmount(clearCanvas)
   border-color: var(--color-accent);
   color: var(--color-accent);
   background: color-mix(in srgb, var(--color-accent) 12%, var(--color-surface-raised));
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .viewer-close:hover .close-icon {
+    transform: rotate(90deg);
+  }
 }
 </style>
